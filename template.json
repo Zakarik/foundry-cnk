@@ -120,13 +120,13 @@
           "dv":0,
           "mod":0,
           "temp":0,
-          "actuel":0,
+          "value":0,
           "max":0
         },
         "maho":{
           "mod":0,
           "temp":0,
-          "actuel":0,
+          "value":0,
           "max":0
         },
         "folie":{
@@ -135,7 +135,7 @@
         "serenite":{
           "mod":0,
           "temp":0,
-          "actuel":0,
+          "value":0,
           "max":0
         },
         "volonte":{
@@ -146,7 +146,7 @@
         "chance":{
           "mod":0,
           "temp":0,
-          "actuel":0,
+          "value":0,
           "max":0
         },
         "blessures":{

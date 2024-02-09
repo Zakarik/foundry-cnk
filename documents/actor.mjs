@@ -122,8 +122,9 @@ export class CNKActor extends Actor {
         if(config.templates.isDouble) {
           d.max = calc;
 
-          if(d.actuel > calc) d.actuel = calc;
-        } else d.actuel = calc;
+          if(d.value > calc && key !== 'volonte') d.value = calc;
+        } else if(key !== 'volonte') d.value = calc;
+        else d.actuel = calc;
       }
     }
 

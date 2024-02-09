@@ -48,8 +48,6 @@ export class EiyuActorSheet extends ActorSheet {
     context.systemData = context.data.system;
     this._listCaracs(context);
 
-    console.warn(context);
-
     return context;
   }
 
@@ -853,8 +851,6 @@ export class EiyuActorSheet extends ActorSheet {
       data.canUseChance = rMentale ? false : true;
       data.rollWButtons = rollWButtons;
       let i = 0;
-
-      console.warn(bRoll, bRollC);
 
       for(let r of bRoll) {
         data.content.bRoll.push({

@@ -2,7 +2,7 @@
   "id": "cthulhu-no-kami",
   "title": "Cthulhu No Kami",
   "description": "La fiche officielle de Cthulhu No Kami, approuvée par Deadcrows.",
-  "version": "1.0",
+  "version": "1.1",
   "media": [
     {
       "type": "setup",
@@ -88,12 +88,12 @@
       "path":"packs/voies-de-magie-corrompue"
     }
   ],
-  "gridDistance": 2,
+  "primaryTokenAttribute": "derives.pv",
+  "secondaryTokenAttribute": "derives.serenite",
+  "gridDistance": 1,
   "gridUnits": "m",
-  "primaryTokenAttribute": "",
-  "url": "",
-  "manifest": "",
-  "download": "",
-  "readme": "",
-  "changelog": ""
+  "url": "https://github.com/Zakarik/foundry-cnk",
+  "manifest": "https://raw.githubusercontent.com/Zakarik/foundry-cnk/main/system.json",
+  "download": "https://github.com/Zakarik/foundry-cnk/archive/1.1.zip",
+  "changelog": "https://raw.githubusercontent.com/Zakarik/foundry-cnk/main/changelog.md"
 }
