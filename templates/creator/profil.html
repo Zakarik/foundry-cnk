@@ -1,0 +1,63 @@
+<section class="modecreation-top">
+    <div class="modecreation-profil">
+        {{#if actor.profil}}
+            <span class="label summary" data-item-id="{{actor.profil._id}}" title="{{actor.profil.name}}">
+                <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.PROFIL.Edit'}}"></i>
+                {{actor.profil.name}}
+                <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.PROFIL.Supprimer'}}"></i>
+            </span>
+        {{else}}
+            <span class="label">
+                {{localize 'CNK.CREATION.Creer-profil'}}
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="profil" title="{{localize 'CNK.PROFIL.Creer'}}"></i>
+            </span>
+        {{/if}}
+
+        <div class="middleLine">
+            <div class="block ki green simple">
+                <label class="headerLine">
+                    <span class="label">{{localize "CNK.CREATION.Ki"}}</span>
+                    <input type="number" name="system.derives.ki.actuel" value="{{systemData.derives.ki.actuel}}" />
+                </label>
+            </div>
+
+            <div class="modecreation-listcapacite">
+                <div class="header {{#if (gt systemData.capacites.value systemData.capacites.max)}}red{{/if}}">
+                    <span class="label">{{localize "CNK.PtsCapacite"}}</span>
+                    <span class="value">{{systemData.capacites.value}} / {{systemData.capacites.max}}</span>
+                </div>
+            </div>
+        </div>
+
+
+        {{#if actor.voies}}
+        <div class="modecreation-listvoie">
+            <span class="listvoie-label">{{localize "CNK.TABS.Voies"}}</span>
+            {{#each actor.voies}}
+            <div class="summary {{_id}}" data-id="{{_id}}">
+                <div class="header">
+                    <span class="label" title="{{name}}">{{name}}</span>
+                    <span class="indice">{{labelizeType system.type}}</span>
+                </div>
+                {{#each system.listrang}}
+                    <div class="rang {{#if selected}}selected{{/if}} {{#if capacitelimitee}}limitee{{/if}}" data-rang="{{@key}}" title="{{ifThen name name (localize (concat "CNK.VOIE." (capitalize @key)))}}">
+                        <i class="fa-solid fa-check"></i>
+                        <span class="txt">{{ifThen name name (localize (concat "CNK.VOIE." (capitalize @key)))}}</span>
+                        {{#if capacitelimitee}}<span class="limitee">(L)</span>{{/if}}
+                    </div>
+                    <span class="hover {{@key}}">{{{description}}}</span>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+
+    <button type="action" class="modecreation-annuler">
+        {{localize 'CNK.Annuler'}}
+    </button>
+
+    <button type="action" class="modecreation-next">
+        {{localize 'CNK.CREATION.Suivant'}}
+    </button>
+</section>

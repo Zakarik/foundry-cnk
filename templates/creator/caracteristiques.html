@@ -1,0 +1,58 @@
+<section class="modecreation-top">
+    {{#each systemData.caracteristiques}}
+        <div class="modecreation-caracteristiques block rolledCaracteristiques-drop" data-type="{{@key}}">
+            <div class="subBlock long">
+                <span class="subtitle val">{{localize "CNK.Valeur-short"}}</span>
+                <span class="subtitle mod">{{localize "CNK.Modificateur-short"}}</span>
+                <span class="score val">{{total}}</span>
+                <span class="score mod">{{modificateur}}</span>
+                <label>
+                    <span class="label">{{localize "CNK.Score"}}</span>
+                    <input type="number" name="system.caracteristiques.{{@key}}.score" value="{{score}}" min="0" />
+                </label>
+            </div>
+        </div>
+    {{/each}}
+
+    <button type="action" class="modecreation-annuler">
+        {{localize 'CNK.Annuler'}}
+    </button>
+    {{#unless systemData.settingsRepartition}}
+    <button type="action" class="rollCaracteristiques">
+        {{localize 'CNK.CREATION.RollCaracteristiques'}}
+    </button>
+
+
+    {{#if systemData.rolledCaracteristiques}}
+        <span class="modecreation-rolledCaracteristiques-label">{{localize 'CNK.CREATION.GlissezDeposerCaracteristiques'}}</span>
+        {{#each systemData.rolledCaracteristiques}}
+            <div class="modecreation-rolledCaracteristiques rolledCaracteristiques-drag draggable" data-value="{{this}}" data-key="{{@key}}">
+                {{this}}
+            </div>
+        {{/each}}
+    {{/if}}
+    {{/unless}}
+
+    {{#if systemData.settingsPonderee}}
+    <div class="btn">
+        <label class="mythos">
+            <span>{{localize 'CNK.CREATION.PC'}}</span>
+            <input type="number" name="system.modecreation-chance" value="{{#if systemData.modecreation-chance}}{{systemData.modecreation-chance}}{{else}}0{{/if}}" />
+        </label>
+    </div>
+
+    <button type="action" class="modecreation-next half">
+        {{localize 'CNK.CREATION.Suivant'}}
+    </button>
+    {{else}}
+    {{#if systemData.settingsRepartition}}
+    <button type="action" class="modecreation-next half">
+        {{localize 'CNK.CREATION.Suivant'}}
+    </button>
+    {{else}}
+    <button type="action" class="modecreation-next full">
+        {{localize 'CNK.CREATION.Suivant'}}
+    </button>
+    {{/if}}
+    {{/if}}
+</section>

@@ -1,0 +1,10 @@
+<form class="mainGrid {{cssClass}}" autocomplete="off">
+    {{~> (importParts 'headerItmStd')}}
+
+    <section class="body">
+        <div class="editorBlock">
+            <span class="label">{{localize "CNK.Description"}}</span>
+            {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+</form>

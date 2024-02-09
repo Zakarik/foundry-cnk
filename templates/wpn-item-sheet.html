@@ -1,0 +1,119 @@
+<form class="mainGrid {{cssClass}} {{#if (eq item.type "wpncontact")}}contact{{else}}{{#if (eq item.type "wpndistance")}}distance{{else}}other{{/if}}{{/if}}" autocomplete="off">
+    {{~> (importParts 'headerItmStd')}}
+
+    <section class="body">
+        <div class="editorBlock">
+            <span class="label">{{localize "CNK.Description"}}</span>
+            {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <label {{#if (or (eq item.type "wpngrenade") (eq item.type "wpnartillerie"))}}class="utilisation"{{/if}}>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Utilisation"}}</span>
+            {{#if (or (eq item.type "wpncontact") (eq item.type "wpndistance") (eq item.type "wpngrenade"))}}
+            <select name="system.utilisation">
+                {{selectOptions systemData.listUtilisations selected=systemData.utilisation blank='CNK.Choisir' localize=true}}
+            </select>
+            {{else}}
+            <input type="text" name="system.utilisation" value="{{systemData.utilisation}}" />
+            {{/if}}
+        </label>
+
+        {{#if (and (eq systemData.utilisation "1mainou2mains") (or (eq item.type "wpncontact") (eq item.type "wpndistance") (eq item.type "wpngrenade")))}}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Dm1main"}}</span>
+            <input type="text" name="system.dm1" value="{{systemData.dm1}}" placeholder="1{{localize "CNK.De-short"}}6" />
+        </label>
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Dm2mains"}}</span>
+            <input type="text" name="system.dm2" value="{{systemData.dm2}}" placeholder="1{{localize "CNK.De-short"}}6" />
+        </label>
+        {{else}}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Dm"}}</span>
+            <input type="text" name="system.dm" value="{{systemData.dm}}" placeholder="1{{localize "CNK.De-short"}}6" />
+        </label>
+        {{/if}}
+
+        {{#if (or (eq item.type "wpndistance") (eq item.type "wpngrenade") (eq item.type "wpnartillerie")) }}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Portee"}}</span>
+            {{numberInput systemData.portee name="system.portee" step=1}}
+        </label>
+
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Rechargement"}}</span>
+            <input type="text" name="system.rechargement" value="{{systemData.rechargement}}" />
+        </label>
+        {{/if}}
+
+        {{#if (eq item.type "wpnartillerie")}}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.AireEffet"}}</span>
+            {{numberInput systemData.aire name="system.aire" step=1}}
+        </label>
+        {{else}}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.ForMin"}}</span>
+            {{numberInput systemData.for name="system.for" step=1}}
+        </label>
+        {{/if}}
+
+        {{#if (eq item.type "wpndistance")}}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.Incident"}}</span>
+            {{numberInput systemData.incident name="system.incident" step=1}}
+        </label>
+        {{/if}}
+
+        <label class="{{#if (and (eq systemData.utilisation "1mainou2mains") (or (eq item.type "wpncontact") (eq item.type "wpndistance") (eq item.type "wpngrenade")))}}doubleEnd{{else}}doubleStart{{/if}}">
+            <span class="label">{{localize "CNK.TABSCOMBAT.CaracteristiqueDegats"}}</span>
+            <select name="system.caracdm">
+                {{selectOptions systemData.caracteristiques selected=systemData.caracdm blank='CNK.Choisir' localize=true}}
+            </select>
+        </label>
+
+        {{#if (or (eq item.type "wpncontact") (eq item.type "wpndistance"))}}
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.MargeCritique"}}</span>
+            {{numberInput systemData.critique name="system.critique" step=1}}
+        </label>
+        {{/if}}
+
+        <div class="block">
+            <span class="label">{{localize "CNK.TABSCOMBAT.ModAtt"}}</span>
+
+            <div class="data">
+                <input type="number" name="system.attaque.base" value="{{systemData.attaque.base}}" title="{{localize "CNK.Base"}}" />
+
+                <button type="action" class="btn {{ifThen systemData.attaque.kipositif "active" "inactive"}}" data-type="attaque" data-subtype="kipositif">
+                    <span>{{localize "CNK.TABSCOMBAT.KiPos"}}</span>
+                    <i class="fa-solid fa-xmark inactive"></i>
+                    <i class="fa-solid fa-check active"></i>
+                </button>
+                <button type="action" class="btn {{ifThen systemData.attaque.kinegatif "active" "inactive"}}" data-type="attaque" data-subtype="kinegatif">
+                    <span>{{localize "CNK.TABSCOMBAT.KiNeg"}}</span>
+                    <i class="fa-solid fa-xmark inactive"></i>
+                    <i class="fa-solid fa-check active"></i>
+                </button>
+            </div>
+        </div>
+        <div class="block">
+            <span class="label">{{localize "CNK.TABSCOMBAT.ModDgt"}}</span>
+
+            <div class="data">
+                <input type="number" name="system.degats.base" value="{{systemData.degats.base}}" title="{{localize "CNK.Base"}}" />
+
+                <button type="action" class="btn {{ifThen systemData.degats.kipositif "active" "inactive"}}" data-type="degats" data-subtype="kipositif">
+                    <span>{{localize "CNK.TABSCOMBAT.KiPos"}}</span>
+                    <i class="fa-solid fa-xmark inactive"></i>
+                    <i class="fa-solid fa-check active"></i>
+                </button>
+                <button type="action" class="btn {{ifThen systemData.degats.kinegatif "active" "inactive"}}" data-type="degats" data-subtype="kinegatif">
+                    <span>{{localize "CNK.TABSCOMBAT.KiNeg"}}</span>
+                    <i class="fa-solid fa-xmark inactive"></i>
+                    <i class="fa-solid fa-check active"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+</form>

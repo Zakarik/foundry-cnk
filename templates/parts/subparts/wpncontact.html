@@ -1,0 +1,92 @@
+<div class="item block contact summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+    <span class="label" title="{{name}}">
+        <i class="fa-message clickable sendmsg fa-solid" data-type="{{type}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+        {{#if system.equipped}}
+        <i class="fa-duotone fa-dice-d20 clickable red rollAtk" data-main="combat" data-type="contact" data-wpn-type="wpncontact" data-title="{{name}}" title="{{localize "CNK.ROLL.Attaque"}}"></i>
+        {{/if}}
+        {{#if system.user}}
+        <i class="fa-duotone fa-dice-d20 clickable red rollAtk" data-main="combat" data-type="contact" data-wpn-type="wpncontact" data-title="{{name}}" title="{{localize "CNK.ROLL.Attaque"}}"></i>
+        {{/if}}
+        {{name}}
+    </span>
+    <div class="btnequip {{#unless (eq system.utilisation '1mainou2mains')}}one{{/unless}}">
+        {{#if (eq actortype 'vehicule')}}
+        <span>{{localize 'CNK.VEHICULE.UtiliserPar'}} :</span>
+        <select class="userSelect">
+            {{selectOptions equipage selected=system.user blank='' sort=true}}
+        </select>
+        {{/if}}
+
+        {{#unless (eq system.utilisation '2mains')}}
+        <i class="{{#if (eq system.equipped '1main')}}fa-solid{{else}}fa-light{{/if}} fa-sword equip" data-equip="1main" title="{{localize "CNK.UTILISATIONS.Prendre1Main"}}"></i>
+        {{/unless}}
+        {{#if (or (eq system.utilisation '1mainou2mains') (eq system.utilisation '2mains'))}}
+        <i class="{{#if (eq system.equipped '2mains')}}fa-solid{{else}}fa-light{{/if}} fa-swords equip" data-equip="2mains" title="{{localize "CNK.UTILISATIONS.Prendre2Mains"}}"></i>
+        {{/if}}
+    </div>
+    <div class="cmd">
+        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.TABSCOMBAT.CONTACT.Edit'}}"></i>
+        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.TABSCOMBAT.CONTACT.Supprimer'}}"></i>
+    </div>
+    <div class="data">
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.Utilisation'}}
+            </span>
+            <span class="value" title="{{system.utilisation}}">
+                {{labelize system.utilisation}}
+            </span>
+        </label>
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.Dm'}}
+            </span>
+            <span class="value">
+                {{#if (eq system.utilisation '1mainou2mains')}}
+                {{ifThen (eq system.dm1 "") (concat "1" (localize "CNK.De-short") "6") system.dm1}} /
+                {{ifThen (eq system.dm2 "") (concat "1" (localize "CNK.De-short") "6") system.dm2}}
+                {{else}}
+                {{ifThen (eq system.dm "") (concat "1" (localize "CNK.De-short") "6") system.dm}}
+                {{/if}}
+            </span>
+        </label>
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.ForMin'}}
+            </span>
+            <span class="value">
+                {{system.for}}
+            </span>
+        </label>
+        <label title="{{system.attaque.base}} + {{system.attaque.ki}} = {{system.attaque.total}}">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.ModAtt-short'}}
+            </span>
+            <span class="value">
+                {{numberFormat system.attaque.total sign=true}}
+            </span>
+        </label>
+        <label title="{{system.degats.base}} + {{system.degats.ki}} = {{system.degats.total}}">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.ModDgt-short'}}
+            </span>
+            <span class="value">
+                {{numberFormat system.degats.total sign=true}}
+            </span>
+        </label>
+    </div>
+
+    <span class="description">{{{system.description}}}</span>
+    <button type="action" class="extend">
+        <span class="plus">
+            <i class="fa-solid fa-caret-down"></i>
+            {{localize "CNK.Plus"}}
+            <i class="fa-solid fa-caret-down"></i>
+        </span>
+        <span class="minus">
+            <i class="fa-solid fa-caret-up"></i>
+            {{localize "CNK.Minus"}}
+            <i class="fa-solid fa-caret-up"></i>
+        </span>
+    </button>
+</div>

@@ -1,0 +1,48 @@
+<div class="modificateurJetBlock {{#if special.modjet.edit}}edit{{/if}}" {{#if special.key}}data-key="{{special.key}}"{{/if}}>
+    <span class="label">
+        <button type="action" class="btnEditJet">
+            {{localize 'CNK.EditModificateurs'}}
+            <i class="fa-solid fa-check"></i>
+        </button>
+        {{localize "CNK.ModificateursJets"}}
+        <i class="fa-solid fa-square-plus clickable addModJet" title="{{localize 'CNK.AddModificateur'}}"></i>
+    </span>
+    <div class="effectsBlock">
+    {{#each special.modjet.list as | jet kJ|}}
+        {{#if ../special.modjet.edit}}
+        <div class="toEdit">
+            <i class="fa-solid fa-trash deleteModJet clickable" data-id="{{jet._id}}" title="{{localize 'CNK.SupprimerModificateur'}}"></i>
+            <select name="{{path}}.list.{{@key}}.key">
+                {{selectOptions (ifThen ../inner ../special.listModJet ../item.listModJet) selected=jet.key blank='CNK.Choisir' localize=true sort=true}}
+            </select>
+            {{#if (or (eq ../item.type 'avantage') (eq ../item.type 'desavantage'))}}
+            <input type="number" name="{{path}}.list.{{@key}}.value" value="{{jet.value}}" />
+            {{else}}
+                {{#if jet.selonrang}}
+                <input type="number" name="{{path}}.list.{{@key}}.rawvalue" value="{{#if jet.rawvalue}}{{jet.rawvalue}}{{else}}0{{/if}}" />
+                {{else}}
+                <input type="number" name="{{path}}.list.{{@key}}.value" value="{{jet.value}}" />
+                {{/if}}
+            {{/if}}
+            <input {{#if (or (eq ../item.type 'avantage') (eq ../item.type 'desavantage'))}}class='full'{{/if}} type="text" name="{{path}}.list.{{@key}}.condition" value="{{jet.condition}}" placeholder="{{localize 'CNK.Condition'}}" >
+            {{#unless (or (eq ../item.type 'avantage') (eq ../item.type 'desavantage'))}}
+            <button type="action" class="btnSelonRang {{#if jet.selonrang}}active{{/if}}" data-id="{{jet._id}}">{{localize "CNK.BonusSelonRang"}}</button>
+            {{/unless}}
+        </div>
+        {{else}}
+        <div class="show {{#if jet.selonrang}}long{{/if}}">
+            <span class="header">
+                <i class="fa-solid fa-trash deleteModJet clickable" data-id="{{jet._id}}" title="{{localize 'CNK.TRAIT.SupprimerBonus'}}"></i>
+                {{labelize jet.key}}
+            </span>
+            {{#if jet.selonrang}}
+            <span class="value">{{numberFormat jet.rawvalue sign=true}} / {{localize 'CNK.Rang'}}</span>
+            {{else}}
+            <span class="value">{{numberFormat jet.value sign=true}}</span>
+            {{/if}}
+            <span class="condition">{{jet.condition}}</span>
+        </div>
+        {{/if}}
+    {{/each}}
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<form class="mainGrid {{cssClass}}" autocomplete="off">
+    <header>
+        <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+        {{~> (importParts 'identite')}}
+    </header>
+
+    <section class="body">
+        {{~> (importParts 'presentation')}}
+    </section>
+</form>

@@ -1,0 +1,50 @@
+<div class="derives">
+    <div class="block {{#if systemData/edit}}toEdit{{/if}} red double">
+        <div class="headerLine">
+            <span class="label">{{localize "CNK.DERIVES.Points-de-vie"}}</span>
+
+            <div class="dataBlock">
+                <input type="number" name="system.derives.pv.actuel" value="{{systemData.derives.pv.actuel}}" min="0" max="{{systemData.derives.pv.max}}" />
+                <span>/</span>
+                <span class="max">{{systemData.derives.pv.max}}</span>
+            </div>
+        </div>
+        <div class="dataLine">
+            <label>
+                <span class="label">{{localize "CNK.Temporaire-short"}}</span>
+                <input type="number" name="system.derives.pv.temp" value="{{systemData.derives.pv.temp}}" />
+            </label>
+            <label>
+                <span class="label">{{localize "CNK.Base"}}</span>
+                <input type="number" name="system.derives.pv.base" value="{{systemData.derives.pv.base}}" />
+            </label>
+        </div>
+    </div>
+
+    <div class="block {{#if systemData/edit}}toEdit{{/if}} blue double">
+        <div class="headerLine">
+            <span class="label">{{localize "CNK.DERIVES.Places"}}</span>
+
+            <div class="dataBlock">
+                <span class="value">{{systemData.derives.places.actuel}}</span>
+                <span>/</span>
+                <span class="max">{{systemData.derives.places.max}}</span>
+            </div>
+        </div>
+        <div class="dataLine">
+            <label>
+                <span class="label">{{localize "CNK.Temporaire-short"}}</span>
+                <input type="number" name="system.derives.places.temp" value="{{systemData.derives.places.temp}}" />
+            </label>
+            <div class="short">
+                <span class="label">{{localize "CNK.Base"}}</span>
+                <span class="value">{{systemData.derives.places.base}}</span>
+            </div>
+        </div>
+    </div>
+
+    <button type="action" class="roll yellow" data-main="derives" data-type="volonte" data-rtype="pilotage" data-title="{{localize 'CNK.DERIVES.Pilotage'}}">
+        <span>{{localize "CNK.DERIVES.Pilotage"}}</span>
+        <i class="fa-solid fa-dice-d20"></i>
+    </button>
+</div>

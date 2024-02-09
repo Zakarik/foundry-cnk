@@ -1,0 +1,31 @@
+&.vehicule {
+    section.window-content form.mainGrid {
+        grid-template-rows: max-content 1fr;
+        grid-template-columns: 200px 1fr;
+        grid-gap: 5px;
+        align-items: flex-start;
+        align-content: flex-start;
+
+        @import "../header";
+
+        section {
+            &.top {
+                display:grid;
+                grid-template-columns: 1fr;
+                grid-gap: 5px;
+
+                @import "../caracteristiques-vehicule";
+                @import "../derives-vehicule";
+            }
+
+            &.body {
+                display: grid;
+
+                @import "../menu";
+                @import "../presentation";
+                @import "../passagers";
+                @import "../combat";
+            }
+        }
+    }
+}

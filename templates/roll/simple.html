@@ -1,0 +1,73 @@
+<div class="dice-roll cnk-roll-simple" data-stringified="{{stringify}}" data-tgt="{{tgt}}" data-wpn="{{wpn}}" data-user="{{user}}">
+    <div class="dice-result">
+        {{#if flavor}}
+        <h4 class="dice-total flavor title">{{flavor}}</h4>
+        {{/if}}
+        {{#if subtitle}}
+        <h4 class="dice-total flavor subtitle notFirst">{{{subtitle}}}</h4>
+        {{/if}}
+        {{#if formula}}
+            <h4 class="dice-total formula">{{formula}}</h4>
+        {{/if}}
+        {{#if listBonus}}
+            <div class="block">
+                {{#each listBonus}}
+                    <span>{{this}}</span>
+                {{/each}}
+            </div>
+        {{/if}}
+        {{#if tooltip}} {{{tooltip}}} {{/if}}
+        {{#if result}}
+        <h4 class="dice-total result {{#if (or special text hit second incident special2 special3)}}notLast{{/if}} {{#if rollWButtons}}rollwbuttons{{/if}}" {{#if rollWButtons}}data-rollwbuttons="{{rollWButtons}}" data-result={{result}}{{/if}}>
+            {{result}}
+        </h4>
+        {{/if}}
+        {{#if special}}
+            <h4 class="dice-total result {{#if (or text hit second special2 special3 special4)}}notLast{{/if}}">{{{special}}}</h4>
+        {{/if}}
+        {{#if special2}}
+            <h4 class="dice-total result {{#if (or text hit second special3 special4)}}notLast{{/if}}">{{{special2}}}</h4>
+        {{/if}}
+        {{#if special3}}
+            <h4 class="dice-total result {{#if (or text hit second special4)}}notLast{{/if}}">{{{special3}}}</h4>
+        {{/if}}
+        {{#if hit}}
+            <h4 class="dice-total result {{#if (or text second special4)}}notLast{{/if}}">{{{hit}}}</h4>
+        {{/if}}
+        {{#if special4}}
+            <h4 class="dice-total result {{#if (or text second)}}notLast{{/if}}">{{{special4}}}</h4>
+        {{/if}}
+        {{#if text}}
+            <span class="text">{{{text}}}</span>
+        {{/if}}
+
+        {{#if second}}
+            <span class="space"></span>
+            {{#if second.flavor}}
+            <h4 class="dice-total flavor title notFirst">{{second.flavor}}</h4>
+            {{/if}}
+            {{#if second.subtitle}}
+            <h4 class="dice-total flavor subtitle notFirst">{{{second.subtitle}}}</h4>
+            {{/if}}
+            {{#if second.listBonus}}
+                <div class="block">
+                    {{#each second.listBonus}}
+                        <span>{{this}}</span>
+                    {{/each}}
+                </div>
+            {{/if}}
+            {{#if second.tooltip}} {{{second.tooltip}}} {{/if}}
+            {{#if second.result}}
+            <h4 class="dice-total result degats {{#if second.isDgt}} rollDgt{{/if}}" {{#if second.isDgt}}data-dgt='{{second.result}}'{{/if}} {{#if second.isCrit}}data-bdgt="{{second.baseDgt}}"{{/if}} {{#if vehicule}}data-vehicule="{{vehicule}}"{{/if}}>
+                <span {{#if second.base}}class="main"{{/if}}>{{second.result}}</span>
+                {{#if second.base}}
+                <span class="secondary">({{second.base}})</span>
+                {{/if}}
+            </h4>
+            {{/if}}
+        {{/if}}
+        {{#if triple}}
+        {{#if triple.tooltip}} {{{triple.tooltip}}} {{/if}}
+        {{/if}}
+    </div>
+</div>

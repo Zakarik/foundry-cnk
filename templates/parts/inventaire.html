@@ -1,0 +1,74 @@
+<div class="tab inventaire" data-group="primary" data-tab="inventaire">
+    <h1>
+        {{localize "CNK.Armures"}}
+        <i class="fa-solid fa-square-plus item-create clickable" data-type="armure" title="{{localize 'CNK.INVENTAIRE.ARMURE.Creer'}}"></i>
+    </h1>
+    <div class="armure item-list">
+        {{#each actor.armures}}
+            <div class="item block summary {{#if system.extended}}extended{{/if}} {{ifThen system.equip "equipped" "notequipped"}}" data-item-id="{{_id}}">
+                <i title="{{localize 'CNK.INVENTAIRE.ARMURE.Unequipe'}}" class="fa-solid fa-shield equipped btnequip"></i>
+                <i title="{{localize 'CNK.INVENTAIRE.ARMURE.Equipe'}}" class="fa-regular fa-shield notequipped btnequip"></i>
+                <span class="label" title="{{name}}">
+                    <i class="fa-message clickable sendmsg fa-solid" data-type="{{type}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                    {{name}}
+                </span>
+                <div class="defense" title="{{localize 'CNK.COMBAT.Defense'}}">
+                    <img src="systems/cthulhu-no-kami/assets/icons/defense.png" />
+                    <span>{{system.defense}}</span>
+                </div>
+                <div class="reduction" title="{{localize 'CNK.COMBAT.Reduction'}}">
+                    <img src="systems/cthulhu-no-kami/assets/icons/reduction.png" />
+                    <span>{{system.reduction}}</span>
+                </div>
+                <div class="cmd">
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.INVENTAIRE.ARMURE.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.INVENTAIRE.ARMURE.Supprimer'}}"></i>
+                </div>
+                <span class="description">{{{system.description}}}</span>
+                <button type="action" class="extend">
+                    <span class="plus">
+                        <i class="fa-solid fa-caret-down"></i>
+                        {{localize "CNK.Plus"}}
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                    <span class="minus">
+                        <i class="fa-solid fa-caret-up"></i>
+                        {{localize "CNK.Minus"}}
+                        <i class="fa-solid fa-caret-up"></i>
+                    </span>
+                </button>
+            </div>
+        {{/each}}
+    </div>
+    <h1>
+        {{localize "CNK.Objets"}}
+        <i class="fa-solid fa-square-plus item-create clickable" data-type="objet" title="{{localize 'CNK.INVENTAIRE.OBJET.Creer'}}"></i>
+    </h1>
+    <div class="objet item-list">
+        {{#each actor.objets}}
+            <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+                <span class="label" title="{{name}}">
+                    <i class="fa-message clickable sendmsg fa-solid" data-title="{{name}}" data-msg="{{system.description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                    {{name}}
+                </span>
+                <div class="cmd">
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.INVENTAIRE.OBJET.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.INVENTAIRE.OBJET.Supprimer'}}"></i>
+                </div>
+                <span class="description">{{{system.description}}}</span>
+                <button type="action" class="extend">
+                    <span class="plus">
+                        <i class="fa-solid fa-caret-down"></i>
+                        {{localize "CNK.Plus"}}
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                    <span class="minus">
+                        <i class="fa-solid fa-caret-up"></i>
+                        {{localize "CNK.Minus"}}
+                        <i class="fa-solid fa-caret-up"></i>
+                    </span>
+                </button>
+            </div>
+        {{/each}}
+    </div>
+</div>

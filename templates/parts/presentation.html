@@ -1,0 +1,18 @@
+<div class="tab presentation {{#if limited}}active{{/if}}" data-group="primary" data-tab="presentation">
+    <div class="physique editorBlock">
+        <span class="label">
+            {{localize "CNK.DescriptionPhysique"}}
+        </span>
+
+        {{editor systemData.physique target="system.physique" button=true owner=owner editable=editable}}
+    </div>
+    {{#unless limited}}
+    <div class="historique editorBlock">
+        <span class="label">
+            {{localize "CNK.Historique"}}
+        </span>
+
+        {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+    </div>
+    {{/unless}}
+</div>

@@ -1,0 +1,25 @@
+<div class="tab passagers" data-group="primary" data-tab="passagers">
+    <div class="pilote">
+        <span class="label">{{localize 'CNK.VEHICULE.Pilote'}}</span>
+        {{#each systemData.pilote}}
+        <div class="value">
+            <i class="fa-solid fa-trash delPilot clickable" title="{{localize 'CNK.VEHICULE.DeletePilote'}}" data-id="{{@key}}"></i>
+            <span>{{this}}</span>
+            <i class="fa-solid fa-person-seat clickable btnPassager" data-id="{{@key}}" title="{{localize 'CNK.VEHICULE.DevenirPassager'}}"></i>
+        </div>
+        {{/each}}
+    </div>
+
+    <div class="listpassagers">
+        <span class="label">{{localize 'CNK.VEHICULE.Passagers'}}</span>
+        {{#each systemData.passagers}}
+        <div class="value {{#if ../systemData.listpilote}}oneGrid{{/if}}">
+            <i class="fa-solid fa-trash delPassager clickable" title="{{localize 'CNK.VEHICULE.DeletePassager'}}" data-id="{{@key}}"></i>
+            <span>{{this}}</span>
+            {{#unless ../systemData.listpilote}}
+            <i class="fa-solid fa-user-pilot clickable btnPilot" data-id="{{@key}}" title="{{localize 'CNK.VEHICULE.DevenirPilote'}}"></i>
+            {{/unless}}
+        </div>
+        {{/each}}
+    </div>
+</div>

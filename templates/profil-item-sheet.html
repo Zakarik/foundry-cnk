@@ -1,0 +1,93 @@
+<form class="mainGrid {{cssClass}}" autocomplete="off">
+    {{~> (importParts 'headerItmStd')}}
+
+    <section class="body">
+        <div class="editorBlock">
+            <span class="label">{{localize "CNK.Description"}}</span>
+            {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <div class="col">
+            <label>
+                <span class="label">{{localize "CNK.PROFIL.FAMILLE.Label"}}</span>
+                <select name="system.famille" class="famille">
+                    {{#select systemData.famille}}
+                        <option value=""></option>
+                        <option value="action">{{localize "CNK.PROFIL.FAMILLE.Action"}}</option>
+                        <option value="reflexion">{{localize "CNK.PROFIL.FAMILLE.Reflexion"}}</option>
+                        <option value="societe">{{localize "CNK.PROFIL.FAMILLE.Societe"}}</option>
+                    {{/select}}
+                </select>
+            </label>
+
+            <div>
+                <label class="main">
+                    <span class="label">{{localize "CNK.PROFIL.Attaque"}}</span>
+                    <input type="number" class="atkTotal" name="system.attaque.total" value="{{systemData.attaque.total}}" min="0" />
+                </label>
+
+                <label class="sub">
+                    <span class="label">{{localize "CNK.COMBAT.Contact"}}</span>
+                    <input type="number" class="atkContact" name="system.attaque.contact" value="{{systemData.attaque.contact}}" min="0" max="{{systemData.attaque.total}}" />
+                </label>
+
+                <label class="sub">
+                    <span class="label">{{localize "CNK.COMBAT.Distance"}}</span>
+                    <input type="number" class="atkDistance" name="system.attaque.distance" value="{{systemData.attaque.distance}}" min="0" max="{{systemData.attaque.total}}" />
+                </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <label>
+                <span class="label">{{localize "CNK.De-de-vie"}}</span>
+                <select name="system.dv">
+                    {{#select systemData.dv}}
+                        <option value="6">{{localize "CNK.De-short"}}6</option>
+                        <option value="8">{{localize "CNK.De-short"}}8</option>
+                        <option value="10">{{localize "CNK.De-short"}}10</option>
+                    {{/select}}
+                </select>
+            </label>
+            <label>
+                <span class="label">{{localize "CNK.Capacite"}}</span>
+                <input type="number" name="system.capacite" value="{{systemData.capacite}}" min="0" />
+            </label>
+            <label>
+                <span class="label">{{localize "CNK.DERIVES.Serenite"}}</span>
+                <input type="number" name="system.serenite" value="{{systemData.serenite}}" min="0" />
+            </label>
+            <label>
+                <span class="label">{{localize "CNK.DERIVES.Chance"}}</span>
+                <input type="number" name="system.chance" value="{{systemData.chance}}" min="0" />
+            </label>
+        </div>
+
+        <div class="voies">
+            <span class="label">{{localize "CNK.TABS.Voies"}}</span>
+            {{#each systemData.voie}}
+            <div class="summary {{_id}}" data-id="{{_id}}">
+                <div class="headerBlock">
+                    <span class="sublabel">
+                        {{name}}
+                    </span>
+                    <select name="system.voie.{{@key}}.system.type">
+                        {{selectOptions ../systemData.listType selected=system.type localize=true sort=true}}
+                    </select>
+                </div>
+                {{#each system.listrang}}
+                    <div class="rang" data-rang="{{@key}}">
+                        <span class="txt">{{ifThen name name (localize (concat "CNK.VOIE." (capitalize @key)))}}</span>
+                        {{#if capacitelimitee}}<span class="limitee">(L)</span>{{/if}}
+                    </div>
+                    <span class="{{@key}} hover">{{{description}}}</span>
+                {{/each}}
+                <div class="cmd">
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.VOIE.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.VOIE.Supprimer'}}"></i>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+</form>

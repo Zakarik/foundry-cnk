@@ -1,0 +1,34 @@
+<form class="mainGrid {{cssClass}}" autocomplete="off">
+    {{~> (importParts 'headerItmStd')}}
+
+    <section class="body">
+        <div class="editorBlock">
+            <span class="label">{{localize "CNK.Description"}}</span>
+            {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.SORTILEGE.Type"}}</span>
+            <input type="text" name="system.type" value="{{systemData.type}}" />
+        </label>
+
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.SORTILEGE.Forme"}}</span>
+            <input type="text" name="system.forme" value="{{systemData.forme}}" />
+        </label>
+
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.SORTILEGE.Caracteristique"}}</span>
+            <select name="system.caracteristique">
+                {{#select systemData.caracteristique}}
+                    {{selectOptions caracteristiques localize=true}}
+                {{/select}}
+            </select>
+        </label>
+
+        <label>
+            <span class="label">{{localize "CNK.TABSCOMBAT.SORTILEGE.BaseDifficulte"}}</span>
+            {{numberInput systemData.attaque name="system.attaque" step=1}}
+        </label>
+    </section>
+</form>

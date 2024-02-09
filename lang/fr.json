@@ -1,0 +1,371 @@
+{
+  "TYPES":{
+    "Actor":{
+      "eiyu":"Eiyu",
+      "vehicule":"Véhicule"
+    },
+    "Item":{
+      "profil":"Profil",
+      "avantage":"Avantage",
+      "desavantage":"Désavantage",
+      "phobie":"Phobie",
+      "folie":"Folie",
+      "wpncontact":"Arme de contact",
+      "wpndistance":"Arme à distance",
+      "wpngrenade":"Grenade",
+      "wpnartillerie":"Artillerie",
+      "sortilege":"Sortilège",
+      "armure":"Armure",
+      "objet":"Objet",
+      "voie":"Voie"
+    }
+  },
+  "CNK":{
+    "Nom":"Nom",
+    "Origine":"Origine",
+    "Religion":"Religion",
+    "Profil":"Profil",
+    "Niveau":"Niveau",
+    "Valeur-short":"Val.",
+    "Modificateur-short":"Mod.",
+    "Modificateur":"Modificateur",
+    "Modificateurs":"Modificateurs",
+    "ModificateursJets":"Modificateurs aux jets",
+    "Condition":"Condition",
+    "Add":"Ajouter",
+    "AddModificateur":"Ajouter un modificateur",
+    "EditModificateurs":"Editer les modificateurs",
+    "SupprimerModificateur":"Supprimer le modificateur",
+    "Base":"Base",
+    "Score":"Score",
+    "Temporaire-short":"Temp.",
+    "Temporaire":"Temporaire",
+    "De-short":"D",
+    "De-de-vie":"Dé de vie",
+    "Des-de-vie-short":"Dv",
+    "Creer-profil":"Créer un profil",
+    "Divers":"Divers",
+    "Avantages":"Avantages",
+    "Desavantages":"Désavantages",
+    "Action-defensive-short":"Action Déf.",
+    "Action-defensive":"Action Défensive",
+    "Armure":"Armure",
+    "Armures":"Armures",
+    "Capacite":"Capacité",
+    "Capacites":"Capacités",
+    "PtsCapacite":"Points de capacité",
+    "Description":"Description",
+    "Choisir":"Choisir",
+    "SauvegarderModification":"Sauvegarder les modifications",
+    "Plus":"Plus",
+    "Minus":"Moins",
+    "Objets":"Objets",
+    "Valider":"Valider",
+    "Annuler":"Annuler",
+    "Jet":"Jet",
+    "DescriptionPhysique":"Description physique",
+    "Historique":"Historique",
+    "BonusSelonRang":"Bonus par rang",
+    "Rang":"Rang",
+    "TITRE":{
+      "Creation-personnage":"Création de personnage"
+    },
+    "CARACTERISTIQUES":{
+      "Force-short":"For",
+      "Force":"Force",
+      "ModForce":"Mod. de Force",
+      "Dexterite-short":"Dex",
+      "Dexterite":"Dextérité",
+      "ModDexterite":"Mod. de Dextérité",
+      "Constitution-short":"Con",
+      "Constitution":"Constitution",
+      "ModConstitution":"Mod. de Constitution",
+      "Perception-short":"Per",
+      "Perception":"Perception",
+      "ModPerception":"Mod. de Perception",
+      "Intelligence-short":"Int",
+      "Intelligence":"Intelligence",
+      "ModIntelligence":"Mod. d'Intelligence",
+      "Charisme-short":"Cha",
+      "Charisme":"Charisme",
+      "ModCharisme":"Mod de Charisme",
+      "Agilite":"Agilité",
+      "Agilite-short":"Agi",
+      "Roll-Force":"Jet de force",
+      "Roll-Dexterite":"Jet de dextérité",
+      "Roll-Constitution":"Jet de constitution",
+      "Roll-Perception":"Jet de perception",
+      "Roll-Intelligence":"Jet d'intelligence",
+      "Roll-Charisme":"Jet de charisme"
+    },
+    "DERIVES":{
+      "Point-de-vie-short":"Pv",
+      "Points-de-vie":"Points de vie",
+      "Maho":"Maho",
+      "Folie":"Folie",
+      "Serenite":"Serenite",
+      "Volonte":"Volonté",
+      "Chance":"Chance",
+      "Blessures-graves":"Blessures graves",
+      "Ki":"Ki",
+      "Resistance-mentale":"Jet de résistance mentale",
+      "Places":"Places disponibles",
+      "Pilotage":"Jet de pilotage"
+    },
+    "COMBAT":{
+      "Initiative":"Initiative",
+      "Contact":"Attaque de contact",
+      "Distance":"Attaque à distance",
+      "Magique":"Attaque magique",
+      "Defense":"Défense",
+      "Defense-DC":"Défense Distance / Contact",
+      "DefenseSTD":"Défense Standard",
+      "DefenseSimple":"Défense Simple",
+      "DefenseTotale":"Défense Totale (L)",
+      "Reduction":"Réduction des dommages"
+    },
+    "TABS":{
+      "Traits":"Traits ",
+      "Mental":"Mental ",
+      "Combat":"Combat",
+      "Inventaire":"Inventaire",
+      "Voies":"Voies",
+      "Presentation":"Présentation",
+      "Equipage":"Equipage"
+    },
+    "ETATS":{
+      "Label":"États",
+      "Etat":"État"
+    },
+    "PROFIL":{
+      "Creer":"Créer le profil",
+      "Edit":"Éditer le profil",
+      "Supprimer":"Supprimer le profil",
+      "FAMILLE":{
+        "Label":"Famille",
+        "Action":"Action",
+        "Reflexion":"Réflexion",
+        "Societe":"Société"
+      },
+      "Attaque":"Attaque"
+    },
+    "TRAIT":{
+      "Creer":"Créer un trait",
+      "Edit":"Éditer le trait",
+      "Supprimer":"Supprimer le trait",
+      "Cout":"Coût",
+      "Bonus":"Bonus",
+      "Mythos":"Mythos",
+      "Avantages":"Avantages",
+      "Desavantages":"Désavantages"
+    },
+    "MENTAL":{
+      "PHOBIE":{
+        "Phobie":"Phobie",
+        "Phobies":"Phobies",
+        "Creer":"Créer une phobie",
+        "Edit":"Editer la phobie",
+        "Supprimer":"Supprimer la phobie"
+      },
+      "FOLIE":{
+        "Folie":"Folie",
+        "Folies":"Folies",
+        "Creer":"Créer une folie",
+        "Edit":"Editer la folie",
+        "Supprimer":"Supprimer la folie"
+      }
+    },
+    "TABSCOMBAT":{
+      "Utilisation":"Utilisation",
+      "Dm":"DM",
+      "Dm1main":"DM (1 main)",
+      "Dm2mains":"DM (2 mains)",
+      "CaracteristiqueDegats":"Caractéristique ajoutée aux dégâts",
+      "Portee":"Portée",
+      "Rechargement":"Rechargement",
+      "Incident":"Incident de tir",
+      "ForMin":"FOR min.",
+      "AireEffet":"Aire d'effet",
+      "ModAtt":"Modificateur d'attaque",
+      "ModDgt":"Modificateur de dégâts",
+      "ModAtt-short":"Mod. d'attaque",
+      "ModDgt-short":"Mod. de dégâts",
+      "KiPos":"Ajouter le Mod. de Ki si positif",
+      "KiNeg":"Ajouter le Mod. de Ki si négatif",
+      "Prix":"Prix",
+      "Equipe":"Arme(s) équipée(s)",
+      "MargeCritique":"Marge de critique",
+      "TOUTES":{
+        "Label":"Toutes"
+      },
+      "CONTACT":{
+        "Label":"Armes de contact",
+        "Creer":"Créer une arme de contact",
+        "Edit":"Editer l'arme de contact",
+        "Supprimer":"Supprimer l'arme de contact"
+      },
+      "DISTANCE":{
+        "Label":"Armes à distance",
+        "Creer":"Créer une arme à distance",
+        "Edit":"Editer l'arme à distance",
+        "Supprimer":"Supprimer l'arme à distance"
+      },
+      "SORTILEGE":{
+        "Label":"Sortilèges",
+        "Creer":"Créer un sortilège",
+        "Edit":"Editer le sortilège",
+        "Supprimer":"Supprimer le sortilège",
+        "Type":"Type de magie",
+        "Forme":"Forme de magie",
+        "Caracteristique":"Caractéristique utilisée",
+        "BaseDifficulte":"Base de la difficulté d'attaque",
+        "Rang":"Rang",
+        "DifficulteForme":"Difficulté du test de forme",
+        "DifficulteCanalisation":"Difficulté du test de canalisation"
+      },
+      "GRENADE":{
+        "Label":"Grenades",
+        "Creer":"Créer une grenade",
+        "Edit":"Editer la grenade",
+        "Supprimer":"Supprimer la grenade"
+      },
+      "ARTILLERIE":{
+        "Label":"Artillerie",
+        "Creer":"Créer une artillerie",
+        "Edit":"Editer l'artillerie",
+        "Supprimer":"Supprimer l'artillerie"
+      }
+    },
+    "INVENTAIRE":{
+      "ARMURE":{
+        "Creer":"Créer une armure",
+        "Edit":"Editer l'armure",
+        "Supprimer":"Supprimer l'armure",
+        "Equipe":"Cliquer pour équiper",
+        "Unequipe":"Cliquer pour déséquiper"
+      },
+      "OBJET":{
+        "Creer":"Créer un objet",
+        "Edit":"Editer l'objet",
+        "Supprimer":"Supprimer l'objet"
+      }
+    },
+    "VOIE":{
+      "TYPE":{
+        "Predilection":"Voie de prédilection",
+        "Famille":"Voie de la même famille",
+        "HorsFamille":"Voie hors famille",
+        "HorsProfil":"Voie hors profil",
+        "Prestige":"Voie de prestige"
+      },
+      "CapaciteLimitee":"Capacité limitée",
+      "Rang1":"Rang 1",
+      "Rang2":"Rang 2",
+      "Rang3":"Rang 3",
+      "Rang4":"Rang 4",
+      "Rang5":"Rang 5",
+      "Edit":"Editer la voie",
+      "Supprimer":"Supprimer la voie"
+    },
+    "NIVEAU":{
+      "Up":"Passage de niveau",
+      "Down":"Diminution de niveau",
+      "Dv":"Dé de vie",
+      "BonusAttaque":"A quelle attaque appliquer le bonus",
+      "AucunProfil":"Passage de niveau impossible : Aucun profil sur ce personnage."
+    },
+    "STATUS":{
+      "Affaibli":"Affaibli",
+      "Aveugle":"Aveuglé",
+      "Etourdi":"Étourdi",
+      "Immobilise":"Immobilisé",
+      "Paralyse":"Paralysé",
+      "Ralenti":"Ralenti",
+      "Renverse":"Renversé",
+      "Surpris":"Surpris"
+    },
+    "ROLL":{
+      "NbreDe":"Nombre de dé",
+      "DeUtilise":"Dé utilisé",
+      "AddMod":"Ajouter un modificateur",
+      "Critique":"Critique",
+      "EchecCritique":"Échec critique",
+      "CoupPouce":"Coup de pouce du destin",
+      "Relance":"Relance",
+      "Attaque":"Jet d'attaque",
+      "Chat":"Envoyer dans le tchat",
+      "Hit":"Touché !",
+      "Success":"Réussi !",
+      "Fail":"Raté !",
+      "Degats":"Dégâts",
+      "Couvert":"Cible à couvert",
+      "Penombre":"Pénombre",
+      "NoirTotal":"Noir total",
+      "CibleProche":"Cible à côté",
+      "CibleMasqueeAllie":"Cible masquée par un allié",
+      "DoublePortee":"Jusqu'au double de la portée",
+      "TriplePortee":"Jusqu'au triple de la portée",
+      "ArcFeu":"Arc de feu (L)",
+      "ArcFeu-short":"Arc de feu",
+      "Incident":"Incident de tir",
+      "ManqueDeuxHommes":"Manque au moins 2 hommes",
+      "Explosion":"Explosion",
+      "PasExplosion":"Pas d'explosion",
+      "DgtSubisExplosion":"Dégâts subis autour de l'explosion",
+      "Cible10":"Zone jusqu'à 20m",
+      "Cible15":"Zone jusqu'à 40m",
+      "Cible":"Cible",
+      "ACouvert":"Lanceur à couvert",
+      "EffetCatastrophique":"Effet catastrophique",
+      "ApplyDgt":"Appliquer les dégâts aux cibles",
+      "ApplyDgtWCritic":"Appliquer les dégâts aux cibles (sans le critique)",
+      "MinusPS":"Diminuer les PS de 1",
+      "DegatsSubis":"Dégâts subis",
+      "NoDegatsSubis":"Aucun dégâts subis",
+      "PSSubis":"Perte de PS"
+    },
+    "CREATION":{
+      "RollCaracteristiques":"Déterminer les caractéristiques",
+      "GlissezDeposerCaracteristiques":"Glissez - déposer les scores sur la caractéristique de votre choix",
+      "Creer-profil":"Créez ou glissez-déposer un profil",
+      "Ki":"Ki de départ",
+      "PC":"Modificateurs aux points de chance",
+      "Suivant":"Suivant"
+    },
+    "CONTEXTMENU":{
+      "RelancePtsChance":"Relancer en utilisant un point de chance"
+    },
+    "UTILISATIONS":{
+      "1main":"1 main",
+      "2mains":"2 mains",
+      "1mainou2mains":"1 main ou 2 mains",
+      "Prendre1Main":"Prendre à 1 main",
+      "Prendre2Mains":"Prendre à 2 mains",
+      "AucuneMain":"Aucune main disponible",
+      "Utiliser":"Manoeuvrer",
+      "Lancer":"Lancer"
+    },
+    "VEHICULE":{
+      "Pilote":"Conducteur",
+      "Passagers":"Passagers",
+      "DevenirPilote":"Passer conducteur",
+      "DevenirPassager":"Passer passager",
+      "Inexistant":"Inexistant",
+      "DeletePassager":"Supprimer le passager",
+      "DeletePilote":"Supprimer le conducteur",
+      "PasPlace":"Il n'y a plus de place dans le véhicule",
+      "DejaABord":"Eiyu déjà dans le véhicule",
+      "UtiliserPar":"Utilisé par"
+    },
+    "SETTINGS":{
+      "CREATION":{
+        "Label":"Méthode de création utilisée",
+        "Hint":"Permet de définir la méthode de création utilisée lorsque vous cliquez sur 'Création de personnage' dans le header de la fiche Eiyu.",
+        "Defaut":"Méthode par défaut",
+        "Aleatoire":"Méthode aléatoire",
+        "AleatoirePonderee":"Méthode aléatoire pondérée",
+        "Repartition":"Méhode par répartition"
+      }
+    }
+  }
+}

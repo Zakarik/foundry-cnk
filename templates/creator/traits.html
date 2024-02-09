@@ -1,0 +1,83 @@
+<section class="modecreation-top">
+    <div class="modecreation-traits">
+        <div class="btn">
+            <label class="mythos">
+                <span>{{localize 'CNK.CREATION.PC'}}</span>
+                <input type="number" name="system.derives.chance.mod" value="{{systemData.derives.chance.mod}}" readonly />
+            </label>
+        </div>
+        <div class="col item-list">
+            <h1>
+                {{localize "CNK.TRAIT.Avantages"}}
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="avantage" title="{{localize 'CNK.TRAIT.Creer'}}"></i>
+            </h1>
+            {{#each actor.avantages}}
+                <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+                    <span class="label" title="{{name}}">
+                        <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{{system.description}}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                        {{name}}
+                    </span>
+                    <span class="cout">{{localize 'CNK.TRAIT.Cout'}} : {{system.cout}}</span>
+                    <div class="cmd">
+                        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.TRAIT.Edit'}}"></i>
+                        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.TRAIT.Supprimer'}}"></i>
+                    </div>
+                    <span class="description">{{{system.description}}}</span>
+                    <button type="action" class="extend">
+                        <span class="plus">
+                            <i class="fa-solid fa-caret-down"></i>
+                            {{localize "CNK.Plus"}}
+                            <i class="fa-solid fa-caret-down"></i>
+                        </span>
+                        <span class="minus">
+                            <i class="fa-solid fa-caret-up"></i>
+                            {{localize "CNK.Minus"}}
+                            <i class="fa-solid fa-caret-up"></i>
+                        </span>
+                    </button>
+                </div>
+            {{/each}}
+        </div>
+        <div class="separation"></div>
+        <div class="col item-list">
+            <h1>
+                {{localize "CNK.TRAIT.Desavantages"}}
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="desavantage" title="{{localize 'CNK.TRAIT.Creer'}}"></i>
+            </h1>
+            {{#each actor.desavantages}}
+                <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+                    <span class="label" title="{{name}}">
+                        <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{{system.description}}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                        {{name}}
+                    </span>
+                    <span class="cout">{{localize 'CNK.TRAIT.Cout'}} : {{system.cout}}</span>
+                    <div class="cmd">
+                        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.TRAIT.Edit'}}"></i>
+                        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.TRAIT.Supprimer'}}"></i>
+                    </div>
+                    <span class="description">{{{system.description}}}</span>
+                    <button type="action" class="extend">
+                        <span class="plus">
+                            <i class="fa-solid fa-caret-down"></i>
+                            {{localize "CNK.Plus"}}
+                            <i class="fa-solid fa-caret-down"></i>
+                        </span>
+                        <span class="minus">
+                            <i class="fa-solid fa-caret-up"></i>
+                            {{localize "CNK.Minus"}}
+                            <i class="fa-solid fa-caret-up"></i>
+                        </span>
+                    </button>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <button type="action" class="modecreation-annuler">
+        {{localize 'CNK.Annuler'}}
+    </button>
+
+    <button type="action" class="modecreation-next">
+        {{localize 'CNK.CREATION.Suivant'}}
+    </button>
+</section>

@@ -1,0 +1,69 @@
+<div class="tab mental" data-group="primary" data-tab="mental">
+    <div class="col item-list">
+        <h1>
+            {{localize "CNK.MENTAL.FOLIE.Folies"}}
+            <i class="fa-solid fa-square-plus item-create clickable" data-type="folie" title="{{localize 'CNK.MENTAL.FOLIE.Creer'}}"></i>
+        </h1>
+
+        {{#each actor.folies}}
+            <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+                <span class="label" title="{{name}}">
+                    <i class="fa-message clickable sendmsg fa-solid" data-title="{{name}}" data-msg="{{system.description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                    {{name}}
+                </span>
+                <div class="cmd">
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.MENTAL.FOLIE.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.MENTAL.FOLIE.Supprimer'}}"></i>
+                </div>
+                <span class="description">{{{system.description}}}</span>
+                <button type="action" class="extend">
+                    <span class="plus">
+                        <i class="fa-solid fa-caret-down"></i>
+                        {{localize "CNK.Plus"}}
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                    <span class="minus">
+                        <i class="fa-solid fa-caret-up"></i>
+                        {{localize "CNK.Minus"}}
+                        <i class="fa-solid fa-caret-up"></i>
+                    </span>
+                </button>
+            </div>
+        {{/each}}
+    </div>
+
+    <div class="separation"></div>
+
+    <div class="col item-list">
+        <h1>
+            {{localize "CNK.MENTAL.PHOBIE.Phobies"}}
+            <i class="fa-solid fa-square-plus item-create clickable" data-type="phobie" title="{{localize 'CNK.MENTAL.PHOBIE.Creer'}}"></i>
+        </h1>
+
+        {{#each actor.phobies}}
+            <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+                <span class="label" title="{{name}}">
+                    <i class="fa-message clickable sendmsg fa-solid" data-title="{{name}}" data-msg="{{system.description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                    {{name}}
+                </span>
+                <div class="cmd">
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.MENTAL.PHOBIE.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.MENTAL.PHOBIE.Supprimer'}}"></i>
+                </div>
+                <span class="description">{{{system.description}}}</span>
+                <button type="action" class="extend">
+                    <span class="plus">
+                        <i class="fa-solid fa-caret-down"></i>
+                        {{localize "CNK.Plus"}}
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                    <span class="minus">
+                        <i class="fa-solid fa-caret-up"></i>
+                        {{localize "CNK.Minus"}}
+                        <i class="fa-solid fa-caret-up"></i>
+                    </span>
+                </button>
+            </div>
+        {{/each}}
+    </div>
+</div>

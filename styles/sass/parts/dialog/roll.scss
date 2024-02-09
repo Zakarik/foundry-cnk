@@ -1,0 +1,297 @@
+&.rollwindow {
+    section.window-content {
+        display: grid;
+        grid-template-rows: max-content 1fr max-content;
+        grid-template-columns: 1fr;
+        grid-gap: 5px;
+        align-items: flex-start;
+        align-content: flex-start;
+
+        h1 {
+            margin: 0px;
+            border: 0px;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-variant: small-caps;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            background: $purple;
+            font-size: 24px;
+        }
+
+        label {
+            display: grid;
+            grid-template-columns: 1fr 100px;
+            align-items: center;
+            align-content: center;
+            padding-left: 5px;
+
+            span {
+                width: 100%;
+                font-size: 20px;
+                font-weight: bold;
+                font-variant: small-caps;
+                border-radius: 0px;
+                letter-spacing: 1px;
+            }
+
+            select,
+            input {
+                width: 100%;
+                border: 0px;
+                background: transparent;
+                font-size: 16px;
+                text-align: center;
+                padding-left: 0px;
+                padding-right: 0px;
+                color: $black;
+                border-bottom: 1px dotted $black;
+                border-radius: 0px;
+
+                &:focus {
+                    box-shadow: 0px 0px 5px 2px $purple;
+                }
+            }
+        }
+
+        div {
+            &.main {
+                border: 1px solid $black;
+                border-radius: 5px;
+            }
+
+            &.mBonus {
+                height: 100%;
+                display: grid;
+                align-items: flex-start;
+                align-content: flex-start;
+                grid-template-rows: max-content 1fr max-content;
+
+                button {
+                    padding: 0px;
+                    margin: 0px;
+                    border-top-right-radius: 0px;
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    background: $grey;
+                    font-size: 16px;
+
+                    &:hover {
+                        background:$lightgreen;
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+
+                    &:focus {
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+
+                    &.btnArcFeu,
+                    &.btnACouvert {
+                        display: grid;
+                        grid-template-columns: 1fr 50px;
+                        border-radius: 0px;
+                        border: 0px;
+                        text-align: left;
+                        padding-left: 5px;
+                        align-items: center;
+                        align-content: center;
+                        border-bottom: 1px solid $black;
+
+                        i {
+                            text-align: center;
+                            font-size: 22px;
+
+                            &.active {
+                                display: none;
+                            }
+                        }
+
+                        &.active {
+                            color: $black;
+                            background-color: $lightgreen;
+
+                            i {
+                                &.inactive {
+                                    display: none;
+                                }
+
+                                &.active {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.bonus,
+            &.bonus2 {
+                display: grid;
+                grid-template-columns: max-content 1fr 50px;
+                align-items: center;
+                align-content: center;
+                grid-gap: 5px;
+
+                input {
+
+                    &[type="checkbox"] {
+                        cursor: pointer;
+                    }
+
+                    &[type="text"] {
+                        width: 100%;
+                        border: 0px;
+                        background: transparent;
+                        font-size: 16px;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        color: $black;
+                        border-radius: 0px;
+                        border-bottom: 1px dotted $black;
+                    }
+
+                    &[type="number"] {
+                        width: 100%;
+                        border: 0px;
+                        background: transparent;
+                        font-size: 16px;
+                        text-align: center;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        color: $black;
+                        border-radius: 0px;
+                        border-bottom: 1px dotted $black
+                    }
+
+
+                    &:focus {
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+                }
+
+                &.unactive {
+                    opacity: 0.5;
+                }
+            }
+
+            &.btn {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 5px;
+                border: 1px solid $black;
+                border-radius: 5px;
+
+                h1 {
+                    grid-column: 1 / 3;
+                }
+
+                button {
+                    display: grid;
+                    grid-template-columns: 1fr 25px;
+                    padding: 0px;
+                    margin: 0px;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    background: $grey;
+                    font-size: 16px;
+                    border-radius: 0px;
+                    border: 0px;
+                    text-align: left;
+                    padding-left: 5px;
+                    align-items: center;
+                    align-content: center;
+                    letter-spacing: 1px;
+
+                    &:hover {
+                        background:$lightgreen;
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+
+                    &:focus {
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+
+                    &.btnCible10 {
+                        border-bottom-left-radius: 5px;
+                        border-right: 1px solid $black;
+                    }
+
+                    &.btnCible15 {
+                        border-bottom-right-radius: 5px;
+                        border-left: 1px solid $black;
+                    }
+
+                    i {
+                        text-align: center;
+                        font-size: 22px;
+
+                        &.active {
+                            display: none;
+                        }
+                    }
+
+                    &.active {
+                        color: $black;
+                        background-color: $lightgreen;
+
+                        i {
+                            &.inactive {
+                                display: none;
+                            }
+
+                            &.active {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.dialog-buttons {
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 5px;
+
+                button {
+                    display: flex;
+                    justify-content: space-between;
+                    border: 1px solid $black;
+                    padding: 5px;
+                    margin: 0px;
+                    border-radius: 5px;
+                    background: $grey;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    font-size: 18px;
+                    line-height: 20px;
+                    flex-direction: row-reverse;
+
+                    &:hover {
+                        background: $lightgreen;
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+
+                    &:focus {
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+                }
+            }
+        }
+    }
+
+    &.wpngrenade {
+        section.window-content {
+            grid-template-rows: max-content max-content 1fr max-content;
+        }
+    }
+
+    &.sortilege {
+        section.window-content {
+            grid-template-rows: max-content 1fr max-content 1fr max-content;
+        }
+    }
+}

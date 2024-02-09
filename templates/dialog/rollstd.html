@@ -1,0 +1,107 @@
+<div class="main">
+    {{#if (eq content.type 'sortilege')}}
+    <h1>{{localize "CNK.TABSCOMBAT.SORTILEGE.Forme"}}</h1>
+    {{else}}
+    <h1>{{localize "CNK.Base"}}</h1>
+    {{/if}}
+    <label>
+        <span>{{localize "CNK.ROLL.DeUtilise"}}</span>
+        <select class="dice">
+            {{selectOptions content.listDice selected=content.dice sort=true}}
+        </select>
+    </label>
+    <label>
+        <span>{{localize "CNK.ROLL.NbreDe"}}</span>
+        <input type="number" class="nbreDice" value="{{content.nbreDe}}" min="1" />
+    </label>
+</div>
+
+{{#if (eq content.type 'wpngrenade')}}
+<div class="btn">
+    <h1>{{localize "CNK.ROLL.Cible"}}</h1>
+    <button type="action" class="btnCible10 {{#if (eq content.cible '10')}}active{{/if}}">
+        <span>{{localize "CNK.ROLL.Cible10"}}</span>
+        <i class="fa-solid fa-xmark inactive"></i>
+        <i class="fa-solid fa-check active"></i>
+    </button>
+    <button type="action" class="btnCible15 {{#if (eq content.cible '15')}}active{{/if}}">
+        <span>{{localize "CNK.ROLL.Cible15"}}</span>
+        <i class="fa-solid fa-xmark inactive"></i>
+        <i class="fa-solid fa-check active"></i>
+    </button>
+</div>
+{{/if}}
+
+<div class="main mBonus">
+    <h1>
+        {{localize "CNK.Modificateurs"}}
+        {{#if (eq content.type 'sortilege')}} ({{localize "CNK.TABSCOMBAT.SORTILEGE.Forme"}}) {{/if}}
+    </h1>
+    <div class="blockBonus">
+        {{#if (eq content.type 'wpndistance')}}
+        <button type="action" class="btnArcFeu {{#if content.arcfeu}}active{{/if}}">
+            <span>{{localize "CNK.ROLL.ArcFeu"}}</span>
+            <i class="fa-solid fa-xmark inactive"></i>
+            <i class="fa-solid fa-check active"></i>
+        </button>
+        {{/if}}
+        {{#if (eq content.type 'wpngrenade')}}
+        <button type="action" class="btnACouvert {{#if content.acouvert}}active{{/if}}">
+            <span>{{localize "CNK.ROLL.ACouvert"}}</span>
+            <i class="fa-solid fa-xmark inactive"></i>
+            <i class="fa-solid fa-check active"></i>
+        </button>
+        {{/if}}
+        {{#each content.bRoll}}
+            <div class="bonus {{#unless active}}unactive{{/unless}} mod-id-{{id}}">
+                <input type="checkbox" class="mod-check" data-id="{{id}}" {{#if active}}checked{{/if}} />
+                <input type="text" class="mod-txt" data-id="{{id}}" value="{{name}}" />
+                <input type="number" class="mod-value" data-id="{{id}}" value="{{value}}" />
+            </div>
+        {{/each}}
+    </div>
+    <button type="action" class="addMod">{{localize "CNK.ROLL.AddMod"}}</button>
+</div>
+
+{{#if (eq content.type 'sortilege')}}
+<div class="main">
+    <h1>{{localize "CNK.COMBAT.Magique"}}</h1>
+    <label>
+        <span>{{localize "CNK.ROLL.DeUtilise"}}</span>
+        <select class="diceAtt">
+            {{selectOptions content.listDice selected=content.dice sort=true}}
+        </select>
+    </label>
+    <label>
+        <span>{{localize "CNK.ROLL.NbreDe"}}</span>
+        <input type="number" class="nbreDiceAtt" value="{{content.nbreDe}}" min="1" />
+    </label>
+</div>
+{{/if}}
+
+{{#if (eq content.type 'sortilege')}}
+<div class="main mBonus">
+    <h1>
+        {{localize "CNK.Modificateurs"}} ({{localize "CNK.COMBAT.Magique"}})
+    </h1>
+    <div class="blockBonus">
+        {{#each content.bRoll2}}
+            <div class="bonus2 {{#unless active}}unactive{{/unless}} mod2-id-{{id}}">
+                <input type="checkbox" class="mod2-check" data-id="{{id}}" {{#if active}}checked{{/if}} />
+                <input type="text" class="mod2-txt" data-id="{{id}}" value="{{name}}" />
+                <input type="number" class="mod2-value" data-id="{{id}}" value="{{value}}" />
+            </div>
+        {{/each}}
+    </div>
+    <button type="action" class="addMod2">{{localize "CNK.ROLL.AddMod"}}</button>
+</div>
+{{/if}}
+
+<div class="dialog-buttons">
+    {{#each buttons}}
+        <button class="dialog-button {{cssClass}}" data-button="{{@key}}">
+            {{{icon}}}
+            {{label}}
+        </button>
+    {{/each}}
+</div>

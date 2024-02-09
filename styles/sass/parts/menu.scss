@@ -1,0 +1,38 @@
+>nav {
+    display:grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 5px;
+    border: 0px;
+
+    a {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        border: 1px solid $black;
+        background: $black;
+        color: $white;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        text-align: left;
+        border-radius: 5px;
+        font-size: 16px;
+        align-items: center;
+        align-content: center;
+
+        i {
+            display: none;
+        }
+
+        &.active {
+            text-shadow: none;
+            background: $green;
+
+            i {
+                display: block;
+            }
+        }
+    }
+}

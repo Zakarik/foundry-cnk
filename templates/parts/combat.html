@@ -1,0 +1,73 @@
+<div class="tab combat {{#if (eq actor.type 'vehicule')}}vehicule{{/if}}" data-group="primary" data-tab="combat">
+    <section class="tabCombat">
+        {{#if actor.wpnequipped}}
+        <h1 class="titleEquipees">{{localize "CNK.TABSCOMBAT.Equipe"}}</h1>
+        <div class="dataCombat active toutes equipees item-list">
+            {{#each actor.wpnequipped}}
+                {{~> (importSubparts type)}}
+            {{/each}}
+        </div>
+        {{/if}}
+        <nav class="tabsCombat" data-group="combat">
+            <a class="item" data-tab="toutes">{{localize "CNK.TABSCOMBAT.TOUTES.Label"}} <i class="fa-solid fa-check"></i></a>
+            <a class="item" data-tab="contact">{{localize "CNK.TABSCOMBAT.CONTACT.Label"}} <i class="fa-solid fa-check"></i></a>
+            <a class="item" data-tab="distance">{{localize "CNK.TABSCOMBAT.DISTANCE.Label"}} <i class="fa-solid fa-check"></i></a>
+            <a class="item" data-tab="grenade">{{localize "CNK.TABSCOMBAT.GRENADE.Label"}} <i class="fa-solid fa-check"></i></a>
+            <a class="item" data-tab="artillerie">{{localize "CNK.TABSCOMBAT.ARTILLERIE.Label"}} <i class="fa-solid fa-check"></i></a>
+            {{#unless (eq actor.type 'vehicule')}}
+            <a class="item" data-tab="sortilege">{{localize "CNK.TABSCOMBAT.SORTILEGE.Label"}} <i class="fa-solid fa-check"></i></a>
+            {{/unless}}
+        </nav>
+
+        <div class="dataCombat toutes item-list" data-group="combat" data-tab="toutes">
+            {{#each actor.wpnall}}
+                {{~> (importSubparts type) actortype=../actor.type equipage=../systemData.listequipage}}
+            {{/each}}
+        </div>
+
+        <div class="dataCombat item-list" data-group="combat" data-tab="contact">
+            <div class="btn">
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="wpncontact" title="{{localize 'CNK.TABSCOMBAT.CONTACT.Creer'}}"></i>
+            </div>
+            {{#each actor.wpncontact}}
+                {{~> (importSubparts 'wpncontact') actortype=../actor.type equipage=../systemData.listequipage}}
+            {{/each}}
+        </div>
+
+        <div class="dataCombat item-list" data-group="combat" data-tab="distance">
+            <div class="btn">
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="wpndistance" title="{{localize 'CNK.TABSCOMBAT.DISTANCE.Creer'}}"></i>
+            </div>
+            {{#each actor.wpndistance}}
+                {{~> (importSubparts 'wpndistance') actortype=../actor.type equipage=../systemData.listequipage}}
+            {{/each}}
+        </div>
+
+        <div class="dataCombat item-list" data-group="combat" data-tab="grenade">
+            <div class="btn">
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="wpngrenade" title="{{localize 'CNK.TABSCOMBAT.GRENADE.Creer'}}"></i>
+            </div>
+            {{#each actor.wpngrenade}}
+                {{~> (importSubparts 'wpngrenade') actortype=../actor.type equipage=../systemData.listequipage}}
+            {{/each}}
+        </div>
+
+        <div class="dataCombat item-list" data-group="combat" data-tab="artillerie">
+            <div class="btn">
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="wpnartillerie" title="{{localize 'CNK.TABSCOMBAT.ARTILLERIE.Creer'}}"></i>
+            </div>
+            {{#each actor.wpnartillerie}}
+                {{~> (importSubparts 'wpnartillerie') actortype=../actor.type equipage=../systemData.listequipage}}
+            {{/each}}
+        </div>
+
+        <div class="dataCombat item-list" data-group="combat" data-tab="sortilege">
+            <div class="btn">
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="sortilege" title="{{localize 'CNK.TABSCOMBAT.SORTILEGE.Creer'}}"></i>
+            </div>
+            {{#each actor.sortilege}}
+                {{~> (importSubparts 'sortilege')}}
+            {{/each}}
+        </div>
+    </section>
+</div>

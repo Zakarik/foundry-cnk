@@ -1,0 +1,175 @@
+div {
+    &.combatstates {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 5px;
+        align-items: flex-start;
+
+        div {
+            img {
+                height: 50px;
+                margin: 0px;
+                border: 0px;
+            }
+
+            &.block {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+
+            &.short {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                position: relative;
+
+                span {
+                    text-align: center;
+                    font-weight: bold;
+                    font-size: 30px;
+                    color: $black;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $white;
+                    border-radius: 0px 7px 7px 0px;
+                    border: 1px solid $black;
+
+                    &.small {
+                        font-size: 24px;
+                    }
+                }
+            }
+
+            &.long {
+                display:none;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                border-left: 1px solid $black;
+                border-right: 1px solid $black;
+                border-bottom: 1px solid $black;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+
+                div,
+                label {
+                    display:grid;
+                    grid-template-columns: 1fr 30px;
+
+                    span {
+                        color: $black;
+                        line-height: 20px;
+                        font-size: 14px;
+                        padding: 0px;
+                        margin: 0px;
+
+                        &.label {
+                            padding-left: 5px;
+                            text-align: left;
+                            text-transform: capitalize;
+                            border-radius: 0px;
+                            font-weight: bold;
+                        }
+
+                        &.value {
+                            text-align: center;
+                            border-left: 1px solid $black;
+                            font-weight: bold;
+                        }
+                    }
+
+                    input {
+                        font-weight: bold;
+                        width: 100%;
+                        text-align: center;
+                        line-height: 20px;
+                        height: 20px;
+                        padding: 0px;
+                        margin: 0px;
+                        font-size: 14px;
+                        border-top: 0px;
+                        border-right: 0px;
+                        border-bottom: 0px;
+                        border-left: 1px solid $black;
+                        border-radius: 0px;
+                        color: $black;
+                    }
+
+                    select {
+                        margin: 0px;
+                        padding: 0px;
+                        border: 0px;
+                        line-height: 21px;
+                        height: 21px;
+                        font-weight: bold;
+                    }
+
+                    &:not(.last) {
+                        border-bottom: 1px dotted $black;
+                    }
+
+                    &.last {
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                    }
+                }
+
+                div {
+                    background: $grey;
+                }
+
+                label {
+                    background: $white;
+                }
+            }
+
+            button {
+                display: flex;
+                padding: 0px 0px 0px 5px;
+                justify-content: center;
+                background: $black;
+                margin: 0px;
+                border: 0px;
+                border-radius: 7px 0px 0px 7px;
+                border-top: 1px solid $black;
+                border-left: 1px solid $black;
+                border-bottom: 1px solid $black;
+                border-right: 0px;
+
+                &:hover,
+                &:focus {
+                    box-shadow: none;
+                }
+
+                &:hover {
+                    background: $green;
+                }
+
+                &.unclickable {
+                    cursor: default;
+
+                    &:hover {
+                        background: $black;
+                    }
+                }
+            }
+
+            &.toEdit {
+                div {
+                    &.long {
+                        display: grid;
+                    }
+
+                    &.short {
+                        button {
+                            border-bottom-left-radius: 0px;
+                        }
+
+                        span {
+                            border-bottom-right-radius: 0px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

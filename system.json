@@ -1,0 +1,99 @@
+{
+  "id": "cthulhu-no-kami",
+  "title": "Cthulhu No Kami",
+  "description": "La fiche officielle de Cthulhu No Kami, approuvée par Deadcrows.",
+  "version": "1.0",
+  "media": [
+    {
+      "type": "setup",
+      "url": "systems/cthulhu-no-kami/assets/logo.webp",
+      "thumbnail": "systems/cthulhu-no-kami/assets/logo.webp",
+      "loop": false,
+      "flags": {}
+    }
+  ],
+  "esmodules": [
+    "module/cnk.mjs"
+  ],
+  "styles": [
+    "styles/cnk.css"
+  ],
+  "languages": [
+    {
+      "lang": "fr",
+      "name": "French",
+      "path": "lang/fr.json",
+      "flags": {}
+    }
+  ],
+  "authors": [
+    {
+      "name": "Zakarik",
+      "url": "https://fr.tipeee.com/zakarik",
+      "discord": "Zakarik#9006",
+      "flags": {}
+    }
+  ],
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "packs": [
+    {
+      "name": "avantages",
+      "label": "Avantages",
+      "type": "Item",
+      "path":"packs/avantages"
+    },
+    {
+      "name": "desavantages",
+      "label": "Désavantages",
+      "type": "Item",
+      "path":"packs/desavantages"
+    },
+    {
+      "name": "equipements",
+      "label": "Équipements",
+      "type": "Item",
+      "path":"packs/equipements"
+    },
+    {
+      "name": "profils",
+      "label": "Profils",
+      "type": "Item",
+      "path":"packs/profils"
+    },
+    {
+      "name": "traits-speciaux",
+      "label": "Traits spéciaux",
+      "type": "Item",
+      "path":"packs/traits-speciaux"
+    },
+    {
+      "name": "voies",
+      "label": "Voies",
+      "type": "Item",
+      "path":"packs/voies"
+    },
+    {
+      "name": "voies-de-magie",
+      "label": "Voies de magie",
+      "type": "Item",
+      "path":"packs/voies-de-magie"
+    },
+    {
+      "name": "voies-de-magie-corrompue",
+      "label": "Voies de magie corrompue",
+      "type": "Item",
+      "path":"packs/voies-de-magie-corrompue"
+    }
+  ],
+  "gridDistance": 2,
+  "gridUnits": "m",
+  "primaryTokenAttribute": "",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "readme": "",
+  "changelog": ""
+}

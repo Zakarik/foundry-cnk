@@ -1,0 +1,22 @@
+<header class="itmStd {{#if (or (eq data.type 'avantage') (eq data.type 'desavantage') (eq data.type 'sortilege'))}}double{{/if}} {{#if (or (eq data.type 'wpncontact') (eq data.type 'wpndistance') (eq data.type 'wpngrenade'))}}specialwpn{{/if}}">
+    <img class="profile-img" src="{{data.img}}" data-edit="img" title="{{data.name}}" />
+
+    <input class="name" name="name" type="text" value="{{data.name}}" placeholder="{{localize "CNK.Nom"}}" />
+
+    {{#if (or (eq data.type 'avantage') (eq data.type 'desavantage'))}}
+        <input name="system.cout" type="number" value="{{systemData.cout}}" title="
+        {{localize 'CNK.TRAIT.Cout'}}
+        " />
+    {{/if}}
+
+    {{#if (eq data.type 'sortilege')}}
+        <input name="system.rang" type="number" value="{{systemData.rang}}" title="{{localize 'CNK.TABSCOMBAT.SORTILEGE.Rang'}}" />
+    {{/if}}
+
+    {{#if (or (eq data.type 'wpncontact') (eq data.type 'wpndistance') (eq data.type 'wpngrenade'))}}
+    <label>
+        <span>{{localize 'CNK.TABSCOMBAT.Prix'}} :</span>
+        <input name="system.prix" type="text" value="{{systemData.prix}}" title="{{localize 'CNK.TABSCOMBAT.Prix'}}" />
+    </label>
+    {{/if}}
+</header>

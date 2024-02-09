@@ -1,0 +1,44 @@
+<div class="identite {{#if (or limited (eq actor.type 'vehicule'))}}limited{{/if}}">
+    <input class="name" name="name" type="text" value="{{data.name}}" placeholder="{{localize "CNK.Nom"}}" />
+
+    <div class="profil">
+        {{#unless (or limited (eq actor.type 'vehicule'))}}
+        {{#if actor.profil}}
+            <span class="label summary" data-item-id="{{actor.profil._id}}" title="{{actor.profil.name}}">
+                <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.PROFIL.Edit'}}"></i>
+                {{actor.profil.name}}
+                <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.PROFIL.Supprimer'}}"></i>
+            </span>
+        {{else}}
+            <span class="label">
+                {{localize 'CNK.Creer-profil'}}
+                <i class="fa-solid fa-square-plus item-create clickable" data-type="profil" title="{{localize 'CNK.PROFIL.Creer'}}"></i>
+            </span>
+        {{/if}}
+        {{/unless}}
+    </div>
+    {{#unless (or limited (eq actor.type 'vehicule'))}}
+
+    <div class="niveau">
+        <span>{{localize 'CNK.Niveau'}} {{systemData.niveau.actuel}}</span>
+        {{#if (gt systemData.niveau.actuel 1)}}
+        <i class="fa-solid fa-arrow-down-long down"></i>
+        {{/if}}
+        <i class="fa-solid fa-arrow-up-long up"></i>
+    </div>
+
+    <label>
+        <span class="label">{{localize 'CNK.Origine'}}</span>
+        <input type="text" name="system.origine" value="{{systemData.origine}}" />
+    </label>
+
+    <label>
+        <span class="label">{{localize 'CNK.Religion'}}</span>
+        <input type="text" name="system.religion" value="{{systemData.religion}}" />
+    </label>
+
+    <select name="system.combat.defense.type">
+        {{selectOptions systemData.combat.defense.list selected=systemData.combat.defense.type localize=true sort=true}}
+    </select>
+    {{/unless}}
+</div>

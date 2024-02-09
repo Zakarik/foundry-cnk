@@ -1,0 +1,70 @@
+<div class="item block sortilege summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+    <span class="label" title="{{name}}">
+        <i class="fa-message clickable sendmsg fa-solid" data-type="{{type}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+        {{#if system.used}}
+        <i class="fa-duotone fa-dice-d20 clickable red rollAtk" data-main="caracteristiques" data-type="{{system.caracteristique}}" data-wpn-type="sortilege" data-title="{{name}}" title="{{localize "CNK.ROLL.Attaque"}}"></i>
+        {{/if}}
+        {{name}}
+    </span>
+    <span class="rang">
+        {{localize 'CNK.TABSCOMBAT.SORTILEGE.Rang'}} : {{system.rang}}
+    </span>
+    <div class="btnequip one">
+        <i class="{{#if (eq system.used true)}}fa-solid{{else}}fa-regular{{/if}} fa-book-sparkles use" title="{{localize "CNK.UTILISATIONS.Lancer"}}"></i>
+    </div>
+    <div class="cmd">
+        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.TABSCOMBAT.SORTILEGE.Edit'}}"></i>
+        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.TABSCOMBAT.SORTILEGE.Supprimer'}}"></i>
+    </div>
+    <div class="data">
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.SORTILEGE.Type'}}
+            </span>
+            <span class="value">
+                {{system.type}}
+            </span>
+        </label>
+
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.SORTILEGE.Forme'}}
+            </span>
+            <span class="value" title="{{system.forme}}">
+                {{system.forme}}
+            </span>
+        </label>
+
+        <label class="inline" title="{{system.rang}} x 5 = {{system.difficulte.forme}}">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.SORTILEGE.DifficulteForme'}}
+            </span>
+            <span class="value">
+                {{system.difficulte.forme}}
+            </span>
+        </label>
+
+        <label class="inline" title="{{system.attaque}} + {{system.rang}} x 5 = {{system.difficulte.canalisation}}">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.SORTILEGE.DifficulteCanalisation'}}
+            </span>
+            <span class="value">
+                {{system.difficulte.canalisation}}
+            </span>
+        </label>
+    </div>
+
+    <span class="description">{{{system.description}}}</span>
+    <button type="action" class="extend">
+        <span class="plus">
+            <i class="fa-solid fa-caret-down"></i>
+            {{localize "CNK.Plus"}}
+            <i class="fa-solid fa-caret-down"></i>
+        </span>
+        <span class="minus">
+            <i class="fa-solid fa-caret-up"></i>
+            {{localize "CNK.Minus"}}
+            <i class="fa-solid fa-caret-up"></i>
+        </span>
+    </button>
+</div>

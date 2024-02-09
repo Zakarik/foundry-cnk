@@ -1,0 +1,47 @@
+<div class="caracteristiques">
+    {{#each systemData.caracteristiques}}
+        <div class="block {{#if ../systemData/edit}}toEdit{{/if}}">
+            <span class="title" data-main="caracteristiques" data-type="{{@key}}">
+                {{localize (concat "CNK.CARACTERISTIQUES." (capitalize @key))}}
+            </span>
+            <div class="subBlock short">
+                <span class="score val">{{total}}</span>
+            </div>
+            <div class="subBlock long">
+                <span class="score val">{{total}}</span>
+                <label>
+                    <span class="label">{{localize "CNK.Score"}}</span>
+                    <input type="number" name="system.caracteristiques.{{@key}}.score" value="{{score}}" min="0" />
+                </label>
+                <label>
+                    <span class="label">{{localize "CNK.Temporaire-short"}}</span>
+                    <input type="number" name="system.caracteristiques.{{@key}}.temp" value="{{temp}}" />
+                </label>
+            </div>
+        </div>
+    {{/each}}
+
+    {{#each systemData.combat}}
+        <div class="block {{#if ../systemData/edit}}toEdit{{/if}}">
+            <span class="title" data-main="caracteristiques" data-type="{{@key}}">
+                {{localize (concat "CNK.COMBAT." (capitalize @key))}}
+            </span>
+            <div class="subBlock short">
+                <span class="score val">{{total}}</span>
+            </div>
+            <div class="subBlock long">
+                <span class="score val">{{total}}</span>
+                <label>
+                    <span class="label">{{localize "CNK.Score"}}</span>
+                    <input type="number" name="system.combat.{{@key}}.score" value="{{score}}" min="0" />
+                </label>
+                <label>
+                    <span class="label">{{localize "CNK.Temporaire-short"}}</span>
+                    <input type="number" name="system.combat.{{@key}}.temp" value="{{temp}}" />
+                </label>
+                <span class="headerLabel">{{localize "CNK.CARACTERISTIQUES.Dexterite-short"}}</span>
+                <span class="headerScore">{{base}}</span>
+            </div>
+        </div>
+    {{/each}}
+</div>

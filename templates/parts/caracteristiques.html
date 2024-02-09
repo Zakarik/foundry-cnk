@@ -1,0 +1,35 @@
+<div class="caracteristiques">
+    {{#each systemData.caracteristiques}}
+        <div class="block {{#if ../systemData/edit}}toEdit{{/if}}">
+            <span class="title roll" data-main="caracteristiques" data-type="{{@key}}" data-title="{{localize (concat "CNK.CARACTERISTIQUES.Roll-" (capitalize @key))}}" title="{{localize (concat "CNK.CARACTERISTIQUES.Roll-" (capitalize @key))}}">
+                <i class="fa-duotone fa-dice-d20"></i>
+                {{localize (concat "CNK.CARACTERISTIQUES." (capitalize @key) "-short")}}
+                <i class="fa-duotone fa-dice-d20"></i>
+            </span>
+            <div class="subBlock short">
+                <span class="subtitle val">{{localize "CNK.Valeur-short"}}</span>
+                <span class="subtitle mod">{{localize "CNK.Modificateur-short"}}</span>
+                <span class="score val">{{total}}</span>
+                <span class="score mod">{{modificateur}}</span>
+            </div>
+            <div class="subBlock long">
+                <span class="subtitle val">{{localize "CNK.Valeur-short"}}</span>
+                <span class="subtitle mod">{{localize "CNK.Modificateur-short"}}</span>
+                <span class="score val">{{total}}</span>
+                <span class="score mod">{{modificateur}}</span>
+                <label>
+                    <span class="label">{{localize "CNK.Score"}}</span>
+                    <input type="number" name="system.caracteristiques.{{@key}}.score" value="{{score}}" min="0" />
+                </label>
+                <label>
+                    <span class="label">{{localize "CNK.Divers"}}</span>
+                    <input type="number" name="system.caracteristiques.{{@key}}.divers" value="{{divers}}" />
+                </label>
+                <label>
+                    <span class="label">{{localize "CNK.Temporaire-short"}}</span>
+                    <input type="number" name="system.caracteristiques.{{@key}}.temp" value="{{temp}}" />
+                </label>
+            </div>
+        </div>
+    {{/each}}
+</div>

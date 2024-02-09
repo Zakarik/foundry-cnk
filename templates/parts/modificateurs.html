@@ -1,0 +1,36 @@
+<div class="modificateurBlock {{#if (ifThen special data.edit systemData.edit)}}edit{{/if}}" {{#if special.key}}data-key="{{special.key}}"{{/if}}>
+    <span class="label">
+        <button type="action" class="btnEdit">
+            {{localize 'CNK.EditModificateurs'}}
+            <i class="fa-solid fa-check"></i>
+        </button>
+        {{localize "CNK.Modificateurs"}}
+        <i class="fa-solid fa-square-plus clickable addMod" title="{{localize 'CNK.AddModificateur'}}"></i>
+    </span>
+    {{#each (ifThen special special.effects item.effects) as | effect kE|}}
+        {{#if effect.changes}}
+            <div class="effectsBlock" data-effect-id="{{effect._id}}">
+                {{#each effect.changes as | change kC|}}
+                    <div class="effectsChanges" data-key="{{kC}}" data-id="{{effect._id}}">
+                        <div class="toEdit">
+                            <i class="fa-solid fa-trash deleteMod clickable" title="{{localize 'CNK.SupprimerModificateur'}}"></i>
+                            <select name="item.effects.{{kE}}.changes.{{kC}}.key" data-key="{{kC}}" data-id="{{effect._id}}" class="effect">
+                                {{selectOptions (ifThen ../../special ../../special.mods ../../item.listMod) selected=change.key blank='CNK.Choisir' localize=true sort=true}}
+                            </select>
+                            <input type="number" name="item.effects.{{kE}}.changes.{{kC}}.key" value="{{change.value}}" data-key="{{kC}}" data-id="{{effect._id}}" class="effect" />
+                        </div>
+                        <div class="show">
+                            <span class="header">
+                                <i class="fa-solid fa-trash deleteMod clickable" title="{{localize 'CNK.TRAIT.SupprimerBonus'}}"></i>
+                                {{labelize change.key}}
+                            </span>
+                            <span class="value">{{numberFormat change.value sign=true}}</span>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        {{/if}}
+    {{/each}}
+
+    <button type="action" class="saveMod">{{localize 'CNK.SauvegarderModification'}}</button>
+</div>

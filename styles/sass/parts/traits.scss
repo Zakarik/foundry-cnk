@@ -1,0 +1,143 @@
+div {
+    &.traits {
+        &.active {
+            display: grid;
+        }
+
+        grid-template-columns: 1fr 1px 1fr;
+        grid-gap: 5px;
+        align-items: flex-start;
+        align-content: flex-start;
+
+        h1 {
+            position:relative;
+            text-align: center;
+            font-variant: small-caps;
+            color: $black;
+            font-size: 30px;
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+
+            i {
+                position:absolute;
+                font-size: 35px;
+                right: 5px;
+            }
+        }
+
+        div {
+            &.btn {
+                grid-column: 1 / 4;
+
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                font-size: 35px;
+
+                label {
+                    display: grid;
+                    grid-template-columns: 1fr 30px;
+                    align-content: center;
+                    align-items: center;
+                    width: max-content;
+                    grid-gap: 5px;
+                    border: 1px solid $black;
+                    border-radius: 5px;
+                    padding-left: 5px;
+                    font-size: 18px;
+                    font-variant: small-caps;
+                    font-weight: bold;
+                    background: $lightgreen;
+                    letter-spacing: 1px;
+                    color: $black;
+
+                    input {
+                        text-align: center;
+                        height: 100%;
+                        width: 100%;
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        border-top-left-radius: 0px;
+                        border-bottom-left-radius: 0px;
+                        border: 0px;
+                        background: transparent;
+                        font-weight: bold;
+                    }
+                }
+
+                i {
+                    margin-left: auto;
+                }
+            }
+
+            &.block {
+                display:grid;
+                grid-template-columns: 1fr 90px 35px;
+
+                border: 1px solid $black;
+                border-radius: 5px;
+                background: $grey;
+                padding-top: 5px;
+
+                span {
+                    &.label {
+                        position: relative;
+                        font-variant: small-caps;
+                        font-size: 17px;
+                        letter-spacing: 1px;
+                        padding-left: 5px;
+                        font-weight: bold;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    &.cout {
+                        font-variant: small-caps;
+                        text-align: right;
+                        font-size: 17px;
+                        font-weight: bold;
+                        padding-right: 5px;
+                    }
+
+                    &.description {
+                        display: none;
+                        word-wrap: break-word;
+                        grid-column: 1 / 4;
+                        padding-left: 5px;
+                        padding-right: 5px;
+                        text-align: justify;
+                        border-top: 1px solid $black;
+                    }
+                }
+
+                @include addExtend;
+            }
+
+            &.cmd {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 5px;
+                padding-right: 5px;
+                align-items: center;
+            }
+
+            &.col {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                align-content: flex-start;
+                height: 100%;
+                grid-gap: 5px;
+            }
+
+            &.separation {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                align-content: flex-start;
+                height: 100%;
+                border-left: 1px solid $black;
+            }
+        }
+    }
+}

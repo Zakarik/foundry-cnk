@@ -1,0 +1,84 @@
+<div class="combatstates">
+    {{#each systemData.combat}}
+        <div class="block {{#if ../systemData/edit}}toEdit{{/if}}" {{#if (gt actionDef 0)}}title="{{localize (concat 'CNK.COMBAT.' (capitalize @key) '-DC')}}"{{else}}title="{{localize (concat 'CNK.COMBAT.' (capitalize @key))}}"{{/if}}>
+            <div class="short">
+                <button type="action" data-main="combat" data-type="{{@key}}" data-title="{{localize (concat 'CNK.COMBAT.' (capitalize @key))}}" class="{{#if (or (eq @key 'defense') (eq @key 'reduction') or (eq @key 'initiative'))}}unclickable{{else}}roll{{/if}}">
+                    <img src="systems/cthulhu-no-kami/assets/icons/{{@key}}.png" />
+                </button>
+                {{#if (gt actionDef 0)}}
+                    <span class="small">{{total}} / {{totalContact}}</span>
+                {{else}}
+                    <span>{{total}}</span>
+                {{/if}}
+            </div>
+            <div class="long">
+                {{#if (or (eq @key 'contact') (eq @key 'distance'))}}
+                    <div>
+                        <span class="label">{{localize 'CNK.Profil'}}</span>
+                        <span class="value">{{profil}}</span>
+                    </div>
+                {{/if}}
+                {{#if (or (eq @key 'initiative') (eq @key 'distance') (eq @key 'defense'))}}
+                    <div>
+                        <select name="system.combat.{{@key}}.carac">
+                            {{selectOptions ../systemData.listCarac selected=carac localize=true sort=true}}
+                        </select>
+                        <span class="value">{{car}}</span>
+                    </div>
+                {{/if}}
+                {{#if (eq @key 'contact')}}
+                    <div>
+                        <select name="system.combat.{{@key}}.carac">
+                            {{selectOptions ../systemData.listCarac selected=carac localize=true sort=true}}
+                        </select>
+                        <span class="value">{{car}}</span>
+                    </div>
+                {{/if}}
+                {{#if (eq @key 'magique')}}
+                    <div>
+                        <select name="system.combat.{{@key}}.carac">
+                            {{selectOptions ../systemData.listCarac selected=carac localize=true sort=true}}
+                        </select>
+                        <span class="value">{{car}}</span>
+                    </div>
+                {{/if}}
+                {{#if (or (eq @key 'initiative') (eq @key 'defense') (eq @key 'reduction'))}}
+                    <div>
+                        <span class="label">{{localize 'CNK.Armure'}}</span>
+                        <span class="value">{{armure}}</span>
+                    </div>
+                {{/if}}
+                {{#if (eq @key 'defense')}}
+                    <div>
+                        <span class="label">{{localize 'CNK.Action-defensive-short'}}</span>
+                        <span class="value">{{actionDef}}</span>
+                    </div>
+                {{/if}}
+                {{#if (or (eq @key 'contact') (eq @key 'distance') (eq @key 'magique'))}}
+                    <div>
+                        <span class="label">{{localize 'CNK.Niveau'}}</span>
+                        <span class="value">{{niveau}}</span>
+                    </div>
+                {{/if}}
+                {{#unless (eq @key 'reduction')}}
+                <div>
+                    <span class="label">{{localize 'CNK.ETATS.Etat'}}</span>
+                    <span class="value">{{etat}}</span>
+                </div>
+                {{/unless}}
+                <div>
+                    <span class="label">{{localize 'CNK.Divers'}}</span>
+                    <span class="value">{{divers}}</span>
+                </div>
+                <label>
+                    <span class="label">{{localize 'CNK.Modificateur'}}</span>
+                    <input type="number" name="system.combat.{{@key}}.mod" value="{{mod}}" />
+                </label>
+                <label class="last">
+                    <span class="label">{{localize 'CNK.Temporaire'}}</span>
+                    <input type="number" name="system.combat.{{@key}}.temp" value="{{temp}}" />
+                </label>
+            </div>
+        </div>
+    {{/each}}
+</div>

@@ -1,0 +1,350 @@
+section {
+    &.modecreation-top {
+        div {
+            &.modecreation-profil {
+                grid-column: 1 / 7;
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+
+                font-size: 25px;
+                text-align: center;
+                font-variant: small-caps;
+
+                div {
+                    &.middleLine {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+
+                    &.block {
+                        display: grid;
+                        grid-template-columns: 1fr;
+
+                        width: 50%;
+
+                        border: 1px solid $black;
+                        line-height: 28px;
+                        border-radius: 6px;
+
+                        span {
+                            color: $black;
+                        }
+
+                        &.red {
+                            div,
+                            label {
+                                &.headerLine {
+                                    background:$lightred;
+                                }
+                            }
+                        }
+
+                        &.blue {
+                            div,
+                            label {
+                                &.headerLine {
+                                    background:$blue;
+                                }
+                            }
+                        }
+
+                        &.yellow {
+                            div,
+                            label {
+                                &.headerLine {
+                                    background:$yellow;
+                                }
+                            }
+                        }
+
+                        &.green {
+                            div,
+                            label {
+                                &.headerLine {
+                                    background:$lightgreen;
+                                }
+                            }
+                        }
+
+                        div,
+                        label {
+                            &.headerLine {
+                                display:grid;
+                                grid-template-columns: 1fr 60px;
+                                grid-gap: 2px;
+                                border-radius: 6px;
+
+                                span {
+                                    &.label {
+                                        font-weight: bold;
+                                        text-transform: capitalize;
+                                        font-variant: small-caps;
+                                        padding-left: 5px;
+                                        letter-spacing: 2px;
+                                        font-size: 16px;
+                                        text-align: left;
+                                    }
+                                }
+                            }
+
+                            &.dataLine {
+                                display:none;
+                                grid-template-columns: 1fr 1fr;
+                                grid-gap: 5px;
+                                padding-top: 5px;
+                                padding-left: 2px;
+                                padding-right: 2px;
+                                padding-bottom: 5px;
+                                background: $white;
+                                border-bottom-left-radius: 6px;
+                                border-bottom-right-radius: 6px;
+
+                                div,
+                                label {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    align-items: flex-start;
+                                    grid-gap: 2px;
+
+                                    span {
+                                        &.label {
+                                            text-align: center;
+                                            font-weight: bold;
+                                            font-variant: small-caps;
+                                            line-height: 18px;
+                                            font-size: 16px;
+                                            letter-spacing: 1px;
+                                        }
+
+                                        &.value {
+                                            background: $grey;
+                                            font-size: 15px;
+                                            font-weight: bold;
+                                            border: 1px solid $black;
+                                            border-radius: 5px;
+                                            text-align: center;
+                                            line-height: 24px;
+                                            min-height: 26px;
+                                        }
+                                    }
+
+                                    input {
+                                        width: 100%;
+                                        margin: 0px;
+                                        padding: 0px;
+                                        text-align: center;
+                                        border: 1px solid $black;
+                                        border-radius: 5px;
+                                        color: $black;
+                                        font-size: 15px;
+                                        font-weight: bold;
+                                    }
+
+                                    &.long {
+                                        grid-column: 1 / 3;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.double {
+                            div {
+                                &.headerLine {
+                                    div {
+                                        &.dataBlock {
+                                            display: grid;
+                                            grid-template-columns: 1fr 10px 1fr;
+                                            grid-gap: 2px;
+
+                                            input {
+                                                height: 100%;
+                                                width: 100%;
+                                                background: transparent;
+                                                border: 0px;
+                                                padding: 0px;
+                                                margin: 0px;
+                                                font-weight: bold;
+                                                color: $black;
+                                                text-align: center;
+                                                font-size: 16px;
+                                            }
+
+                                            span {
+                                                text-align: center;
+                                                font-weight: bold;
+                                                font-size: 17px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.simple {
+                            label {
+                                &.headerLine {
+                                    input {
+                                        height: 100%;
+                                        width: 100%;
+                                        background: transparent;
+                                        border: 0px;
+                                        padding: 0px;
+                                        margin: 0px;
+                                        font-weight: bold;
+                                        color: $black;
+                                        text-align: center;
+                                        font-size: 16px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.modecreation-listvoie {
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                align-content: flex-start;
+                border: 1px solid $black;
+                border-radius: 5px;
+                margin-top: 10px;
+
+                span {
+                    &.listvoie-label {
+                        background-color: $purple;
+                        font-weight: bold;
+                        font-variant: small-caps;
+                        border-bottom: 1px solid $black;
+                    }
+                }
+
+                div {
+                    &.summary {
+                        display: grid;
+                        grid-template-columns: repeat(6, 1fr);
+                        align-items: center;
+                        align-content: center;
+
+                        div {
+                            &.rang {
+                                display: flex;
+                                grid-gap: 5px;
+                                height: 100%;
+                                border-left: 1px solid $black;
+                                padding-left: 5px;
+                                padding-right: 5px;
+                                letter-spacing: 1px;
+                                font-size: 16px;
+                                font-variant: small-caps;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                align-items: center;
+                                align-content: center;
+
+                                span {
+                                    &.txt {
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                    }
+
+                                    &.limitee {
+                                        font-size: 14px;
+                                    }
+                                }
+
+                                i {
+                                    display: none;
+                                    padding-right: 2px;
+                                }
+
+                                &.selected {
+                                    background: $green;
+                                    color: $white;
+
+                                    i {
+                                        display: inline-block;
+                                    }
+                                }
+                            }
+                        }
+
+                        span {
+                            display: flex;
+                            align-items: center;
+                            align-content: center;
+                            font-variant: small-caps;
+                            font-size: 16px;
+
+                            &.label {
+                                font-weight: bold;
+                                padding-left: 5px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+
+                            &.indice {
+                                padding-left: 5px;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                font-size: 14px;
+                                letter-spacing: 1px;
+                            }
+
+                            &.hover {
+                                display: none;
+                                position: absolute;
+                                background: $white;
+                                padding: 5px;
+                                border-radius: 10px;
+                                font-variant: normal;
+                                text-align: justify;
+                                width: 300px;
+                                line-height: 20px;
+                                word-break: break-word;
+                                border: 1px solid $black;
+                            }
+                        }
+
+                        &:not(:first-of-type) {
+                            border-top: 1px solid $black;
+                        }
+                    }
+
+                    &.header {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                    }
+                }
+            }
+
+
+            &.modecreation-listcapacite {
+                grid-column: 3;
+                display: grid;
+                grid-template-columns: 1fr;
+                align-items: flex-start;
+                align-content: flex-start;
+
+                div {
+                    &.header {
+                        font-variant: small-caps;
+                        font-size: 16px;
+                        letter-spacing: 1px;
+                        margin-left: auto;
+                        padding: 5px;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+
+                        &.red {
+                            background: $lightred;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+<div class="item block artillerie summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+    <span class="label" title="{{name}}">
+        <i class="fa-message clickable sendmsg fa-solid" data-type="{{type}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+        {{#if system.used}}
+        <i class="fa-duotone fa-dice-d20 clickable red rollAtk" data-main="combat" data-type="distance" data-wpn-type="wpnartillerie" data-title="{{name}}" title="{{localize "CNK.ROLL.Attaque"}}"></i>
+        {{/if}}
+        {{#if system.user}}
+        <i class="fa-duotone fa-dice-d20 clickable red rollAtk" data-main="combat" data-type="distance" data-wpn-type="wpnartillerie" data-title="{{name}}" title="{{localize "CNK.ROLL.Attaque"}}"></i>
+        {{/if}}
+        {{name}}
+    </span>
+    <div class="btnequip one">
+        {{#if (eq actortype 'vehicule')}}
+        <span>{{localize 'CNK.VEHICULE.UtiliserPar'}} :</span>
+        <select class="userSelect">
+            {{selectOptions equipage selected=system.user blank='' sort=true}}
+        </select>
+        {{/if}}
+
+        <i class="{{#if (eq system.used true)}}fa-solid{{else}}fa-regular{{/if}} fa-hammer-war use" title="{{localize "CNK.UTILISATIONS.Utiliser"}}"></i>
+    </div>
+    <div class="cmd">
+        <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.TABSCOMBAT.ARTILLERIE.Edit'}}"></i>
+        <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.TABSCOMBAT.ARTILLERIE.Supprimer'}}"></i>
+    </div>
+    <div class="data">
+        <label class="utilisation">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.Utilisation'}}
+            </span>
+            <span class="value" title="{{system.utilisation}}">
+                {{system.utilisation}}
+            </span>
+        </label>
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.Dm'}}
+            </span>
+            <span class="value">
+                {{ifThen system.dm system.dm (concat "1" (localize "CNK.De-short") "6")}}
+            </span>
+        </label>
+        <label title="{{system.attaque.base}} + {{system.attaque.ki}} = {{system.attaque.total}}">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.ModAtt-short'}}
+            </span>
+            <span class="value">
+                {{numberFormat system.attaque.total sign=true}}
+            </span>
+        </label>
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.Portee'}}
+            </span>
+            <span class="value">
+                {{system.portee}}
+            </span>
+        </label>
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.Rechargement'}}
+            </span>
+            <span class="value" title="{{system.rechargement}}">
+                {{system.rechargement}}
+            </span>
+        </label>
+        <label>
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.AireEffet'}}
+            </span>
+            <span class="value">
+                {{system.aire}}
+            </span>
+        </label>
+        <label title="{{system.degats.base}} + {{system.degats.ki}} = {{system.degats.total}}">
+            <span class="sublabel">
+                {{localize 'CNK.TABSCOMBAT.ModDgt-short'}}
+            </span>
+            <span class="value">
+                {{numberFormat system.degats.total sign=true}}
+            </span>
+        </label>
+    </div>
+
+    <span class="description">{{{system.description}}}</span>
+    <button type="action" class="extend">
+        <span class="plus">
+            <i class="fa-solid fa-caret-down"></i>
+            {{localize "CNK.Plus"}}
+            <i class="fa-solid fa-caret-down"></i>
+        </span>
+        <span class="minus">
+            <i class="fa-solid fa-caret-up"></i>
+            {{localize "CNK.Minus"}}
+            <i class="fa-solid fa-caret-up"></i>
+        </span>
+    </button>
+</div>

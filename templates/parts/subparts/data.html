@@ -1,0 +1,48 @@
+<div class="block {{template.class}} {{#if edit}}toEdit{{/if}}">
+    {{#if template.isDouble}}
+        <div class="headerLine">
+            <span class="label">{{template.label}}</span>
+
+            <div class="dataBlock">
+                <input type="number" name="system.derives.{{template.key}}.actuel" value="{{actuel}}" {{#if template.hasMin}}min="0"{{/if}} max="{{max}}" />
+                <span>/</span>
+                <span class="max">{{max}}</span>
+            </div>
+        </div>
+    {{else}}
+        <label class="headerLine">
+            <span class="label">{{template.label}}</span>
+            {{#if template.isLock}}
+                <span class="value">{{actuel}}</span>
+            {{else}}
+                <input type="number" name="system.derives.{{template.key}}.actuel" value="{{actuel}}" {{#if template.hasMin}}min="0"{{/if}} />
+            {{/if}}
+        </label>
+    {{/if}}
+    {{#if (and (ne template.key 'folie') (ne template.key 'blessures') (ne template.key 'ki'))}}
+        <div class="dataLine">
+            <label>
+                <span class="label">{{localize "CNK.Modificateur-short"}}</span>
+                <input type="number" name="system.derives.{{template.key}}.mod" value="{{mod}}" />
+            </label>
+            <label>
+                <span class="label">{{localize "CNK.Temporaire-short"}}</span>
+                <input type="number" name="system.derives.{{template.key}}.temp" value="{{temp}}" />
+            </label>
+            <div class="long">
+                <span class="label">{{localize "CNK.Base"}}</span>
+                <span class="value">{{base}}</span>
+            </div>
+            {{#if (eq template.key 'pv')}}
+                <div>
+                    <span class="label">{{localize "CNK.Des-de-vie-short"}}</span>
+                    <span class="value">{{dv}}</span>
+                </div>
+                <div>
+                    <span class="label">{{localize "CNK.CARACTERISTIQUES.Constitution-short"}}</span>
+                    <span class="value">{{con}}</span>
+                </div>
+            {{/if}}
+        </div>
+    {{/if}}
+</div>

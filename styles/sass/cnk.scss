@@ -1,0 +1,565 @@
+$black:black;
+$green:#186A3B;
+$white:white;
+$grey:#D3D3D3;
+$red:RGB(143 050 050);
+$lightred:#d34f4f;
+$blue:#17a2b8;
+$yellow:#daa506;
+$lightgreen:#28a745;
+$purple:#a176ca;
+
+@import "./_library";
+
+div {
+    &.actor,
+    &.item {
+        section.window-content {
+            form {
+                input,
+                select {
+                    &:focus {
+                        box-shadow: 0px 0px 5px 2px $purple;
+                    }
+                }
+
+                i.clickable {
+                    cursor: pointer;
+
+                    &:hover {
+                        text-shadow: 0px 0px 5px $purple;
+                    }
+
+                    &.red {
+                        &:hover {
+                            color: $lightred;
+                        }
+                    }
+                }
+
+                &.mainGrid {
+                    display:grid;
+                }
+
+                div {
+                    &.modificateurBlock {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        grid-gap: 5px;
+                        padding-bottom: 5px;
+
+                        span {
+                            &.label {
+                                position: relative;
+                                width: 100%;
+                                font-size: 20px;
+                                font-weight: bold;
+                                font-variant: small-caps;
+                                text-align: center;
+                                border-top-left-radius: 5px;
+                                border-top-right-radius: 5px;
+                                background: $purple;
+                                letter-spacing: 1px;
+
+                                button {
+                                    position: absolute;
+                                    left: 1px;
+                                    top: 1px;
+                                    border: 1px solid $black;
+                                    background: $black;
+                                    padding: 2px;
+                                    width: max-content;
+                                    margin: 0px;
+                                    padding-right: 40px;
+                                    height: 23px;
+                                    line-height: 23px;
+                                    font-size: 13px;
+                                    color: $white;
+                                    letter-spacing: 1px;
+                                    font-variant: small-caps;
+
+                                    i {
+                                        display: none;
+                                    }
+                                }
+
+                                i.addMod {
+                                    position:absolute;
+                                    right: 5px;
+                                    top: 3px;
+
+                                    &:hover {
+                                        text-shadow: 0px 0px 5px $white;
+                                    }
+                                }
+                            }
+                        }
+
+                        div {
+                            &.effectsBlock {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                align-items: flex-start;
+                                align-content: flex-start;
+                                grid-gap: 5px;
+                            }
+
+                            &.effectsChanges {
+                                display: grid;
+                                grid-template-columns: 1fr;
+                                align-items: flex-start;
+                                align-content: flex-start;
+                            }
+
+                            &.toEdit {
+                                display:none;
+                                position:relative;
+                                grid-template-columns: 11px 1fr 50px;
+                                margin-left: 5px;
+                                border-bottom: 1px solid $black;
+
+                                select {
+                                    border: 0px;
+                                    background: transparent;
+                                    color:$black;
+                                    font-variant: small-caps;
+                                    font-size: 17px;
+                                    margin-right: 5px;
+                                    padding-left: 0px;
+                                }
+
+                                input {
+                                    padding: 0px;
+                                    text-align: center;
+                                    border: 0px;
+                                    background: transparent;
+                                    padding-top: 1px;
+                                    padding-left: 2px;
+                                    color:$black;
+                                }
+
+                                i {
+                                    margin-top: 7px;
+                                }
+                            }
+
+                            &.show {
+                                display:grid;
+                                position: relative;
+                                grid-template-columns: 1fr 50px;
+                                grid-gap: 5px;
+                                margin-left: 5px;
+                                border-bottom: 1px solid $black;
+                                line-height: 27px;
+
+                                span {
+                                    font-size: 14px;
+                                    font-variant: small-caps;
+
+                                    &.header {
+                                        padding-left: 15px;
+                                        font-size: 17px;
+                                    }
+
+                                    &.value {
+                                        text-align: center;
+                                    }
+                                }
+
+                                i {
+                                    position:absolute;
+                                    left: 0px;
+                                    top: 7px;
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+
+                        button.saveMod {
+                            display:none;
+                            width: 100%;
+                            line-height: 15px;
+                            padding: 5px;
+                            text-align: center;
+                            font-variant: small-caps;
+                            border-bottom-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                            border-top-left-radius: 0px;
+                            border-top-right-radius: 0px;
+                            margin: 0px;
+                            background: $lightgreen;
+                            font-size: 16px;
+                            border: 0px;
+                            letter-spacing: 1px;
+                            font-weight: bold;
+
+                            &:hover {
+                                box-shadow: 0px 0px 5px 2px $purple;
+                            }
+                        }
+
+                        &.edit {
+                            padding-bottom: 0px;
+
+                            span {
+                                button {
+                                    background: $green;
+                                    padding-right: 0px;
+
+                                    i {
+                                        display: inline-block;
+                                        margin-left: 20px;
+                                    }
+
+                                    &:hover {
+                                        box-shadow: 0px 0px 5px 2px $purple;
+                                    }
+                                }
+                            }
+
+                            div {
+                                &.toEdit {
+                                    display:grid;
+                                }
+
+                                &.show {
+                                    display:none;
+                                }
+                            }
+
+                            button.saveMod {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    &.modificateurJetBlock {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        align-items: flex-start;
+                        align-content: flex-start;
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        grid-gap: 5px;
+                        padding-bottom: 5px;
+
+                        span {
+                            &.label {
+                                position: relative;
+                                width: 100%;
+                                font-size: 20px;
+                                font-weight: bold;
+                                font-variant: small-caps;
+                                text-align: center;
+                                border-top-left-radius: 5px;
+                                border-top-right-radius: 5px;
+                                background: $purple;
+                                letter-spacing: 1px;
+
+                                button {
+                                    position: absolute;
+                                    left: 1px;
+                                    top: 1px;
+                                    border: 1px solid $black;
+                                    background: $black;
+                                    padding: 2px;
+                                    width: max-content;
+                                    margin: 0px;
+                                    padding-right: 40px;
+                                    height: 23px;
+                                    line-height: 23px;
+                                    font-size: 13px;
+                                    color: $white;
+                                    letter-spacing: 1px;
+                                    font-variant: small-caps;
+
+                                    i {
+                                        display: none;
+                                    }
+
+                                    &:hover {
+                                        box-shadow: 0px 0px 5px 2px $purple;
+                                    }
+                                }
+
+                                i.addModJet {
+                                    position:absolute;
+                                    right: 5px;
+                                    top: 3px;
+
+                                    &:hover {
+                                        text-shadow: 0px 0px 5px $white;
+                                    }
+                                }
+                            }
+                        }
+
+                        div {
+                            &.effectsBlock {
+                                display: grid;
+                                grid-template-columns: 1fr 1fr;
+                                align-items: flex-start;
+                                align-content: flex-start;
+                                grid-gap: 5px;
+                            }
+
+                            &.toEdit {
+                                display:none;
+                                position:relative;
+                                grid-template-columns: 11px 1fr 100px 50px;
+                                margin-left: 5px;
+                                border-bottom: 1px solid $black;
+
+                                select {
+                                    grid-column: 2 / 4;
+                                    border: 0px;
+                                    background: transparent;
+                                    color:$black;
+                                    font-variant: small-caps;
+                                    font-size: 17px;
+                                    margin-right: 5px;
+                                    padding-left: 0px;
+                                }
+
+                                input {
+                                    &[type="number"] {
+                                        padding: 0px;
+                                        text-align: center;
+                                        border: 0px;
+                                        background: transparent;
+                                        padding-top: 1px;
+                                        padding-left: 2px;
+                                        color:$black;
+                                    }
+
+                                    &[type="text"] {
+                                        grid-column: 1 / 3;
+
+                                        padding: 0px;
+                                        text-align: left;
+                                        border: 0px;
+                                        background: transparent;
+                                        padding-top: 1px;
+                                        padding-left: 2px;
+                                        color:$black;
+                                        border-top: 1px solid $black;
+                                        border-radius: 0px;
+
+                                        &.full {
+                                            grid-column: 1 / 5;
+                                        }
+                                    }
+                                }
+
+                                i {
+                                    margin-top: 7px;
+                                }
+
+                                button {
+                                    margin: 0px;
+                                    padding: 0px;
+                                    border: 0px;
+                                    grid-column: 3 / 5;
+                                    background: $grey;
+                                    border-radius: 0px;
+                                    border-top: 1px solid $black;
+                                    font-variant: small-caps;
+
+                                    &.active {
+                                        background-color: #28a745;
+                                    }
+
+                                    &:hover,
+                                    &:focus {
+                                        box-shadow: 0px 0px 5px 2px $purple;
+                                    }
+                                }
+
+                                &:nth-of-type(odd) {
+                                    border-right: 1px solid $black;
+                                }
+
+                                &:nth-of-type(even) {
+                                    border-left: 1px solid $black;
+                                    padding-left: 1px;
+                                }
+                            }
+
+                            &.show {
+                                display:grid;
+                                position: relative;
+                                grid-template-columns: 1fr 50px;
+                                column-gap: 5px;
+                                margin-left: 5px;
+                                border-bottom: 1px solid $black;
+                                line-height: 27px;
+
+                                span {
+                                    font-size: 14px;
+                                    font-variant: small-caps;
+
+                                    &.header {
+                                        padding-left: 15px;
+                                        font-size: 17px;
+                                    }
+
+                                    &.value {
+                                        text-align: center;
+                                    }
+
+                                    &.condition {
+                                        grid-column: 1 / 3;
+                                        width: 100%;
+                                        line-height: 20px;
+                                    }
+                                }
+
+                                i {
+                                    position:absolute;
+                                    left: 0px;
+                                    top: 7px;
+                                    font-size: 14px;
+                                }
+
+                                &.long {
+                                    grid-template-columns: 1fr 70px;
+                                }
+                            }
+                        }
+
+                        button.saveModJet {
+                            display:none;
+                            width: 100%;
+                            line-height: 15px;
+                            padding: 5px;
+                            text-align: center;
+                            font-variant: small-caps;
+                            border-bottom-left-radius: 5px;
+                            border-bottom-right-radius: 5px;
+                            border-top-left-radius: 0px;
+                            border-top-right-radius: 0px;
+                            margin: 0px;
+                            background: $lightgreen;
+                            font-size: 16px;
+                            border: 0px;
+                            letter-spacing: 1px;
+                            font-weight: bold;
+                        }
+
+                        &.edit {
+                            span {
+                                button {
+                                    background: $green;
+                                    padding-right: 0px;
+
+                                    i {
+                                        display: inline-block;
+                                        margin-left: 20px;
+                                    }
+                                }
+                            }
+
+                            div {
+                                &.toEdit {
+                                    display:grid;
+                                }
+
+                                &.show {
+                                    display:none;
+                                }
+                            }
+
+                            button.saveMod {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                header {
+                    &.itmStd {
+                        display: grid;
+                        grid-template-columns: 50px 1fr;
+                        grid-gap: 5px;
+                        align-items: flex-end;
+
+                        img {
+                            width: 100%;
+                            background:$grey;
+                        }
+
+                        input {
+                            width: 100%;
+                            font-size: 24px;
+                            border-top: 0px;
+                            border-right: 0px;
+                            border-left: 0px;
+                            border-bottom: 1px solid $black;
+                            border-radius: 0px;
+                            text-align: center;
+                            padding-left: 0px;
+                            padding-right: 0px;
+                            color: $black;
+                            background: transparent;
+
+                            font-variant: small-caps;
+                        }
+
+                        &.double {
+                            grid-template-columns: 50px 1fr 50px;
+                        }
+
+                        &.specialwpn {
+                            grid-template-columns: 50px 1fr 150px;
+
+                            label {
+                                display: grid;
+                                grid-template-columns: max-content 1fr;
+                                font-variant: small-caps;
+                                font-size: 16px;
+                                align-items: flex-end;
+                                border-bottom: 1px solid $black;
+
+                                input {
+                                    border-bottom: 0px;
+                                    font-size: 14px;
+                                    padding-top: 7px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @import "./parts/actor/eiyu";
+    @import "./parts/actor/vehicule";
+    @import "./parts/dialog/lvl";
+    @import "./parts/dialog/roll";
+    @import "./parts/item/profil";
+    @import "./parts/item/traitMental";
+    @import "./parts/item/wpn";
+    @import "./parts/item/sortilege";
+    @import "./parts/item/armure";
+    @import "./parts/item/objet";
+    @import "./parts/item/voie";
+    @import "./parts/roll/simple";
+    @import "./parts/chat/sendlvl";
+    @import "./parts/chat/sendmsg";
+
+    @import "./parts/creator/caracteristiques";
+    @import "./parts/creator/profil";
+    @import "./parts/creator/traits";
+}
+
+li {
+    &.chat-message {
+        border: 1px solid $black;
+    }
+}

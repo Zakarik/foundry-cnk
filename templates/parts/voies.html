@@ -1,0 +1,40 @@
+<div class="tab voies item-list" data-group="primary" data-tab="voies">
+    {{#if actor.voies}}
+    <div class="listvoie">
+        {{#each actor.voies}}
+        <div class="summary {{_id}}" data-id="{{_id}}">
+            <div class="header">
+                <span class="label" title="{{name}}">{{name}}</span>
+                <span class="indice">{{labelizeType system.type}}</span>
+            </div>
+            {{#each system.listrang}}
+                <div class="rang {{#if selected}}selected{{/if}} {{#if capacitelimitee}}limitee{{/if}}" data-rang="{{@key}}" title="{{ifThen name name (localize (concat "CNK.VOIE." (capitalize @key)))}}">
+                    <i class="fa-solid fa-check"></i>
+                    <span class="txt">{{ifThen name name (localize (concat "CNK.VOIE." (capitalize @key)))}}</span>
+                    {{#if capacitelimitee}}<span class="limitee">(L)</span>{{/if}}
+                </div>
+                <span class="hover {{@key}}">{{{description}}}</span>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    <div class="listcapacite">
+        <div class="header {{#if (gt systemData.capacites.value systemData.capacites.max)}}red{{/if}}">
+            <span class="label">{{localize "CNK.PtsCapacite"}}</span>
+            <span class="value">{{systemData.capacites.value}} / {{systemData.capacites.max}}</span>
+        </div>
+        <div class="block">
+            {{#each actor.capacites}}
+            <div class="subBlock" >
+                <span class="label {{#if capacitelimitee}}limitee{{/if}}" title="{{ifThen name name (localize (concat "CNK.VOIE." (capitalize strrang)))}}">
+                    <i class="fa-message clickable sendmsg fa-solid" data-title="{{ifThen name name (localize (concat "CNK.VOIE." (capitalize strrang)))}}" data-msg="{{description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                    {{ifThen name name (localize (concat "CNK.VOIE." (capitalize strrang)))}}
+                </span>
+                <span class="description">{{{description}}}</span>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

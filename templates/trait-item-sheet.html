@@ -1,0 +1,30 @@
+<form class="mainGrid {{cssClass}}" autocomplete="off">
+    {{~> (importParts 'headerItmStd')}}
+
+    <section class="body">
+        <div class="editorBlock">
+            <span class="label">{{localize "CNK.Description"}}</span>
+            {{editor systemData.description target="system.description" button=true owner=owner editable=editable}}
+        </div>
+
+        <nav class="sheet-tabs tabs" data-group="primary">
+            <a class="item" data-tab="modificateurs">
+                <span class="txt">{{localize "CNK.Modificateurs"}}</span>
+                <i class="fa-solid fa-check"></i>
+            </a>
+
+            <a class="item" data-tab="modjet">
+                <span class="txt">{{localize "CNK.ModificateursJets"}}</span>
+                <i class="fa-solid fa-check"></i>
+            </a>
+        </nav>
+
+        <div class="tab mod" data-group="primary" data-tab="modificateurs">
+            {{~> (importParts 'modificateurs')}}
+        </div>
+
+        <div class="tab modjet" data-group="primary" data-tab="modjet">
+            {{~> (importParts 'modjet') special=systemData}}
+        </div>
+    </section>
+</form>

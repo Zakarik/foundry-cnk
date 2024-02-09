@@ -1,0 +1,41 @@
+<div class="cnk-sendlvl">
+    <div>
+        <h4 class="flavor">{{label}}</h4>
+
+        {{#if newLvl}}
+        <span class="label">{{localize "CNK.Niveau"}}</span>
+        <span class="value">
+            <span>{{oldLvl}}</span>
+            <i class="fa-solid fa-forward"></i>
+            <span>{{newLvl}}</span>
+        </span>
+        {{/if}}
+
+        {{#if newPv}}
+        <span class="label">{{localize "CNK.DERIVES.Points-de-vie"}}</span>
+        <span class="value" title="{{titlePv}}">
+            <span>{{oldPv}}</span>
+            <i class="fa-solid fa-forward"></i>
+            <span>{{newPv}}</span>
+        </span>
+        {{/if}}
+
+        {{#if newAtk}}
+        <span class="label">{{labelAtk}}</span>
+        <span class="value">
+            <span>{{oldAtk}}</span>
+            <i class="fa-solid fa-forward"></i>
+            <span>{{newAtk}}</span>
+        </span>
+        {{/if}}
+
+        {{#if newCap}}
+        <span class="label">{{localize "CNK.PtsCapacite"}}</span>
+        <span class="value">
+            <span>{{oldCap}}</span>
+            <i class="fa-solid fa-forward"></i>
+            <span>{{newCap}}</span>
+        </span>
+        {{/if}}
+    </div>
+</div>

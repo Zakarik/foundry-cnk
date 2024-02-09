@@ -1,0 +1,86 @@
+@mixin addExtend {
+    button {
+        &.extend {
+            grid-column: 1 / 4;
+            width: 100%;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border: 0px;
+
+            span {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                font-variant: small-caps;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: 14px;
+                width: 80px;
+                line-height: 17px;
+
+                i {
+                    &:first-of-type {
+                        position: absolute;
+                        left: 0px;
+                    }
+                    &:last-of-type {
+                        position: absolute;
+                        right: 0px;
+                    }
+                }
+
+                &.plus {
+                    display:inline-block;
+                }
+
+                &.minus {
+                    display:none;
+                }
+            }
+
+            &:hover {
+                text-shadow: 0px 0px 5px $purple;
+                box-shadow: 0px 0px 5px 2px $purple;
+            }
+        }
+    }
+
+    span {
+        &.description {
+            height: auto;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+    }
+
+    &.extended {
+        span {
+            &.description {
+                display: inline;
+            }
+        }
+
+        button {
+            &.extend {
+                span {
+                    &.plus {
+                        display: none;
+                    }
+
+                    &.minus {
+                        display: inline-block;
+                    }
+                }
+
+                &:hover {
+                    box-shadow: 0px 0px 5px 2px $purple;
+                }
+            }
+        }
+    }
+
+    @content;
+}
