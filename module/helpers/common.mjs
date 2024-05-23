@@ -405,7 +405,8 @@ export async function doRoll(actor, data={}) {
   const type = dataWpn === undefined ? "" : dataWpn.type;
   const roll = new Roll(`${data.formula}`);
   let rollData = data.pRoll;
-  roll.evaluate({async:false});
+  await roll.evaluate();
+
   const total = roll.dice[0].total;
   const totalRoll = roll.total;
   const noSpecial = data?.noSpecial ?? false;
@@ -418,8 +419,6 @@ export async function doRoll(actor, data={}) {
   let incident = false;
   let explode = false;
   let diceRolled = [];
-
-  console.warn(dataWpn, margeCritique)
 
   if(type === 'wpnartillerie') echecCritique.push(1, 2);
   if(type === 'sortilege' && !specialType) {
@@ -543,7 +542,7 @@ export async function doRoll(actor, data={}) {
         }
       } else if(type === 'wpnartillerie' && echecCritique.includes(total)) {
         const rollRelance = new Roll(`1D20`);
-        rollRelance.evaluate({async:false});
+        await rollRelance.evaluate();
         const totalRelance = rollRelance.dice[0].total;
 
         rollData.special2 = echecCritique.includes(totalRelance) ? `<span class='fail'>${game.i18n.localize(`CNK.ROLL.Relance`)} : ${totalRelance}</span>` : `<span class="standard">${game.i18n.localize(`CNK.ROLL.Relance`)} : ${totalRelance}</span>`;
@@ -578,7 +577,7 @@ export async function doRoll(actor, data={}) {
         }
 
         const rollDgt = new Roll(formula);
-        rollDgt.evaluate({async:false});
+        await rollDgt.evaluate();
         let tDgt = rollDgt.total < 1 ? 1 : rollDgt.total;
         let bDgt = undefined;
         let forTxt = 0;
@@ -628,7 +627,7 @@ export async function doRoll(actor, data={}) {
         }
 
         const rollDgt = new Roll(formula);
-        rollDgt.evaluate({async:false});
+        await rollDgt.evaluate();
         let tDgt = rollDgt.total < 1 ? 1 : rollDgt.total;
         let bDgt = undefined;
         let forTxt = 0;

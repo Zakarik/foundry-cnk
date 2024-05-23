@@ -632,7 +632,7 @@ export class EiyuActorSheet extends ActorSheet {
             } else if(newNiveau%2 === 0) {
               const formula = `1D${dv}`;
               const rollDv = new Roll(formula);
-              rollDv.evaluate({async:false});
+              await rollDv.evaluate();
               const pRollDv = {
                 flavor:game.i18n.localize(`CNK.NIVEAU.Dv`),
                 tooltip:await rollDv.getTooltip(),
