@@ -31,4 +31,8 @@ export const RegisterHandlebars = function () {
     Handlebars.registerHelper('labelizeType', function (string) {
         return game.i18n.localize(CONFIG.CNK.TypePossible[string]);
     });
+
+    Handlebars.registerHelper('sanitize', function (string) {
+        return string.replace(/<[^>]*>?/gm, '');
+    });
 };

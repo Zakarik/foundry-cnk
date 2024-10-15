@@ -2,6 +2,7 @@
     {{#each systemData.combat}}
         <div class="block {{#if ../systemData/edit}}toEdit{{/if}}" {{#if (gt actionDef 0)}}title="{{localize (concat 'CNK.COMBAT.' (capitalize @key) '-DC')}}"{{else}}title="{{localize (concat 'CNK.COMBAT.' (capitalize @key))}}"{{/if}}>
             <div class="short">
+                <span class="title">{{localize (concat 'CNK.COMBAT.' (capitalize @key))}}</span>
                 <button type="action" data-main="combat" data-type="{{@key}}" data-title="{{localize (concat 'CNK.COMBAT.' (capitalize @key))}}" class="{{#if (or (eq @key 'defense') (eq @key 'reduction') or (eq @key 'initiative'))}}unclickable{{else}}roll{{/if}}">
                     <img src="systems/cthulhu-no-kami/assets/icons/{{@key}}.png" />
                 </button>

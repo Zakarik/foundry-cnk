@@ -14,7 +14,7 @@
             {{#each actor.avantages}}
                 <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
                     <span class="label" title="{{name}}">
-                        <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{{system.description}}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                        <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{sanitize system.description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
                         {{name}}
                     </span>
                     <span class="cout">{{localize 'CNK.TRAIT.Cout'}} : {{system.cout}}</span>
@@ -47,7 +47,7 @@
             {{#each actor.desavantages}}
                 <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
                     <span class="label" title="{{name}}">
-                        <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{{system.description}}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                        <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{sanitize system.description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
                         {{name}}
                     </span>
                     <span class="cout">{{localize 'CNK.TRAIT.Cout'}} : {{system.cout}}</span>

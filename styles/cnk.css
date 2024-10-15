@@ -777,7 +777,7 @@ div.eiyu section.window-content form.mainGrid section.top div.caracteristiques d
 }
 div.eiyu section.window-content form.mainGrid section.top div.derives {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(140px, 1fr));
   grid-gap: 5px;
   margin-top: 5px;
   align-items: flex-start;
@@ -1043,11 +1043,20 @@ div.eiyu section.window-content form.mainGrid section.top div.combatstates div.s
   align-items: center;
   justify-content: center;
   background: white;
-  border-radius: 0px 7px 7px 0px;
+  border-radius: 0px 0px 7px 0px;
   border: 1px solid black;
 }
 div.eiyu section.window-content form.mainGrid section.top div.combatstates div.short span.small {
   font-size: 24px;
+}
+div.eiyu section.window-content form.mainGrid section.top div.combatstates div.short span.title {
+  grid-column: 1/3;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 12px;
+  border-bottom: 0px;
 }
 div.eiyu section.window-content form.mainGrid section.top div.combatstates div.long {
   display: none;
@@ -1134,7 +1143,7 @@ div.eiyu section.window-content form.mainGrid section.top div.combatstates div b
   background: black;
   margin: 0px;
   border: 0px;
-  border-radius: 7px 0px 0px 7px;
+  border-radius: 0px 0px 0px 7px;
   border-top: 1px solid black;
   border-left: 1px solid black;
   border-bottom: 1px solid black;
@@ -5038,16 +5047,12 @@ div section.modecreation-top div.modecreation-caracteristiques span.title {
   border: 0px;
   padding: 0px;
   margin: auto;
-  cursor: pointer;
 }
 div section.modecreation-top div.modecreation-caracteristiques span.title i:first-of-type {
   margin-right: 5px;
 }
 div section.modecreation-top div.modecreation-caracteristiques span.title i:last-of-type {
   margin-left: 5px;
-}
-div section.modecreation-top div.modecreation-caracteristiques span.title:hover {
-  color: #186A3B;
 }
 div section.modecreation-top div.modecreation-caracteristiques span.subtitle {
   display: flex;

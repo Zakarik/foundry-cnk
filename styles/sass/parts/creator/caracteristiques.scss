@@ -69,7 +69,6 @@ section {
                         border: 0px;
                         padding: 0px;
                         margin: auto;
-                        cursor: pointer;
 
                         i {
                             &:first-of-type {
@@ -79,10 +78,6 @@ section {
                             &:last-of-type {
                                 margin-left: 5px;
                             }
-                        }
-
-                        &:hover {
-                            color: $green;
                         }
                     }
 

@@ -1,6 +1,9 @@
 <section class="modecreation-top">
     {{#each systemData.caracteristiques}}
-        <div class="modecreation-caracteristiques block rolledCaracteristiques-drop" data-type="{{@key}}">
+        <div class="modecreation-caracteristiques block" data-type="{{@key}}">
+            <span class="title">
+                {{localize (concat "CNK.CARACTERISTIQUES." (capitalize @key) "-short")}}
+            </span>
             <div class="subBlock long">
                 <span class="subtitle val">{{localize "CNK.Valeur-short"}}</span>
                 <span class="subtitle mod">{{localize "CNK.Modificateur-short"}}</span>

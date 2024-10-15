@@ -48,6 +48,8 @@ export class EiyuActorSheet extends ActorSheet {
     context.systemData = context.data.system;
     this._listCaracs(context);
 
+    console.warn(context);
+
     return context;
   }
 
@@ -1340,7 +1342,7 @@ export class EiyuActorSheet extends ActorSheet {
     let total = 0;
 
     for(let key of avantages) {
-      total -= key.system.cout;
+      total += key.system.cout;
     }
 
     for(let key of desavantages) {
