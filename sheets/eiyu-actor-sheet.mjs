@@ -1148,11 +1148,12 @@ export class EiyuActorSheet extends ActorSheet {
       case "rolledCaracteristiques":
         const drop = $(event.target).parents('.rolledCaracteristiques-drop');
         const type = drop.data('type');
-        const key = drop.data('key');
+        const value = data.value;
 
         if(type !== undefined) {
           const rolled = this.actor.system.rolledCaracteristiques;
-          rolled.splice(key, 1);
+          const index = rolled.indexOf(value);
+          if (index !== -1) rolled.splice(index, 1);
 
           let update = {};
           update[`system.caracteristiques.${type}.score`] = data.value;
@@ -1342,11 +1343,11 @@ export class EiyuActorSheet extends ActorSheet {
     let total = 0;
 
     for(let key of avantages) {
-      total += key.system.cout;
+      total -= key.system.cout;
     }
 
     for(let key of desavantages) {
-      total += key.system.cout;
+      total -= key.system.cout;
     }
 
     if(alreadyAdd !== total) {
