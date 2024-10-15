@@ -918,8 +918,12 @@ export class EiyuActorSheet extends ActorSheet {
       data.canUseChance = true;
       data.target = token;
       data.wpn = wpn;
+      data.main = main;
+      data.type = type;
       let i = 0;
       let n = 0;
+
+
 
       if(wpntype === 'wpndistance') {
         data.content.bRoll.push({

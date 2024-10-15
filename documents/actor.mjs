@@ -128,6 +128,7 @@ export class CNKActor extends Actor {
       }
     }
 
+
     for(let key in combat) {
       const c = combat[key];
       let total = 0;
@@ -208,6 +209,7 @@ export class CNKActor extends Actor {
       if(key === 'defense') c.totalContact = total+totalContact;
     }
 
+
     for(let v in voies) {
       const voie = voies[v];
       const listrang = voie.system.listrang;
@@ -232,28 +234,28 @@ export class CNKActor extends Actor {
               ptscapacites += 2;
               break;
           }
-        }
 
-        for(let j in modjet) {
-          const dJ = modjet[j];
-          const name = dJ.key;
-          const value = dJ.value;
-          const condition = dJ.condition;
+          for(let j in modjet) {
+            const dJ = modjet[j];
+            const name = dJ.key;
+            const value = dJ.value;
+            const condition = dJ.condition;
 
-          if(name !== "") {
-            const listcar = CONFIG.CNK.ListCaracteristiques;
+            if(name !== "") {
+              const listcar = CONFIG.CNK.ListCaracteristiques;
 
-            if(listcar.includes(name)) {
-              if(condition !== "") bonusRollCondition[name].push({
-                value:value,
-                name:condition
-              })
-              else {
-                bonusRoll[name].push({
-                  name:rang.name === '' ? game.i18n.localize(`CNK.VOIE.${r.charAt(0).toUpperCase() + r.slice(1)}`) : rang.name,
+              if(listcar.includes(name)) {
+                if(condition !== "") bonusRollCondition[name].push({
                   value:value,
-                  active:true
-                });
+                  name:condition
+                })
+                else {
+                  bonusRoll[name].push({
+                    name:rang.name === '' ? game.i18n.localize(`CNK.VOIE.${r.charAt(0).toUpperCase() + r.slice(1)}`) : rang.name,
+                    value:value,
+                    active:true
+                  });
+                }
               }
             }
           }
@@ -291,20 +293,24 @@ export class CNKActor extends Actor {
       }
     }
 
+
     for(let key in carac) {
       carac[key].bonusRoll = bonusRoll[key];
       carac[key].bonusRollCondition = bonusRollCondition[key];
     }
+
 
     for(let key in combat) {
       combat[key].bonusRoll = bonusRoll[key];
       combat[key].bonusRollCondition = bonusRollCondition[key];
     }
 
+
     for(let key in derives) {
       derives[key].bonusRoll = bonusRoll[key];
       derives[key].bonusRollCondition = bonusRollCondition[key];
     }
+
 
     for(let w of wpn) {
       const equipped = w.system?.equipped ?? "";
@@ -314,6 +320,7 @@ export class CNKActor extends Actor {
       if(equipped === '1main' && wpnequipped === '') wpnequipped = '1main';
       else if((equipped === '2mains' && wpnequipped === '') || (equipped === '1main' && wpnequipped === '1main')) wpnequipped = '2mains';
     }
+
 
     system.capacites = {
       value:ptscapacites,

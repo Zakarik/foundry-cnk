@@ -1,4 +1,7 @@
 # Changelog
+## v1.2.4
+- Correction d'un problème de gestion des modificateurs.
+
 ## v1.2.3
 - Correction d'un problème de drag & drop pour la création de personnage.
 - Correction d'un problème de calcul des traits.
