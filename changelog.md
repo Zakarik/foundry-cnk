@@ -1,4 +1,7 @@
 # Changelog
+## v1.2.2
+- Correction d'un problème de release.
+
 ## v1.2.1
 - Correction d'un bug avec le compte du coût des avantages / désavantages.
 - Correction d'un bug d'affichage avec les avantages / désavantages
