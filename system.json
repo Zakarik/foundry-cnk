@@ -2,7 +2,7 @@
   "id": "cthulhu-no-kami",
   "title": "Cthulhu No Kami",
   "description": "La fiche officielle de Cthulhu No Kami, approuvée par Deadcrows.",
-  "version": "1.2",
+  "version": "#{VERSION}#",
   "media": [
     {
       "type": "setup",
@@ -92,8 +92,8 @@
   "secondaryTokenAttribute": "derives.serenite",
   "gridDistance": 1,
   "gridUnits": "m",
-  "url": "https://github.com/Zakarik/foundry-cnk",
-  "manifest": "https://raw.githubusercontent.com/Zakarik/foundry-cnk/main/system.json",
-  "download": "https://github.com/Zakarik/foundry-cnk/archive/1.2.zip",
+  "url": "#{URL}#",
+  "manifest": "#{MANIFEST}#",
+  "download": "#{DOWNLOAD}#",
   "changelog": "https://raw.githubusercontent.com/Zakarik/foundry-cnk/main/changelog.md"
 }
