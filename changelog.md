@@ -1,4 +1,7 @@
 # Changelog
+## v1.2.5
+- Correction d'un oubli de description pour la Science Infuse.
+
 ## v1.2.4
 - Correction d'un problème de gestion des modificateurs.
 
