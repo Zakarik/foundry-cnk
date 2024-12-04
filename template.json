@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["eiyu", "vehicule"],
+    "types": ["eiyu", "vehicule", "entite"],
     "templates":{
       "general":{
         "caracteristiques":{
@@ -227,10 +227,107 @@
         }
       },
       "description":""
+    },
+    "entite":{
+      "description":"",
+      "challenge":1,
+      "niveau":{
+        "actuel":1,
+        "contact":0,
+        "distance":0,
+        "magique":0
+      },
+      "caracteristiques":{
+        "force":{
+          "score":10,
+          "modificateur":0,
+          "temp":0,
+          "divers":0
+        },
+        "dexterite":{
+          "score":10,
+          "modificateur":0,
+          "temp":0,
+          "divers":0
+        },
+        "constitution":{
+          "score":10,
+          "modificateur":0,
+          "temp":0,
+          "divers":0
+        },
+        "perception":{
+          "score":10,
+          "modificateur":0,
+          "temp":0,
+          "divers":0
+        },
+        "intelligence":{
+          "score":10,
+          "modificateur":0,
+          "temp":0,
+          "divers":0
+        },
+        "charisme":{
+          "score":10,
+          "modificateur":0,
+          "temp":0,
+          "divers":0
+        }
+      },
+      "derives":{
+        "pv":{
+          "actuel":0,
+          "con":0,
+          "dv":0,
+          "mod":0,
+          "temp":0,
+          "value":0,
+          "max":0
+        }
+      },
+      "combat":{
+        "initiative":{
+          "mod":0,
+          "temp":0,
+          "total":0,
+          "carac":"dexterite"
+        },
+        "contact":{
+          "mod":0,
+          "temp":0,
+          "total":0,
+          "carac":"force"
+        },
+        "distance":{
+          "mod":0,
+          "temp":0,
+          "total":0,
+          "carac":"dexterite"
+        },
+        "magique":{
+          "mod":0,
+          "temp":0,
+          "total":0,
+          "carac":"intelligence"
+        },
+        "defense":{
+          "mod":0,
+          "temp":0,
+          "total":0,
+          "type":"std",
+          "carac":"dexterite"
+        },
+        "reduction":{
+          "mod":0,
+          "temp":0,
+          "total":0
+        }
+      }
     }
   },
   "Item": {
-    "types": ["profil", "avantage", "desavantage", "phobie", "folie", "wpncontact", "wpndistance", "wpngrenade", "wpnartillerie", "sortilege", "armure", "objet", "voie"],
+    "types": ["profil", "avantage", "desavantage", "phobie", "folie", "wpncontact", "wpndistance", "wpngrenade", "wpnartillerie", "sortilege", "armure", "objet", "voie", "capacite"],
     "templates":{
       "general":{
         "description":""
@@ -355,6 +452,9 @@
           "description":""
         }
       }
+    },
+    "capacites":{
+      "templates": ["general"]
     }
   }
 }

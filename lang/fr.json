@@ -2,7 +2,8 @@
   "TYPES":{
     "Actor":{
       "eiyu":"Eiyu",
-      "vehicule":"Véhicule"
+      "vehicule":"Véhicule",
+      "entite":"Entité"
     },
     "Item":{
       "profil":"Profil",
@@ -17,7 +18,8 @@
       "sortilege":"Sortilège",
       "armure":"Armure",
       "objet":"Objet",
-      "voie":"Voie"
+      "voie":"Voie",
+      "capacite":"Capacité"
     }
   },
   "CNK":{
@@ -131,7 +133,8 @@
       "Inventaire":"Inventaire",
       "Voies":"Voies",
       "Presentation":"Présentation",
-      "Equipage":"Equipage"
+      "Equipage":"Equipage",
+      "Capacites":"Capacités"
     },
     "ETATS":{
       "Label":"États",
@@ -158,6 +161,13 @@
       "Mythos":"Mythos",
       "Avantages":"Avantages",
       "Desavantages":"Désavantages"
+    },
+    "CAPACITE":{
+      "Label":"Capacité",
+      "Plural":"Capacités",
+      "Creer":"Créer une capacité",
+      "Edit":"Éditer la capacité",
+      "Supprimer":"Supprimer la capacité"
     },
     "MENTAL":{
       "PHOBIE":{

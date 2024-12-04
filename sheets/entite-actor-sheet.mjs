@@ -10,13 +10,13 @@ import {
 /**
  * @extends {ActorSheet}
  */
-export class EiyuActorSheet extends ActorSheet {
+export class EntiteActorSheet extends ActorSheet {
 
   /** @inheritdoc */
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
-      classes: ["cnk", "sheet", "actor", "eiyu"],
-      template: "systems/cthulhu-no-kami/templates/eiyu-actor-sheet.html",
+      classes: ["cnk", "sheet", "actor", "entite"],
+      template: "systems/cthulhu-no-kami/templates/entite-actor-sheet.html",
       width: 1150,
       height: 800,
       tabs: [
@@ -36,17 +36,10 @@ export class EiyuActorSheet extends ActorSheet {
     this._prepareCharacterItems(context);
     this._prepareDefense(context);
 
-    if(this.actor.system.modecreation === 1) {
-      const settings = game.settings.get('cthulhu-no-kami','methode-creation');
-      context.data.system.settingsPonderee = settings === 'AleatoirePonderee' ? true : false;
-      context.data.system.settingsRepartition = settings === 'Repartition' ? true : false;
-    }
-    if(this.actor.system.modecreation === 3) {
-      this._calculPC(context);
-    }
-
     context.systemData = context.data.system;
     this._listCaracs(context);
+
+    console.warn(context);
 
     return context;
   }
@@ -116,54 +109,6 @@ export class EiyuActorSheet extends ActorSheet {
   activateListeners(html) {
     super.activateListeners(html);
 
-    html.find('div.voies div.listvoie div.rang').mouseenter(ev => {
-      const target = $(ev.currentTarget);
-      const header = target.parents(".summary");
-      const id = header.data('id');
-      const rang = target.data('rang');
-
-      const getHtml = html.find(`div.voies div.listvoie div.${id} span.${rang}`);
-      const position = target.position();
-      const height = target.height();
-
-      getHtml.toggle();
-      getHtml.css('left', position.left);
-      getHtml.css('top', position.top+height);
-    });
-
-    html.find('div.voies div.listvoie div.rang').mouseleave(ev => {
-      const target = $(ev.currentTarget);
-      const header = target.parents(".summary");
-      const id = header.data('id');
-      const rang = target.data('rang');
-
-      html.find(`div.voies div.listvoie div.${id} span.${rang}`).toggle();
-    });
-
-    html.find('div.modecreation-listvoie div.rang').mouseenter(ev => {
-      const target = $(ev.currentTarget);
-      const header = target.parents(".summary");
-      const id = header.data('id');
-      const rang = target.data('rang');
-
-      const getHtml = html.find(`div.modecreation-listvoie div.${id} span.${rang}`);
-      const position = target.position();
-      const height = target.height();
-
-      getHtml.toggle();
-      getHtml.css('left', position.left);
-      getHtml.css('top', position.top+height);
-    });
-
-    html.find('div.modecreation-listvoie div.rang').mouseleave(ev => {
-      const target = $(ev.currentTarget);
-      const header = target.parents(".summary");
-      const id = header.data('id');
-      const rang = target.data('rang');
-
-      html.find(`div.modecreation-listvoie div.${id} span.${rang}`).toggle();
-    });
-
     // Everything below here is only needed if the sheet is editable
     if ( !this.isEditable ) return;
 
@@ -217,38 +162,6 @@ export class EiyuActorSheet extends ActorSheet {
 
       let update = {};
       update['system.rolledCaracteristiques'] = toUpdate;
-
-      this.actor.update(update);
-    });
-
-    html.find('.modecreation-next').click(async ev => {
-      const settings = game.settings.get('cthulhu-no-kami','methode-creation');
-      const value = this.actor.system.modecreation;
-      let result = value+1;
-      let update = {};
-
-      if(result > 3) {
-        const chance = parseInt(this.actor.system.derives.chance.mod);
-        const bonusChance = this.actor.system?.['modecreation-chance'] ?? 0;
-
-        if(settings === 'AleatoirePonderee') update['system.derives.chance.mod'] = chance+bonusChance;
-
-        update['system.-=modecreation'] = null;
-        update['system.-=rolledCaracteristiques'] = null;
-        update['system.-=modecreation-chance'] = null;
-      } else {
-        update['system.modecreation'] = result;
-      }
-
-      this.actor.update(update);
-    });
-
-    html.find('.modecreation-annuler').click(async ev => {
-      let update = {};
-
-      update['system.-=modecreation'] = null;
-      update['system.-=rolledCaracteristiques'] = null;
-      update['system.-=modecreation-chance'] = null;
 
       this.actor.update(update);
     });
@@ -538,283 +451,6 @@ export class EiyuActorSheet extends ActorSheet {
 
       item.update({['system.equip']:newValue});
       activeOrUnactiveEffect(item, isEquipped);
-    });
-
-    html.find('div.voies div.listvoie div.rang').click(ev => {
-      const target = $(ev.currentTarget);
-      const header = target.parents(".summary");
-      const id = header.data('id');
-      const rang = target.data('rang');
-      const profil = this.profil;
-      const getIndexVoie = Object.values(profil.system.voie).findIndex(itm => itm._id === id);
-      const getVoie = profil.system.voie[getIndexVoie];
-      const getRang = getVoie.system.listrang[rang];
-      const value = getRang?.selected ?? false;
-      const newValue = value ? false : true;
-
-      profil.update({[`system.voie.${getIndexVoie}.system.listrang.${rang}.selected`]:newValue});
-      activeOrUnactiveEffect(profil, value, getVoie._id, rang);
-    });
-
-    html.find('div.modecreation-listvoie div.rang').click(ev => {
-      const target = $(ev.currentTarget);
-      const header = target.parents(".summary");
-      const id = header.data('id');
-      const rang = target.data('rang');
-      const profil = this.profil;
-      const getIndexVoie = Object.values(profil.system.voie).findIndex(itm => itm._id === id);
-      const getVoie = profil.system.voie[getIndexVoie];
-      const getRang = getVoie.system.listrang[rang];
-      const value = getRang?.selected ?? false;
-      const newValue = value ? false : true;
-
-      profil.update({[`system.voie.${getIndexVoie}.system.listrang.${rang}.selected`]:newValue});
-    });
-
-    html.find('div.niveau i.up').click(ev => {
-      const system = this.actor.system;
-      const profil = this.profil;
-      const niveau = parseInt(system.niveau.actuel);
-      const newNiveau = niveau+1;
-      let atkContact = parseInt(system.combat.contact.niveau);
-      let atkDistance = parseInt(system.combat.distance.niveau);
-      let atkMagique = parseInt(system.combat.magique.niveau);
-      let html = ``;
-
-      if(profil === undefined) {
-        ui.notifications.error(game.i18n.localize(`CNK.NIVEAU.AucunProfil`));
-        return;
-      }
-
-      if((atkContact < 6 || atkDistance < 6 || atkMagique < 6) && newNiveau%2 === 0) {
-        html +=
-        `<label>
-          <span>${game.i18n.localize(`CNK.NIVEAU.BonusAttaque`)} ?</span>
-          <select class="atk">`;
-        html += `<option value="">${game.i18n.localize(`CNK.Choisir`)}</option>`;
-        if(atkContact < 6) html += `<option value="contact">${game.i18n.localize(`CNK.COMBAT.Contact`)}</option>`;
-        if(atkDistance < 6) html += `<option value="distance">${game.i18n.localize(`CNK.COMBAT.Distance`)}</option>`;
-        if(atkMagique < 6) html += `<option value="magique">${game.i18n.localize(`CNK.COMBAT.Magique`)}</option>`;
-        html += `</select> </label>`;
-      }
-
-    let d = new Dialog({
-        title: game.i18n.localize(`CNK.NIVEAU.Up`),
-        content: html,
-        buttons: {
-         one: {
-          icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize(`CNK.Valider`),
-          callback: async (dataHtml) => {
-            const pv = system.derives.pv;
-            const dataProfil = profil.system;
-            const dv = parseInt(dataProfil.dv);
-            const con = parseInt(system.caracteristiques.constitution.modificateur);
-            const pvMax = parseInt(pv.max);
-            const rMode = game.settings.get("core", "rollMode");
-            const whatAtk = dataHtml.find('select.atk').val();
-            let newDv = parseInt(pv.dv);
-            let newCon = parseInt(pv.con);
-            let pData = {};
-            let update = {};
-
-            pData.label = game.i18n.localize("CNK.NIVEAU.Up");
-            pData.oldLvl = niveau;
-            pData.newLvl = newNiveau;
-            pData.oldPv = pvMax;
-            pData.newPv = pvMax;
-            pData.oldCap = parseInt(system.capacites.max);
-            pData.newCap = pData.oldCap+2;
-
-            if(newNiveau > 10) {
-              if(dv === 6 || dv === 8) pData.newPv += 1;
-              else if(dv === 10) pData.newPv += 2;
-            } else if(newNiveau%2 === 0) {
-              const formula = `1D${dv}`;
-              const rollDv = new Roll(formula);
-              await rollDv.evaluate();
-              const pRollDv = {
-                flavor:game.i18n.localize(`CNK.NIVEAU.Dv`),
-                tooltip:await rollDv.getTooltip(),
-                result:rollDv.total,
-              };
-              const rollMsgDataDv = {
-                user: game.user.id,
-                speaker: {
-                  actor: this.actor?.id || null,
-                  token: this.actor?.token?.id || null,
-                  alias: this.actor?.name || null,
-                },
-                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-                rolls:[rollDv],
-                content: await renderTemplate('systems/cthulhu-no-kami/templates/roll/simple.html', pRollDv),
-                sound: CONFIG.sounds.dice
-              };
-              const msgDataDv = ChatMessage.applyRollMode(rollMsgDataDv, rMode);
-
-              await ChatMessage.create(msgDataDv, {
-                rollMode:rMode
-              });
-
-              pData.newPv += con < 0 ? Math.max(parseInt(rollDv.total)+con, 0) : parseInt(rollDv.total);
-              newDv += con < 0 ? Math.max(parseInt(rollDv.total)+con, 0) : parseInt(rollDv.total);
-              pData.titlePv = con < 0 ? `1D10 (${rollDv.total} - ${Math.abs(con)})` : `1D10 (${rollDv.total})`;
-            } else {
-              pData.newPv += con < 0 ? 0 : con;;
-              newCon += con < 0 ? 0 : con;
-            }
-
-            if(whatAtk !== "") {
-              switch(whatAtk) {
-                case 'contact':
-                  pData.labelAtk = game.i18n.localize(`CNK.COMBAT.Contact`);
-                  pData.oldAtk = atkContact;
-                  pData.newAtk = atkContact+1;
-                  break;
-
-                case 'distance':
-                  pData.labelAtk = game.i18n.localize(`CNK.COMBAT.Distance`);
-                  pData.oldAtk = atkDistance;
-                  pData.newAtk = atkDistance+1;
-                  break;
-
-                case 'magique':
-                  pData.labelAtk = game.i18n.localize(`CNK.COMBAT.Magique`);
-                  pData.oldAtk = atkMagique;
-                  pData.newAtk = atkMagique+1;
-                  break;
-              }
-
-              update[`system.niveau.${whatAtk}`] = pData.newAtk;
-            }
-
-            const sendMsgData = {
-              user: game.user.id,
-              speaker: {
-                actor: this.actor?.id || null,
-                token: this.actor?.token?.id || null,
-                alias: this.actor?.name || null,
-              },
-              type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-              content: await renderTemplate('systems/cthulhu-no-kami/templates/chat/sendlvl.html', pData)
-            };
-            const msgData = ChatMessage.applyRollMode(sendMsgData, rMode);
-
-            await ChatMessage.create(msgData, {
-              rollMode:rMode
-            });
-
-            update[`system.niveau.actuel`] = newNiveau;
-            update[`system.derives.pv.dv`] = newDv;
-            update[`system.derives.pv.con`] = newCon;
-            update[`system.historique.${niveau}`] = {
-              dv:pv.dv,
-              con:pv.con,
-              contact:atkContact,
-              distance:atkDistance,
-              magique:atkMagique,
-            };
-
-            this.actor.update(update);
-          }
-         },
-         two: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize(`CNK.Annuler`)
-         }
-        },
-        default: "two",
-      },{
-      classes:['dialoglvl']
-      });
-      d.render(true);
-    });
-
-    html.find('div.niveau i.down').click(async ev => {
-      const system = this.actor.system;
-      const niveau = parseInt(system.niveau.actuel);
-      const historique = system.historique[niveau-1];
-      const pvMod = parseInt(system.derives.pv.mod);
-      const pvTemp = parseInt(system.derives.pv.temp);
-      const pvBase = parseInt(system.derives.pv.base);
-      const atkContact = parseInt(system.niveau.contact);
-      const atkDistance = parseInt(system.niveau.distance);
-      const atkMagique = parseInt(system.niveau.magique);
-      const hDv = parseInt(historique.dv);
-      const hCon = parseInt(historique.con);
-      const hContact = parseInt(historique.contact);
-      const hDistance = parseInt(historique.distance);
-      const hMagique = parseInt(historique.magique);
-      const rMode = game.settings.get("core", "rollMode");
-
-      let d = new Dialog({
-        title: game.i18n.localize(`CNK.NIVEAU.Down`),
-        content: "",
-        buttons: {
-         one: {
-          icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize(`CNK.Valider`),
-          callback: async () => {
-          let update = {};
-          let pData = {};
-          update[`system.niveau.actuel`] = niveau-1;
-          update[`system.derives.pv.dv`] = hDv;
-          update[`system.derives.pv.con`] = hCon;
-          update[`system.niveau.contact`] = hContact;
-          update[`system.niveau.distance`] = hDistance;
-          update[`system.niveau.magique`] = hMagique;
-          update[`system.historique.-=${niveau}`] = null;
-
-          pData.label = game.i18n.localize("CNK.NIVEAU.Down");
-          pData.oldLvl = niveau;
-          pData.newLvl = niveau-1;
-
-          if(hContact !== atkContact) {
-            pData.labelAtk = game.i18n.localize(`CNK.COMBAT.Contact`);
-            pData.oldAtk = atkContact;
-            pData.newAtk = hContact;
-          } else if(hDistance !== atkDistance) {
-            pData.labelAtk = game.i18n.localize(`CNK.COMBAT.Distance`);
-            pData.oldAtk = atkDistance;
-            pData.newAtk = hDistance;
-          } else if(hMagique !== atkMagique) {
-            pData.labelAtk = game.i18n.localize(`CNK.COMBAT.Magique`);
-            pData.oldAtk = atkMagique;
-            pData.newAtk = hMagique;
-          }
-
-          pData.oldPv = pvBase+pvMod+pvTemp;
-          pData.newPv = hDv+hCon+pvMod+pvTemp;
-
-          const sendMsgData = {
-            user: game.user.id,
-            speaker: {
-              actor: this.actor?.id || null,
-              token: this.actor?.token?.id || null,
-              alias: this.actor?.name || null,
-            },
-            type: CONST.CHAT_MESSAGE_TYPES.OTHER,
-            content: await renderTemplate('systems/cthulhu-no-kami/templates/chat/sendlvl.html', pData)
-          };
-          const msgData = ChatMessage.applyRollMode(sendMsgData, rMode);
-
-          await ChatMessage.create(msgData, {
-            rollMode:rMode
-          });
-
-          this.actor.update(update);
-          }
-         },
-         two: {
-          icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize(`CNK.Annuler`)
-         }
-        },
-        default: "two",
-      },{
-      classes:['dialoglvl']
-      });
-      d.render(true);
     });
 
     html.find('.roll').click(async ev => {
@@ -1169,59 +805,15 @@ export class EiyuActorSheet extends ActorSheet {
 
   async _onDropItemCreate(itemData) {
     itemData = itemData instanceof Array ? itemData : [itemData];
-    const actorData = this.actor;
-    const data = itemData[0];
-    const itemBaseType = data.type;
 
-    if(itemBaseType === 'profil') {
-      const profil = actorData.items.find(items => items.type === 'profil');
+    const itemCreate = await this.actor.createEmbeddedDocuments("Item", itemData);
 
-      if(profil !== undefined) await profil.delete();
-    }
-
-    if(itemBaseType === 'voie') {
-      const profil = actorData.items.find(items => items.type === 'profil');
-
-      if(profil === undefined) return;
-
-      const voie = profil.system.voie;
-      const id = foundry.utils.randomID();
-      let length = Object.keys(voie).length;
-      let update = {};
-      let addEffect = [];
-
-      update[`system.voie.${length}`] = data;
-      update[`system.voie.${length}._id`] = id;
-      update[`system.voie.${length}.-=effects`] = null;
-      update[`system.voie.${length}.system.type`] = "predilection";
-
-      profil.update(update);
-
-      for(let e of data.effects) {
-        addEffect.push({
-          name: `${id}_${e.name}`,
-          icon:'',
-          changes:e.changes,
-          disabled:true
-        });
-      }
-
-      profil.createEmbeddedDocuments('ActiveEffect', addEffect);
-    } else {
-      const itemCreate = await this.actor.createEmbeddedDocuments("Item", itemData);
-
-      return itemCreate;
-    }
+    return itemCreate;
   }
 
   async _prepareCharacterItems(actorData) {
     const items = actorData.items;
-    const ki = this.ki;
-    let profil = undefined;
-    let avantage = [];
-    let desavantage = [];
-    let folie = [];
-    let phobie = [];
+    let capacite = [];
     let wpnall = [];
     let wpncontact = [];
     let wpndistance = [];
@@ -1231,7 +823,6 @@ export class EiyuActorSheet extends ActorSheet {
     let sortilege = [];
     let armure = [];
     let objet = [];
-    let voie = [];
     let used = false;
 
     for (let i of items) {
@@ -1239,24 +830,8 @@ export class EiyuActorSheet extends ActorSheet {
       const data = i.system;
 
       switch(type) {
-        case "profil":
-          profil = i;
-          break;
-
-        case "avantage":
-          avantage.push(i);
-          break;
-
-        case "desavantage":
-          desavantage.push(i);
-          break;
-
-        case "folie":
-          folie.push(i);
-          break;
-
-        case "phobie":
-          phobie.push(i);
+        case "capacite":
+          capacite.push(i);
           break;
 
         case "wpncontact":
@@ -1301,29 +876,7 @@ export class EiyuActorSheet extends ActorSheet {
       }
     };
 
-    if(profil !== undefined) {
-      const voies = profil?.system?.voie ?? {};
-
-      for(let v in voies) {
-        const rangs = voies[v].system.listrang;
-        for(let r in rangs) {
-          const d = rangs[r];
-
-          if(d.selected) voie.push(Object.assign({rang:parseInt(r.replace('rang','')), strrang:r}, d));
-        }
-      }
-    }
-
-    voie.sort((a, b) => {
-      if(a.rang > b.rang) return 1;
-      else return -1;
-    });
-
-    actorData.actor.profil = profil;
-    actorData.actor.avantages = avantage;
-    actorData.actor.desavantages = desavantage;
-    actorData.actor.folies = folie;
-    actorData.actor.phobies = phobie;
+    actorData.actor.capacites = capacite;
     actorData.actor.wpnall = wpnall;
     actorData.actor.wpncontact = wpncontact;
     actorData.actor.wpndistance = wpndistance;
@@ -1333,8 +886,6 @@ export class EiyuActorSheet extends ActorSheet {
     actorData.actor.sortilege = sortilege;
     actorData.actor.armures = armure;
     actorData.actor.objets = objet;
-    actorData.actor.voies = profil?.system?.voie ?? [];
-    actorData.actor.capacites = voie;
   }
 
   _calculPC(actorData) {

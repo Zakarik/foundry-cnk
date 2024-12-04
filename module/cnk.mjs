@@ -6,6 +6,7 @@ import { CNKItem } from "../documents/item.mjs";
 // Import sheet classes.
 import { EiyuActorSheet } from "../sheets/eiyu-actor-sheet.mjs";
 import { VehiculeActorSheet } from "../sheets/vehicule-actor-sheet.mjs";
+import { EntiteActorSheet } from "../sheets/entite-actor-sheet.mjs";
 import { ProfilItemSheet } from "../sheets/profil-item-sheet.mjs";
 import { TraitItemSheet } from "../sheets/trait-item-sheet.mjs";
 import { MentalItemSheet } from "../sheets/mental-item-sheet.mjs";
@@ -14,6 +15,7 @@ import { SortilegeItemSheet } from "../sheets/sortilege-item-sheet.mjs";
 import { ArmureItemSheet } from "../sheets/armure-item-sheet.mjs";
 import { ObjetItemSheet } from "../sheets/objet-item-sheet.mjs";
 import { VoieItemSheet } from "../sheets/voie-item-sheet.mjs";
+import { CapaciteItemSheet } from "../sheets/capacite-item-sheet.mjs";
 
 //UTILITY
 import { RegisterHandlebars } from "./handlebars.mjs";
@@ -41,6 +43,7 @@ Hooks.once('init', async function() {
     applications: {
       EiyuActorSheet,
       VehiculeActorSheet,
+      EntiteActorSheet,
       ProfilItemSheet,
       TraitItemSheet,
       MentalItemSheet,
@@ -49,6 +52,7 @@ Hooks.once('init', async function() {
       ArmureItemSheet,
       ObjetItemSheet,
       VoieItemSheet,
+      CapaciteItemSheet,
     },
     documents:{
       CNKActor,
@@ -85,6 +89,11 @@ Hooks.once('init', async function() {
 
   Actors.registerSheet("cthulhu-no-kami", VehiculeActorSheet, {
     types: ["vehicule"],
+    makeDefault: true
+  });
+
+  Actors.registerSheet("cthulhu-no-kami", EntiteActorSheet, {
+    types: ["entite"],
     makeDefault: true
   });
 
@@ -125,6 +134,11 @@ Hooks.once('init', async function() {
 
   Items.registerSheet("cthulhu-no-kami", VoieItemSheet, {
     types: ["voie"],
+    makeDefault: true
+  });
+
+  Items.registerSheet("cthulhu-no-kami", CapaciteItemSheet, {
+    types: ["capacite"],
     makeDefault: true
   });
 

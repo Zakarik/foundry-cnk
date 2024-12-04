@@ -30,6 +30,7 @@ export class CNKActor extends Actor {
     const actorData = this;
 
     this._prepareCNKData(actorData);
+    this._prepareEntiteData(actorData);
     this._prepareVehiculeData(actorData);
   }
 
@@ -326,6 +327,235 @@ export class CNKActor extends Actor {
       value:ptscapacites,
       max:ptscapacitesMax,
     };
+
+    system.wpnequipped = wpnequipped;
+    system.listwpnequipped = listWpnEquipped;
+  };
+
+  _prepareEntiteData(actorData) {
+    if (actorData.type !== 'entite') return;
+
+    const system = actorData.system;
+    const carac = system.caracteristiques;
+    const derives = system.derives;
+    const combat = system.combat;
+    const profil = actorData.items.find(items => items.type === 'profil');
+    const armure = actorData.items.filter(items => items.type === 'armure');
+    const listWpn = ['wpncontact', 'wpndistance', 'wpnartillerie', 'wpngrenade'];
+    const wpn = actorData.items.filter(items => listWpn.includes(items.type));
+    const traits = actorData.items.filter(items => items.type === 'capacite');
+    let wpnequipped = "";
+    let listWpnEquipped = [];
+    let totalArmure = 0;
+    let totalReduction = 0;
+    let bonusRoll = {
+      force:[],
+      dexterite:[],
+      constitution:[],
+      perception:[],
+      intelligence:[],
+      sagesse:[],
+      charisme:[],
+      contact:[],
+      distance:[],
+      magique:[],
+      volonte:[],
+    };
+    let bonusRollCondition = {
+      force:[],
+      dexterite:[],
+      constitution:[],
+      perception:[],
+      intelligence:[],
+      sagesse:[],
+      charisme:[],
+      contact:[],
+      distance:[],
+      magique:[],
+      volonte:[],
+    };
+
+    for (let armureItem of armure) {
+      let isEquip = armureItem?.system?.equip ?? false;
+
+      totalArmure += isEquip ? parseInt(armureItem?.system?.defense ?? 0) : 0;
+      totalReduction += isEquip ? parseInt(armureItem?.system?.reduction ?? 0) : 0;
+    }
+
+    for (let key in carac) {
+      let total = 0;
+      let bonusMod = 0;
+      total += parseInt(carac[key].score ?? 0);
+      total += parseInt(carac[key].divers ?? 0);
+      total += parseInt(carac[key].temp ?? 0);
+      total += parseInt(carac[key].other ?? 0);
+      bonusMod += parseInt(carac[key].modOther ?? 0);
+
+      carac[key].total = total;
+      carac[key].modificateur = Math.floor((total-10)/2)+bonusMod;
+    }
+
+    for(let key in derives) {
+      const notAutoCalc = ['folie', 'blessures', 'ki'];
+      const d = derives[key];
+      const config = CONFIG.CNK.Derives[key];
+
+      d.template =  config.templates;
+      d.template.key = key;
+      d.template.label = game.i18n.localize(CONFIG.CNK.Derives[key].label);
+
+      this._setBaseData(key, actorData, profil);
+
+      if(!notAutoCalc.includes(key)) {
+        const calc = Math.max(parseInt(d.base)+parseInt(d.temp)+parseInt(d.mod), 0);
+
+        if(config.templates.isDouble) {
+          d.max = calc;
+
+          if(d.value > calc && key !== 'volonte') d.value = calc;
+        } else if(key !== 'volonte') d.value = calc;
+        else d.actuel = calc;
+      }
+    }
+
+
+    for(let key in combat) {
+      const c = combat[key];
+      let total = 0;
+      let totalContact = 0;
+      let divers = c?.other ?? 0;
+
+      switch(key) {
+        case 'initiative':
+          c.car = parseInt(carac[c.carac].modificateur);
+          c.armure = 0-parseInt(totalArmure);
+
+          total += parseInt(c.car);
+          total += parseInt(c.armure);
+          break;
+
+        case 'contact':
+          c.profil = profil ? profil.system.attaque.contact : 0;
+          c.car = parseInt(carac[c.carac].modificateur);
+          c.niveau = parseInt(system.niveau.contact);
+
+          total += parseInt(c.profil);
+          total += parseInt(c.car);
+          total += parseInt(c.niveau);
+          break;
+
+        case 'distance':
+          c.profil = profil ? profil.system.attaque.distance : 0;
+          c.car = parseInt(carac[c.carac].modificateur);
+          c.niveau = parseInt(system.niveau.distance);
+
+          total += parseInt(c.profil);
+          total += parseInt(c.car);
+          total += parseInt(c.niveau);
+          break;
+
+        case 'magique':
+          c.car = parseInt(carac[c.carac].modificateur);
+          c.niveau = parseInt(system.niveau.distance);
+
+          total += parseInt(c.car);
+          total += parseInt(c.niveau);
+          break;
+
+        case 'defense':
+          let actDef = 0;
+          if(c.type === 'simple') actDef += 2;
+          else if(c.type === 'totale') actDef += 4;
+
+          c.car = parseInt(carac[c.carac].modificateur);
+          c.armure = parseInt(totalArmure);
+          c.actionDef = parseInt(actDef);
+
+          total += 10;
+          total += parseInt(c.car);
+          total += parseInt(c.armure);
+          totalContact += parseInt(c.actionDef);
+          break;
+
+        case 'reduction':
+          c.armure = parseInt(totalReduction);
+
+          total += parseInt(c.armure);
+          break;
+      }
+
+      c.divers = divers;
+
+      if(key !== 'reduction') {
+        c.etat = c?.etat ?? 0;
+        total += parseInt(c.etat);
+      }
+
+      total += parseInt(c.divers);
+      total += parseInt(c.mod);
+      total += parseInt(c.temp);
+
+      c.total = total;
+      if(key === 'defense') c.totalContact = total+totalContact;
+    }
+
+    for(let t in traits) {
+      const data = traits[t];
+      const modjet = data.system?.modjet?.list ?? {};
+
+      for(let j in modjet) {
+        const dJ = modjet[j];
+        const name = dJ.key;
+        const value = dJ.value;
+        const condition = dJ.condition;
+
+        if(name !== "") {
+          const listroll = [].concat(CONFIG.CNK.ListCaracteristiques, CONFIG.CNK.ListCombatWithRoll, CONFIG.CNK.ListDerivesWithRoll);
+
+          if(listroll.includes(name)) {
+            if(condition !== "") bonusRollCondition[name].push({
+              value:value,
+              condition:condition
+            })
+            else {
+              bonusRoll[name].push({
+                name:data.name,
+                value:value,
+                active:true
+              });
+            }
+          }
+        }
+      }
+    }
+
+
+    for(let key in carac) {
+      carac[key].bonusRoll = bonusRoll[key];
+      carac[key].bonusRollCondition = bonusRollCondition[key];
+    }
+
+
+    for(let key in combat) {
+      combat[key].bonusRoll = bonusRoll[key];
+      combat[key].bonusRollCondition = bonusRollCondition[key];
+    }
+
+
+    for(let key in derives) {
+      derives[key].bonusRoll = bonusRoll[key];
+      derives[key].bonusRollCondition = bonusRollCondition[key];
+    }
+
+
+    for(let w of wpn) {
+      const equipped = w.system?.equipped ?? "";
+
+      if(equipped !== '') listWpnEquipped.push(w._id);
+
+      if(equipped === '1main' && wpnequipped === '') wpnequipped = '1main';
+      else if((equipped === '2mains' && wpnequipped === '') || (equipped === '1main' && wpnequipped === '1main')) wpnequipped = '2mains';
+    }
 
     system.wpnequipped = wpnequipped;
     system.listwpnequipped = listWpnEquipped;

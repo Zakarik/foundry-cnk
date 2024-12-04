@@ -2,7 +2,7 @@
     <input class="name" name="name" type="text" value="{{data.name}}" placeholder="{{localize "CNK.Nom"}}" />
 
     <div class="profil">
-        {{#unless (or limited (eq actor.type 'vehicule'))}}
+        {{#unless (or limited (eq actor.type 'vehicule') (eq actor.type 'entite'))}}
         {{#if actor.profil}}
             <span class="label summary" data-item-id="{{actor.profil._id}}" title="{{actor.profil.name}}">
                 <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.PROFIL.Edit'}}"></i>
@@ -17,7 +17,7 @@
         {{/if}}
         {{/unless}}
     </div>
-    {{#unless (or limited (eq actor.type 'vehicule'))}}
+    {{#unless (or limited (eq actor.type 'vehicule') (eq actor.type 'entite'))}}
 
     <div class="niveau">
         <span>{{localize 'CNK.Niveau'}} {{systemData.niveau.actuel}}</span>
@@ -41,4 +41,10 @@
         {{selectOptions systemData.combat.defense.list selected=systemData.combat.defense.type localize=true sort=true}}
     </select>
     {{/unless}}
+
+    {{#if (eq actor.type 'entite')}}
+        <select name="system.combat.defense.type">
+            {{selectOptions systemData.combat.defense.list selected=systemData.combat.defense.type localize=true sort=true}}
+        </select>
+    {{/if}}
 </div>

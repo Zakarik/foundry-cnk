@@ -1,0 +1,33 @@
+<div class="tab capacites item-list" data-group="primary" data-tab="capacites">
+    <div class="item-list">
+        <h1>
+            {{localize "CNK.CAPACITE.Plural"}}
+            <i class="fa-solid fa-square-plus item-create clickable" data-type="capacite" title="{{localize 'CNK.CAPACITE.Creer'}}"></i>
+        </h1>
+        {{#each actor.capacites}}
+            <div class="item block summary {{#if system.extended}}extended{{/if}}" data-item-id="{{_id}}">
+                <span class="label" title="{{name}}">
+                    <i class="fa-solid fa-message clickable sendmsg" data-title="{{name}}" data-msg="{{sanitize system.description}}" title="{{localize "CNK.ROLL.Chat"}}"></i>
+                    {{name}}
+                </span>
+                <div class="cmd">
+                    <i class="fa-solid fa-pen-to-square item-edit clickable" title="{{localize 'CNK.CAPACITE.Edit'}}"></i>
+                    <i class="fa-solid fa-trash item-delete clickable" title="{{localize 'CNK.CAPACITE.Supprimer'}}"></i>
+                </div>
+                <span class="description">{{{system.description}}}</span>
+                <button type="action" class="extend">
+                    <span class="plus">
+                        <i class="fa-solid fa-caret-down"></i>
+                        {{localize "CNK.Plus"}}
+                        <i class="fa-solid fa-caret-down"></i>
+                    </span>
+                    <span class="minus">
+                        <i class="fa-solid fa-caret-up"></i>
+                        {{localize "CNK.Minus"}}
+                        <i class="fa-solid fa-caret-up"></i>
+                    </span>
+                </button>
+            </div>
+        {{/each}}
+    </div>
+</div>

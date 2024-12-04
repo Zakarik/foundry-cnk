@@ -2312,6 +2312,1898 @@ div.eiyu section.window-content form.mainGrid section.body div.presentation div.
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
+div.entite section.window-content form.mainGrid {
+  grid-template-rows: max-content 1fr;
+  grid-template-columns: 200px 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid header {
+  grid-row: 1/3;
+  display: grid;
+  grid-template-columns: 200px;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 100%;
+  background: #D3D3D3;
+  border: 1px solid black;
+  border-radius: 10px;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid header img {
+  width: calc(100% - 2px);
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+  border-radius: 0px;
+}
+div.entite section.window-content form.mainGrid header div.identite {
+  display: grid;
+  grid-template-columns: 198px;
+  grid-gap: 5px;
+  align-items: flex-start;
+}
+div.entite section.window-content form.mainGrid header div.identite input.name {
+  width: 100%;
+  font-size: 24px;
+  border: 0px;
+  border-radius: 0px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: black;
+  background: transparent;
+  font-variant: small-caps;
+}
+div.entite section.window-content form.mainGrid header div.identite select {
+  text-align: center;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  background: transparent;
+  border-bottom: 1px dotted black;
+  color: black;
+  font-size: 18px;
+  font-variant: small-caps;
+}
+div.entite section.window-content form.mainGrid header div.identite div span.label,
+div.entite section.window-content form.mainGrid header div.identite label span.label {
+  font-size: 18px;
+  font-variant: small-caps;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid header div.identite div span.label::after,
+div.entite section.window-content form.mainGrid header div.identite label span.label::after {
+  content: " :";
+}
+div.entite section.window-content form.mainGrid header div.identite div span.value,
+div.entite section.window-content form.mainGrid header div.identite label span.value {
+  width: 100%;
+  border-bottom: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid header div.identite label {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-gap: 5px;
+  color: black;
+  align-items: flex-end;
+}
+div.entite section.window-content form.mainGrid header div.identite label span {
+  padding-left: 5px;
+}
+div.entite section.window-content form.mainGrid header div.identite label input {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  border-bottom: 1px dotted black;
+  padding-left: 0px;
+  padding-right: 0px;
+  background: transparent;
+}
+div.entite section.window-content form.mainGrid header div.identite div.profil {
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  font-size: 20px;
+  background: #D3D3D3;
+  border-top: 1px solid black;
+  border-bottom: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid header div.identite div.profil span {
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+div.entite section.window-content form.mainGrid header div.identite div.profil span i.item-edit {
+  position: absolute;
+  left: 2px;
+  top: 7px;
+}
+div.entite section.window-content form.mainGrid header div.identite div.profil span i.item-delete,
+div.entite section.window-content form.mainGrid header div.identite div.profil span i.item-create {
+  position: absolute;
+  right: 2px;
+  top: 7px;
+}
+div.entite section.window-content form.mainGrid header div.identite div.profil span::after {
+  content: "";
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau {
+  display: grid;
+  grid-template-columns: max-content;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  position: relative;
+  padding: 5px;
+  padding-top: 0px;
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau span {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau i {
+  position: absolute;
+  bottom: 7px;
+  font-size: 18px;
+  cursor: pointer;
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau i.up {
+  right: 5px;
+  color: #186A3B;
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau i.up:hover {
+  text-shadow: 0px 0px 10px #186A3B;
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau i.down {
+  left: 5px;
+  color: RGB(143 50 50);
+}
+div.entite section.window-content form.mainGrid header div.identite div.niveau i.down:hover {
+  text-shadow: 0px 0px 10px RGB(143 50 50);
+}
+div.entite section.window-content form.mainGrid header div.identite.limited div.profil {
+  border-bottom: 0px;
+}
+div.entite section.window-content form.mainGrid header button {
+  display: grid;
+  grid-template-columns: 1fr 16px;
+  bottom: 0px;
+  text-align: left;
+  align-items: center;
+  align-content: center;
+  font-size: 16px;
+  font-variant: small-caps;
+  font-weight: bold;
+  border: 0px;
+  border-bottom: 1px solid black;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  margin: 0px;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+div.entite section.window-content form.mainGrid header button i {
+  display: none;
+}
+div.entite section.window-content form.mainGrid header button:hover {
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid header button:focus {
+  box-shadow: none;
+}
+div.entite section.window-content form.mainGrid header button.toEdit {
+  background: #186A3B;
+  color: white;
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid header button.toEdit i {
+  display: inline-block;
+  color: white;
+}
+div.entite section.window-content form.mainGrid section.top {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.title {
+  display: flex;
+  background: transparent;
+  width: max-content;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: RGB(143 50 50);
+  border: 0px;
+  padding: 0px;
+  margin: auto;
+  cursor: pointer;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.title i:first-of-type {
+  margin-right: 5px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.title i:last-of-type {
+  margin-left: 5px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.title:hover {
+  color: #186A3B;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.subtitle {
+  display: flex;
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  align-items: flex-end;
+  border-bottom: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.subtitle.val {
+  border-right: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.score {
+  display: flex;
+  width: 100%;
+  text-transform: capitalize;
+  text-align: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  align-items: flex-start;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div span.score.val {
+  border-right: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div a.btnEdit {
+  display: none;
+  width: max-content;
+  position: absolute;
+  right: 5px;
+  top: 25px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div a.btnEdit:hover {
+  text-shadow: 0px 0px 5px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 104px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.block:hover a.btnEdit {
+  display: blocK;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.block.toEdit a.btnEdit {
+  display: block;
+  text-shadow: 0px 0px 5px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.block.toEdit div.subBlock.short {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.block.toEdit div.subBlock.long {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 102px;
+  border: 1px solid black;
+  border-radius: 50%;
+  align-content: stretch;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.short {
+  height: 98px;
+  background: #D3D3D3;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long {
+  display: none;
+  border-top-right-radius: 40px;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long span.subtitle {
+  height: 50px;
+  background: #D3D3D3;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long span.subtitle.val {
+  border-top-left-radius: 40px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long span.subtitle.mod {
+  border-top-right-radius: 40px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long span.score {
+  display: grid;
+  height: 26px;
+  align-items: flex-end;
+  align-content: flex-end;
+  background: #D3D3D3;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long label {
+  grid-column: 1/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+  align-content: flex-end;
+  border-top: 1px dotted black;
+  background: white;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long label span {
+  display: grid;
+  height: 100%;
+  font-variant: small-caps;
+  padding-left: 5px;
+  font-weight: bold;
+  border-right: 1px solid black;
+  display: grid;
+  align-items: flex-end;
+  font-size: 15px;
+}
+div.entite section.window-content form.mainGrid section.top div.caracteristiques div.subBlock.long label input {
+  width: 100%;
+  border-radius: 0px;
+  border: 0px;
+  text-align: center;
+  background: transparent;
+  padding-top: 8px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(140px, 1fr));
+  grid-gap: 5px;
+  margin-top: 5px;
+  align-items: flex-start;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid black;
+  line-height: 28px;
+  border-radius: 6px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block span {
+  color: black;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.red div.headerLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block.red label.headerLine {
+  background: #d34f4f;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.blue div.headerLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block.blue label.headerLine {
+  background: #17a2b8;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.yellow div.headerLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block.yellow label.headerLine {
+  background: #daa506;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.green div.headerLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block.green label.headerLine {
+  background: #28a745;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.headerLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.headerLine {
+  display: grid;
+  grid-template-columns: 1fr 60px;
+  grid-gap: 2px;
+  border-radius: 6px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.headerLine span.label,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.headerLine span.label {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  padding-left: 5px;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-top: 5px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 5px;
+  background: white;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine div,
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine label,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine div,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine label {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  grid-gap: 2px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine div span.label,
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine label span.label,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine div span.label,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine label span.label {
+  text-align: center;
+  font-weight: bold;
+  font-variant: small-caps;
+  line-height: 18px;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine div span.value,
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine label span.value,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine div span.value,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine label span.value {
+  background: #D3D3D3;
+  font-size: 15px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 24px;
+  min-height: 26px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine div input,
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine label input,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine div input,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine label input {
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine div.long,
+div.entite section.window-content form.mainGrid section.top div.derives div.block div.dataLine label.long,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine div.long,
+div.entite section.window-content form.mainGrid section.top div.derives div.block label.dataLine label.long {
+  grid-column: 1/3;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.double div.headerLine div.dataBlock {
+  display: grid;
+  grid-template-columns: 1fr 10px 1fr;
+  grid-gap: 2px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.double div.headerLine div.dataBlock input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.double div.headerLine div.dataBlock span {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.simple label.headerLine input {
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.lock label.headerLine span.value {
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.doubleBlock1 {
+  grid-row: 2;
+  grid-column: 1/3;
+  width: 70%;
+  min-width: 280px;
+  margin-right: auto;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.doubleBlock2 {
+  grid-row: 2;
+  grid-column: 3/5;
+  width: 70%;
+  min-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.doubleBlock3 {
+  grid-row: 2;
+  grid-column: 5/7;
+  width: 70%;
+  min-width: 280px;
+  margin-left: auto;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.toEdit div.headerLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block.toEdit label.headerLine {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives div.block.toEdit div.dataLine,
+div.entite section.window-content form.mainGrid section.top div.derives div.block.toEdit label.dataLine {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 5px;
+  border: 1px solid black;
+  line-height: 28px;
+  border-radius: 6px;
+  padding: 0px;
+  align-items: center;
+  justify-content: space-between;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button span {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  padding-left: 5px;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button i {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-variant: small-caps;
+  font-size: 16px;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button.yellow {
+  background: #daa506;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button.doubleBlock1 {
+  grid-row: 2;
+  grid-column: 1/3;
+  width: 70%;
+  min-width: 280px;
+  margin-right: auto;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button.doubleBlock2 {
+  grid-row: 2;
+  grid-column: 3/5;
+  width: 70%;
+  min-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button.doubleBlock3 {
+  grid-row: 2;
+  grid-column: 5/7;
+  width: 70%;
+  min-width: 280px;
+  margin-left: auto;
+}
+div.entite section.window-content form.mainGrid section.top div.derives button:hover {
+  box-shadow: none;
+  background: #28a745;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 5px;
+  align-items: flex-start;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div img {
+  height: 50px;
+  margin: 0px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.short {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.short span {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0px 0px 7px 0px;
+  border: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.short span.small {
+  font-size: 24px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.short span.title {
+  grid-column: 1/3;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 12px;
+  border-bottom: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long {
+  display: none;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div span,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label span {
+  color: black;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 0px;
+  margin: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div span.label,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label span.label {
+  padding-left: 5px;
+  text-align: left;
+  text-transform: capitalize;
+  border-radius: 0px;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div span.value,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label span.value {
+  text-align: center;
+  border-left: 1px solid black;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div input,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label input {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px;
+  font-size: 14px;
+  border-top: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-left: 1px solid black;
+  border-radius: 0px;
+  color: black;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div select,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label select {
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  line-height: 21px;
+  height: 21px;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div:not(.last),
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label:not(.last) {
+  border-bottom: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div.last,
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label.last {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long div {
+  background: #D3D3D3;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.long label {
+  background: white;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div button {
+  display: flex;
+  padding: 0px 0px 0px 5px;
+  justify-content: center;
+  background: black;
+  margin: 0px;
+  border: 0px;
+  border-radius: 0px 0px 0px 7px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div button:hover, div.entite section.window-content form.mainGrid section.top div.combatstates div button:focus {
+  box-shadow: none;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div button:hover {
+  background: #186A3B;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div button.unclickable {
+  cursor: default;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div button.unclickable:hover {
+  background: black;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.toEdit div.long {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.toEdit div.short button {
+  border-bottom-left-radius: 0px;
+}
+div.entite section.window-content form.mainGrid section.top div.combatstates div.toEdit div.short span {
+  border-bottom-right-radius: 0px;
+}
+div.entite section.window-content form.mainGrid section.body {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body > nav {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 5px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body > nav a {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: left;
+  border-radius: 5px;
+  font-size: 16px;
+  align-items: center;
+  align-content: center;
+}
+div.entite section.window-content form.mainGrid section.body > nav a i {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body > nav a.active {
+  text-shadow: none;
+  background: #186A3B;
+}
+div.entite section.window-content form.mainGrid section.body > nav a.active i {
+  display: block;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites {
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites.active {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites h1 {
+  position: relative;
+  text-align: center;
+  font-variant: small-caps;
+  color: black;
+  font-size: 30px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites h1 i {
+  position: absolute;
+  font-size: 35px;
+  right: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.btn {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 35px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.btn label {
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  align-content: center;
+  align-items: center;
+  width: max-content;
+  grid-gap: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 18px;
+  font-variant: small-caps;
+  font-weight: bold;
+  background: #28a745;
+  letter-spacing: 1px;
+  color: black;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.btn label input {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 0px;
+  background: transparent;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.btn i {
+  margin-left: auto;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #D3D3D3;
+  padding-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block span.label {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block span.description {
+  display: none;
+  word-wrap: break-word;
+  grid-column: 1/4;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: justify;
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend {
+  grid-column: 1/4;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-variant: small-caps;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  width: 80px;
+  line-height: 17px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend span i:first-of-type {
+  position: absolute;
+  left: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend span i:last-of-type {
+  position: absolute;
+  right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend span.plus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend span.minus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block button.extend:hover {
+  text-shadow: 0px 0px 5px #a176ca;
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block span.description {
+  height: auto;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block.extended span.description {
+  display: inline;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block.extended button.extend span.plus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block.extended button.extend span.minus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block.extended button.extend:hover {
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.block:not(:first-of-type) {
+  margin-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.cmd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.col {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 100%;
+  grid-gap: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.capacites div.separation {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 100%;
+  border-left: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.mental {
+  grid-template-columns: 1fr 1px 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.mental.active {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body div.mental h1 {
+  position: relative;
+  text-align: center;
+  font-variant: small-caps;
+  color: black;
+  font-size: 30px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental h1 i {
+  position: absolute;
+  font-size: 35px;
+  right: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.separation {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 100%;
+  border-left: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.col {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 100%;
+  grid-gap: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #D3D3D3;
+  padding-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block span.label {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block span.description {
+  display: none;
+  word-wrap: break-word;
+  grid-column: 1/4;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: justify;
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend {
+  grid-column: 1/4;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-variant: small-caps;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  width: 80px;
+  line-height: 17px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend span i:first-of-type {
+  position: absolute;
+  left: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend span i:last-of-type {
+  position: absolute;
+  right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend span.plus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend span.minus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block button.extend:hover {
+  text-shadow: 0px 0px 5px #a176ca;
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block span.description {
+  height: auto;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block.extended span.description {
+  display: inline;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block.extended button.extend span.plus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block.extended button.extend span.minus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.block.extended button.extend:hover {
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.mental div.cmd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+div.entite section.window-content form.mainGrid section.body div.combat {
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.combat.active {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-gap: 10px;
+  background: black;
+  color: white;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+  align-content: center;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a i {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a.active {
+  text-shadow: none;
+  background: #186A3B;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a.active i {
+  display: block;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a:first-of-type {
+  border-top-left-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a:last-of-type {
+  border-top-right-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat nav a:not(:first-of-type) {
+  border-left: 1px solid #186A3B;
+}
+div.entite section.window-content form.mainGrid section.body div.combat h1.titleEquipees {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  background: black;
+  color: white;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  text-align: left;
+  font-size: 16px;
+  align-items: center;
+  align-content: center;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom: 0px;
+  margin: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.btn {
+  display: flex;
+  justify-content: right;
+  font-size: 35px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat {
+  display: none;
+  border: 1px solid black;
+  margin-top: -1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
+  grid-gap: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat.active {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat.toutes {
+  padding-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat.equipees {
+  margin-bottom: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.contact div.data {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.contact button.extend {
+  grid-column: 1/5;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance div.data {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance div.data label:nth-of-type(1), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance div.data label:nth-of-type(2), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance div.data label:nth-of-type(3), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance div.data label:nth-of-type(4) {
+  border-bottom: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance div.data label:nth-of-type(4) {
+  border-right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.distance button.extend {
+  grid-column: 1/5;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade div.data, div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie div.data {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade div.data label.utilisation, div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie div.data label.utilisation {
+  grid-column: 1/3;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade div.data label:nth-of-type(1), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade div.data label:nth-of-type(2), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade div.data label:nth-of-type(3), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie div.data label:nth-of-type(1), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie div.data label:nth-of-type(2), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie div.data label:nth-of-type(3) {
+  border-bottom: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade div.data label:nth-of-type(3), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie div.data label:nth-of-type(3) {
+  border-right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.grenade button.extend, div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.artillerie button.extend {
+  grid-column: 1/5;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege {
+  grid-template-columns: 1fr 90px 40px 35px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege span.rang {
+  font-variant: small-caps;
+  text-align: right;
+  font-size: 17px;
+  font-weight: bold;
+  padding-right: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege div.data {
+  grid-column: 1/5;
+  grid-template-columns: 1fr 1fr;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege div.data label.inline {
+  grid-template-columns: 1fr 100px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege div.data label.inline span.sublabel {
+  text-align: left;
+  padding-left: 10px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege div.data label:nth-of-type(1), div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege div.data label:nth-of-type(2) {
+  border-bottom: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege div.data label:nth-of-type(2) {
+  border-right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege button.extend {
+  grid-column: 1/5;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block {
+  display: grid;
+  grid-template-columns: 1fr 40px 35px;
+  column-gap: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #D3D3D3;
+  padding-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block div.btnequip {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block div.btnequip i {
+  cursor: pointer;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block div.btnequip i:hover {
+  text-shadow: 1px 1px 1px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block div.btnequip.one {
+  justify-content: right;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block span.label {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block span.sublabel {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block span.value {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block span.description {
+  display: none;
+  word-wrap: break-word;
+  grid-column: 1/5;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: justify;
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend {
+  grid-column: 1/4;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-variant: small-caps;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  width: 80px;
+  line-height: 17px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend span i:first-of-type {
+  position: absolute;
+  left: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend span i:last-of-type {
+  position: absolute;
+  right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend span.plus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend span.minus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block button.extend:hover {
+  text-shadow: 0px 0px 5px #a176ca;
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block span.description {
+  height: auto;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block.extended span.description {
+  display: inline;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block.extended button.extend span.plus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block.extended button.extend span.minus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.block.extended button.extend:hover {
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.cmd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.data {
+  grid-column: 1/4;
+  display: grid;
+  align-items: flex-start;
+  align-content: flex-start;
+  border-top: 1px dotted black;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.data label {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  height: 100%;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.data label span {
+  line-height: 20px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat div.data label:not(:last-of-type) {
+  border-right: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.combat.vehicule nav {
+  grid-template-columns: repeat(5, auto);
+}
+div.entite section.window-content form.mainGrid section.body div.combat.vehicule i.equip,
+div.entite section.window-content form.mainGrid section.body div.combat.vehicule i.use {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.combat.vehicule div.block {
+  grid-template-columns: 1fr max-content 35px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat.vehicule div.btnequip {
+  align-items: center;
+  font-variant: small-caps;
+  grid-template-columns: max-content max-content;
+  display: grid;
+  grid-gap: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.combat.vehicule div.btnequip select {
+  padding: 0px;
+  text-align: center;
+  font-variant: small-caps;
+  border-bottom: 0px;
+  border-radius: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire {
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire.active {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire h1 {
+  position: relative;
+  text-align: center;
+  font-variant: small-caps;
+  color: black;
+  font-size: 30px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire h1 i {
+  position: absolute;
+  font-size: 35px;
+  right: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire h1:not(:first-of-type) {
+  border-top: 1px dashed black;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block {
+  display: grid;
+  grid-template-columns: 35px 1fr 45px 45px 35px;
+  grid-gap: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #D3D3D3;
+  padding-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block span.label {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block span.description {
+  grid-column: 1/6;
+  display: none;
+  word-wrap: break-word;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: justify;
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block > i {
+  cursor: pointer;
+  font-size: 23px;
+  margin-left: auto;
+  margin-right: auto;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.equipped > i.equipped {
+  display: block;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.equipped > i.notequipped {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.notequipped > i {
+  cursor: pointer;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.notequipped > i.equipped {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.notequipped > i.notequipped {
+  display: block;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend {
+  grid-column: 1/4;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-variant: small-caps;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  width: 80px;
+  line-height: 17px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend span i:first-of-type {
+  position: absolute;
+  left: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend span i:last-of-type {
+  position: absolute;
+  right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend span.plus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend span.minus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend:hover {
+  text-shadow: 0px 0px 5px #a176ca;
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block span.description {
+  height: auto;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.extended span.description {
+  display: inline;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.extended button.extend span.plus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.extended button.extend span.minus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block.extended button.extend:hover {
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block button.extend {
+  grid-column: 1/6;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.reduction, div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.defense {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  background: black;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.reduction img, div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.defense img {
+  border: 0px;
+  width: 100%;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.reduction span, div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.defense span {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  color: black;
+  text-align: center;
+  height: 100%;
+  background: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.cmd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block {
+  display: grid;
+  grid-template-columns: 1fr 35px;
+  grid-gap: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: #D3D3D3;
+  padding-top: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block span.label {
+  position: relative;
+  font-variant: small-caps;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-weight: bold;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block span.description {
+  grid-column: 1/3;
+  display: none;
+  word-wrap: break-word;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: justify;
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend {
+  grid-column: 1/4;
+  width: 100%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend span {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  font-variant: small-caps;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  width: 80px;
+  line-height: 17px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend span i:first-of-type {
+  position: absolute;
+  left: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend span i:last-of-type {
+  position: absolute;
+  right: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend span.plus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend span.minus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block button.extend:hover {
+  text-shadow: 0px 0px 5px #a176ca;
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block span.description {
+  height: auto;
+  overflow: hidden;
+  display: none;
+  position: relative;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block.extended span.description {
+  display: inline;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block.extended button.extend span.plus {
+  display: none;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block.extended button.extend span.minus {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.block.extended button.extend:hover {
+  box-shadow: 0px 0px 5px 2px #a176ca;
+}
+div.entite section.window-content form.mainGrid section.body div.inventaire div.objet div.cmd {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+  padding-right: 5px;
+  align-items: center;
+}
+div.entite section.window-content form.mainGrid section.body div.voies {
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.voies.active {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: center;
+  align-content: center;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary div.rang {
+  display: flex;
+  grid-gap: 5px;
+  height: 100%;
+  cursor: pointer;
+  border-left: 1px solid black;
+  padding-left: 5px;
+  padding-right: 5px;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-variant: small-caps;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-items: center;
+  align-content: center;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary div.rang span.txt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary div.rang span.limitee {
+  font-size: 14px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary div.rang i {
+  display: none;
+  padding-right: 2px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary div.rang.selected {
+  background: #186A3B;
+  color: white;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary div.rang.selected i {
+  display: inline-block;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary span {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  font-variant: small-caps;
+  font-size: 16px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary span.label {
+  font-weight: bold;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary span.indice {
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary span.hover {
+  display: none;
+  position: absolute;
+  background: white;
+  padding: 5px;
+  border-radius: 10px;
+  font-variant: normal;
+  text-align: justify;
+  width: 300px;
+  line-height: 20px;
+  word-break: break-word;
+  border: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.summary:not(:first-of-type) {
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listvoie div.header {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.header {
+  font-variant: small-caps;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin-left: auto;
+  padding: 5px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.header.red {
+  background: #d34f4f;
+  font-weight: bold;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.block {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid black;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.subBlock {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.subBlock span.label {
+  font-variant: small-caps;
+  font-size: 20px;
+  padding-left: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.subBlock span.description {
+  font-size: 14px;
+  padding: 5px;
+  text-align: justify;
+  word-break: break-word;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.subBlock span.description p {
+  padding: 0px;
+  margin: 0px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.subBlock span.limitee::after {
+  content: "(L)";
+  padding-left: 5px;
+  font-size: 14px;
+}
+div.entite section.window-content form.mainGrid section.body div.voies div.listcapacite div.subBlock:not(:first-of-type) {
+  border-top: 1px solid black;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation {
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation.active {
+  display: grid;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation div.editorBlock {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  align-content: flex-start;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation div.editorBlock span.label {
+  width: 100%;
+  font-size: 20px;
+  font-weight: bold;
+  font-variant: small-caps;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background: #a176ca;
+  letter-spacing: 1px;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation div.editor {
+  min-height: 100px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation div.editor div.editor-content {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+div.entite section.window-content form.mainGrid section.body div.presentation div.editor div.tox-tinymce {
+  min-height: 200px !important;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
 div.vehicule section.window-content form.mainGrid {
   grid-template-rows: max-content 1fr;
   grid-template-columns: 200px 1fr;

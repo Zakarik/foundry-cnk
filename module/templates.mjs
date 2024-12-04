@@ -18,6 +18,7 @@ export const PreloadTemplates = async function() {
       `${path}/parts/derives-vehicule.html`,
       `${path}/parts/combatStates.html`,
       `${path}/parts/traits.html`,
+      `${path}/parts/capacites.html`,
       `${path}/parts/mental.html`,
       `${path}/parts/combat.html`,
       `${path}/parts/inventaire.html`,

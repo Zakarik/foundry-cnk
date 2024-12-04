@@ -339,6 +339,14 @@ export function setBaseImg(type) {
     case "eiyu":
         img = "icons/svg/mystery-man.svg";
       break;
+
+    case "entite":
+        img = "systems/cthulhu-no-kami/assets/icons/entite.svg";
+      break;
+
+    case "capacite":
+        img = "systems/cthulhu-no-kami/assets/icons/capacite.svg";
+      break;
   }
 
   return img;

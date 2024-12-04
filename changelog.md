@@ -1,4 +1,7 @@
 # Changelog
+## v1.3.0
+- Ajout des entités, qui avaient été oubliées.
+
 ## v1.2.5
 - Correction d'un oubli de description pour la Science Infuse.
 

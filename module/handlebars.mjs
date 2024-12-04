@@ -33,6 +33,6 @@ export const RegisterHandlebars = function () {
     });
 
     Handlebars.registerHelper('sanitize', function (string) {
-        return string.replace(/<[^>]*>?/gm, '');
+        return string ? string.replace(/<[^>]*>?/gm, '') : '';
     });
 };
