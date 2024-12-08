@@ -396,7 +396,7 @@ export class CNKActor extends Actor {
     }
 
     for(let key in derives) {
-      const notAutoCalc = ['folie', 'blessures', 'ki'];
+      const notAutoCalc = ['folie', 'blessures', 'ki', 'pv'];
       const d = derives[key];
       const config = CONFIG.CNK.Derives[key];
 

@@ -1,4 +1,7 @@
 # Changelog
+## v1.3.1
+- Correction des entités, dont les PV ne pouvaient pas être rentrés.
+
 ## v1.3.0
 - Ajout des entités, qui avaient été oubliées.
 

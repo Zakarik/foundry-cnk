@@ -6,7 +6,11 @@
             <div class="dataBlock">
                 <input type="number" name="system.derives.{{template.key}}.value" value="{{value}}" {{#if template.hasMin}}min="0"{{/if}} max="{{max}}" />
                 <span>/</span>
+                {{#if unlocked}}
+                <input type="number" name="system.derives.{{template.key}}.max" value="{{max}}" {{#if template.hasMin}}min="0"{{/if}} />
+                {{else}}
                 <span class="max">{{max}}</span>
+                {{/if}}
             </div>
         </div>
     {{else}}
