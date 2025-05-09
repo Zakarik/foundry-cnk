@@ -1,4 +1,7 @@
 # Changelog
+## v1.4.0
+- Compatibilité avec la V13.
+
 ## v1.3.1
 - Correction des entités, dont les PV ne pouvaient pas être rentrés.
 

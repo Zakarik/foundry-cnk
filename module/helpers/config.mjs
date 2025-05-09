@@ -1,10 +1,11 @@
 export const CNK = {};
 
-CNK.ListCaracteristiques = ['force', 'dexterite', 'constitution', 'perception', 'intelligence', 'sagesse', 'charisme'];
+CNK.ListCaracteristiques = ['force', 'dexterite', 'constitution', 'perception', 'intelligence', 'charisme'];
 CNK.ListCombatWithRoll = ['contact', 'distance', 'magique']
 CNK.ListDerivesWithData = ['pv', 'maho', 'serenite', 'volonte', 'chance'];
 CNK.ListWpnCanBeEquipped = ['wpncontact', 'wpndistance', 'wpngrenade'];
 CNK.ListDerivesWithRoll = ['volonte'];
+CNK.ListDerivesEntite = ['pv'];
 
 CNK.Famille = {
     'action':{

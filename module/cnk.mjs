@@ -1,4 +1,3 @@
-
 // Import document classes.
 import { CNKActor } from "../documents/actor.mjs";
 import { CNKItem } from "../documents/item.mjs";
@@ -21,6 +20,24 @@ import { CapaciteItemSheet } from "../sheets/capacite-item-sheet.mjs";
 import { RegisterHandlebars } from "./handlebars.mjs";
 import { PreloadTemplates } from "./templates.mjs";
 import { RegisterSettings } from "./settings.mjs";
+
+//MODELS
+// Actor Models
+import { EiyuDataModel } from "../models/actors/eiyu-data-model.mjs";
+import { VehiculeDataModel } from "../models/actors/vehicule-data-model.mjs";
+import { EntiteDataModel } from "../models/actors/entite-data-model.mjs";
+
+// Item Models
+import { BaseItemDataModel } from "../models/items/base-data-model.mjs";
+import { AvDvDataModel } from "../models/items/avdv-data-model.mjs";
+import { ArmureDataModel } from "../models/items/armure-data-model.mjs";
+import { VoieDataModel } from "../models/items/voie-data-model.mjs";
+import { WpnGrenadeDataModel } from "../models/items/wpngrenade-data-model.mjs";
+import { WpnDistanceDataModel } from "../models/items/wpndistance-data-model.mjs";
+import { WpnContactDataModel } from "../models/items/wpncontact-data-model.mjs";
+import { WpnArtillerieDataModel } from "../models/items/wpnartillerie-data-model.mjs";
+import { SortilegeDataModel } from "../models/items/sortilege-data-model.mjs";
+import { ProfilDataModel } from "../models/items/profil-data-model.mjs";
 
 //HELPERS
 import { CNK } from "./helpers/config.mjs";
@@ -74,6 +91,29 @@ Hooks.once('init', async function() {
   // Define custom Document classes
   CONFIG.Actor.documentClass = CNKActor;
   CONFIG.Item.documentClass = CNKItem;
+
+  CONFIG.Actor.dataModels = {
+    eiyu: EiyuDataModel,
+    vehicule: VehiculeDataModel,
+    entite: EntiteDataModel
+  };
+
+  CONFIG.Item.dataModels = {
+    profil: ProfilDataModel,
+    avantage: AvDvDataModel,
+    desavantage: AvDvDataModel,
+    phobie: BaseItemDataModel,
+    folie: BaseItemDataModel,
+    wpncontact: WpnContactDataModel,
+    wpndistance: WpnDistanceDataModel,
+    wpngrenade: WpnGrenadeDataModel,
+    wpnartillerie: WpnArtillerieDataModel,
+    sortilege: SortilegeDataModel,
+    armure: ArmureDataModel,
+    objet: BaseItemDataModel,
+    voie: VoieDataModel,
+    capacite: BaseItemDataModel
+  };
 
   // SETTINGS
   RegisterSettings();
@@ -264,6 +304,12 @@ Hooks.once("ready", async function() {
 });
 
 Hooks.on("renderChatMessage", function(message, html, messageData) {
+
+  $(html).find('.message-content div.dice-result').click(ev => {
+      const header = $(ev.currentTarget).parents('.dice-roll');
+      header.toggleClass('expanded');
+  });
+
   const isInitiative = message.getFlag('core', 'initiativeRoll');
   const menu = [
     {

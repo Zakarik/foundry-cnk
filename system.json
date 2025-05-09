@@ -35,8 +35,8 @@
     }
   ],
   "compatibility": {
-    "minimum": "11",
-    "verified": "12"
+    "minimum": "12",
+    "verified": "13"
   },
   "packs": [
     {
@@ -88,10 +88,35 @@
       "path":"packs/voies-de-magie-corrompue"
     }
   ],
+  "documentTypes": {
+    "Actor": {
+      "eiyu":{},
+      "vehicule":{},
+      "entite":{}
+    },
+    "Item":{
+      "profil":{},
+      "avantage":{},
+      "desavantage":{},
+      "phobie":{},
+      "folie":{},
+      "wpncontact":{},
+      "wpndistance":{},
+      "wpngrenade":{},
+      "wpnartillerie":{},
+      "sortilege":{ },
+      "armure":{},
+      "objet":{},
+      "voie":{},
+      "capacite":{}
+    }
+  },
   "primaryTokenAttribute": "derives.pv",
   "secondaryTokenAttribute": "derives.serenite",
-  "gridDistance": 1,
-  "gridUnits": "m",
+  "grid":{
+    "distance":1,
+    "unit":"m"
+  },
   "url": "#{URL}#",
   "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",

@@ -94,6 +94,7 @@ jobs:
             module/                              \
             documents/                           \
             sheets/                              \
+            models/                              \
             packs/                               \
             scripts/                             \
             styles/                              \

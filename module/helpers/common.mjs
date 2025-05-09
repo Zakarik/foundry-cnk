@@ -2,29 +2,34 @@ export function generateID() {
   return foundry.utils.randomID();
 }
 
-export function activeOrUnactiveEffect(item, value, idVoie='', rang=undefined) {
+export async function activeOrUnactiveEffect(item, value, idVoie='', rang=undefined) {
+  const version = game.version.split('.')[0];
+  const isVersion12 = version <= 12 ? true : false;
   const actor = item.actor;
   let effect = {};
 
   if(idVoie !== '' && rang !== undefined) effect = item.effects.find(itm => itm.name === `${idVoie}_${rang}`);
   else item.effects.contents[0]
 
-  item.updateEmbeddedDocuments('ActiveEffect', [{
-    "_id":effect._id,
-    disabled:value,
-  }]);
-
-  if(actor !== null) {
-    const effects = actor.effects.contents;
-    let search = {};
-
-    if(idVoie !== '' && rang !== undefined) search = effects.find(itm => itm.name === `${idVoie}_${rang}` && itm.origin === `Actor.${actor._id}.Item.${item._id}`);
-    else search = effects.find(eff => eff.origin === `Actor.${actor._id}.Item.${item._id}`);
-
-    actor.updateEmbeddedDocuments('ActiveEffect', [{
-      "_id":search._id,
+  if(effect) {
+    item.updateEmbeddedDocuments('ActiveEffect', [{
+      "_id":effect._id,
       disabled:value,
     }]);
+
+    if(actor !== null && isVersion12) {
+      const effects = actor.effects.contents;
+      let search = {};
+
+      if(idVoie !== '' && rang !== undefined) search = effects.find(itm => itm.name === `${idVoie}_${rang}` && itm.origin === `Actor.${actor._id}.Item.${item._id}`);
+      else search = effects.find(eff => eff.origin === `Actor.${actor._id}.Item.${item._id}`);
+
+      actor.updateEmbeddedDocuments('ActiveEffect', [{
+        "_id":search._id,
+        disabled:value,
+      }]);
+
+    }
   }
 }
 
