@@ -688,7 +688,7 @@ export async function doRoll(actor, data={}) {
       scene: actor?.token?.parent?.id || null,
       alias: actor?.name || null,
     },
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    style: CONST.CHAT_MESSAGE_STYLES.ROLL,
     rolls:diceRolled,
     content: await renderTemplate(data.template, mergeObject),
     sound: CONFIG.sounds.dice

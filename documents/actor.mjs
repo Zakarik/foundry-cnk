@@ -14,7 +14,7 @@ export class CNKActor extends Actor {
     // Replace default image
     if (data.img === undefined) data.img = setBaseImg(data.type);
 
-    await super.create(data, options);
+    return await super.create(data, options);
   }
 
   /** @override */

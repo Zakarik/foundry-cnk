@@ -35,4 +35,12 @@ export const RegisterHandlebars = function () {
     Handlebars.registerHelper('sanitize', function (string) {
         return string ? string.replace(/<[^>]*>?/gm, '') : '';
     });
+
+    Handlebars.registerHelper('getCFG', function (str) {
+        const cfg = str.split('.').reduce((obj, key) => {
+            return obj && obj[key] !== undefined ? obj[key] : undefined;
+        }, CONFIG.CNK);
+
+        return cfg;
+    });
 };

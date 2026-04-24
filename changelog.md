@@ -1,4 +1,7 @@
 # Changelog
+## v1.5.0
+- Compatibilité avec la V14.
+
 ## v1.4.0
 - Compatibilité avec la V13.
 

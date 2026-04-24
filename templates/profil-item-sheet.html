@@ -11,12 +11,7 @@
             <label>
                 <span class="label">{{localize "CNK.PROFIL.FAMILLE.Label"}}</span>
                 <select name="system.famille" class="famille">
-                    {{#select systemData.famille}}
-                        <option value=""></option>
-                        <option value="action">{{localize "CNK.PROFIL.FAMILLE.Action"}}</option>
-                        <option value="reflexion">{{localize "CNK.PROFIL.FAMILLE.Reflexion"}}</option>
-                        <option value="societe">{{localize "CNK.PROFIL.FAMILLE.Societe"}}</option>
-                    {{/select}}
+                    {{selectOptions (getCFG 'LIST.Famille') selected=systemData.famille localize=true blank=''}}
                 </select>
             </label>
 
@@ -42,11 +37,7 @@
             <label>
                 <span class="label">{{localize "CNK.De-de-vie"}}</span>
                 <select name="system.dv">
-                    {{#select systemData.dv}}
-                        <option value="6">{{localize "CNK.De-short"}}6</option>
-                        <option value="8">{{localize "CNK.De-short"}}8</option>
-                        <option value="10">{{localize "CNK.De-short"}}10</option>
-                    {{/select}}
+                    {{selectOptions (getCFG 'LIST.Dv') selected=systemData.dv localize=true}}
                 </select>
             </label>
             <label>

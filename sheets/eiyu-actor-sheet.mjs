@@ -645,7 +645,7 @@ export class EiyuActorSheet extends ActorSheet {
                   token: this.actor?.token?.id || null,
                   alias: this.actor?.name || null,
                 },
-                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+                style: CONST.CHAT_MESSAGE_STYLES.ROLL,
                 rolls:[rollDv],
                 content: await renderTemplate('systems/cthulhu-no-kami/templates/roll/simple.html', pRollDv),
                 sound: CONFIG.sounds.dice
@@ -1079,7 +1079,7 @@ export class EiyuActorSheet extends ActorSheet {
     // Get the type of item to create.
     const type = header.dataset.type;
     // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
+    const data = foundry.utils.duplicate(header.dataset);
     // Initialize a default name.
     const name = `${game.i18n.localize(`TYPES.Item.${type}`)}`;
     // Prepare the item object.

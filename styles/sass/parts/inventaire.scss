@@ -41,7 +41,7 @@ div {
                 div {
                     &.block {
                         display: grid;
-                        grid-template-columns: 35px 1fr 45px 45px 35px;
+                        grid-template-columns: 35px 1fr 45px 45px 40px;
                         grid-gap: 5px;
 
                         border: 1px solid $black;

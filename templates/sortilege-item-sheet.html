@@ -20,9 +20,7 @@
         <label>
             <span class="label">{{localize "CNK.TABSCOMBAT.SORTILEGE.Caracteristique"}}</span>
             <select name="system.caracteristique">
-                {{#select systemData.caracteristique}}
-                    {{selectOptions caracteristiques localize=true}}
-                {{/select}}
+                {{selectOptions (getCFG 'LIST.Caracteristiques') selected=systemData.caracteristique localize=true}}
             </select>
         </label>
 

@@ -54,7 +54,7 @@ export class WpnContactDataModel extends foundry.abstract.TypeDataModel {
     }
 
     _prepareWpnData() {
-        const isOwned = this.item.isOwned;
+        const isOwned = this.actor;
 
         if(isOwned) {
             const actor = this.actor;

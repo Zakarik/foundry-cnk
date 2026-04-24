@@ -1271,7 +1271,7 @@ div.eiyu section.window-content form.mainGrid section.body div.traits div.btn i 
 }
 div.eiyu section.window-content form.mainGrid section.body div.traits div.block {
   display: grid;
-  grid-template-columns: 1fr 90px 35px;
+  grid-template-columns: 1fr 90px 40px;
   border: 1px solid black;
   border-radius: 5px;
   background: #D3D3D3;
@@ -1424,7 +1424,7 @@ div.eiyu section.window-content form.mainGrid section.body div.mental div.col {
 }
 div.eiyu section.window-content form.mainGrid section.body div.mental div.block {
   display: grid;
-  grid-template-columns: 1fr 35px;
+  grid-template-columns: 1fr 40px;
   border: 1px solid black;
   border-radius: 5px;
   background: #D3D3D3;
@@ -1642,7 +1642,7 @@ div.eiyu section.window-content form.mainGrid section.body div.combat div.dataCo
   grid-column: 1/5;
 }
 div.eiyu section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege {
-  grid-template-columns: 1fr 90px 40px 35px;
+  grid-template-columns: 1fr 90px 40px 40px;
 }
 div.eiyu section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege span.rang {
   font-variant: small-caps;
@@ -1673,7 +1673,7 @@ div.eiyu section.window-content form.mainGrid section.body div.combat div.dataCo
 }
 div.eiyu section.window-content form.mainGrid section.body div.combat div.block {
   display: grid;
-  grid-template-columns: 1fr 40px 35px;
+  grid-template-columns: 1fr 40px 40px;
   column-gap: 5px;
   border: 1px solid black;
   border-radius: 5px;
@@ -1822,7 +1822,7 @@ div.eiyu section.window-content form.mainGrid section.body div.combat.vehicule i
   display: none;
 }
 div.eiyu section.window-content form.mainGrid section.body div.combat.vehicule div.block {
-  grid-template-columns: 1fr max-content 35px;
+  grid-template-columns: 1fr max-content 40px;
 }
 div.eiyu section.window-content form.mainGrid section.body div.combat.vehicule div.btnequip {
   align-items: center;
@@ -1874,7 +1874,7 @@ div.eiyu section.window-content form.mainGrid section.body div.inventaire div.ar
 }
 div.eiyu section.window-content form.mainGrid section.body div.inventaire div.armure div.block {
   display: grid;
-  grid-template-columns: 35px 1fr 45px 45px 35px;
+  grid-template-columns: 35px 1fr 45px 45px 40px;
   grid-gap: 5px;
   border: 1px solid black;
   border-radius: 5px;
@@ -3316,7 +3316,7 @@ div.entite section.window-content form.mainGrid section.body div.mental div.col 
 }
 div.entite section.window-content form.mainGrid section.body div.mental div.block {
   display: grid;
-  grid-template-columns: 1fr 35px;
+  grid-template-columns: 1fr 40px;
   border: 1px solid black;
   border-radius: 5px;
   background: #D3D3D3;
@@ -3534,7 +3534,7 @@ div.entite section.window-content form.mainGrid section.body div.combat div.data
   grid-column: 1/5;
 }
 div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege {
-  grid-template-columns: 1fr 90px 40px 35px;
+  grid-template-columns: 1fr 90px 40px 40px;
 }
 div.entite section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege span.rang {
   font-variant: small-caps;
@@ -3565,7 +3565,7 @@ div.entite section.window-content form.mainGrid section.body div.combat div.data
 }
 div.entite section.window-content form.mainGrid section.body div.combat div.block {
   display: grid;
-  grid-template-columns: 1fr 40px 35px;
+  grid-template-columns: 1fr 40px 40px;
   column-gap: 5px;
   border: 1px solid black;
   border-radius: 5px;
@@ -3714,7 +3714,7 @@ div.entite section.window-content form.mainGrid section.body div.combat.vehicule
   display: none;
 }
 div.entite section.window-content form.mainGrid section.body div.combat.vehicule div.block {
-  grid-template-columns: 1fr max-content 35px;
+  grid-template-columns: 1fr max-content 40px;
 }
 div.entite section.window-content form.mainGrid section.body div.combat.vehicule div.btnequip {
   align-items: center;
@@ -3766,7 +3766,7 @@ div.entite section.window-content form.mainGrid section.body div.inventaire div.
 }
 div.entite section.window-content form.mainGrid section.body div.inventaire div.armure div.block {
   display: grid;
-  grid-template-columns: 35px 1fr 45px 45px 35px;
+  grid-template-columns: 35px 1fr 45px 45px 40px;
   grid-gap: 5px;
   border: 1px solid black;
   border-radius: 5px;
@@ -5062,7 +5062,7 @@ div.vehicule section.window-content form.mainGrid section.body div.combat div.da
   grid-column: 1/5;
 }
 div.vehicule section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege {
-  grid-template-columns: 1fr 90px 40px 35px;
+  grid-template-columns: 1fr 90px 40px 40px;
 }
 div.vehicule section.window-content form.mainGrid section.body div.combat div.dataCombat div.sortilege span.rang {
   font-variant: small-caps;
@@ -5093,7 +5093,7 @@ div.vehicule section.window-content form.mainGrid section.body div.combat div.da
 }
 div.vehicule section.window-content form.mainGrid section.body div.combat div.block {
   display: grid;
-  grid-template-columns: 1fr 40px 35px;
+  grid-template-columns: 1fr 40px 40px;
   column-gap: 5px;
   border: 1px solid black;
   border-radius: 5px;
@@ -5242,7 +5242,7 @@ div.vehicule section.window-content form.mainGrid section.body div.combat.vehicu
   display: none;
 }
 div.vehicule section.window-content form.mainGrid section.body div.combat.vehicule div.block {
-  grid-template-columns: 1fr max-content 35px;
+  grid-template-columns: 1fr max-content 40px;
 }
 div.vehicule section.window-content form.mainGrid section.body div.combat.vehicule div.btnequip {
   align-items: center;
@@ -5730,7 +5730,7 @@ div.profil section.window-content form.mainGrid section.body div.voies span.labe
 }
 div.profil section.window-content form.mainGrid section.body div.voies div.summary {
   display: grid;
-  grid-template-columns: repeat(6, 1fr) 35px;
+  grid-template-columns: repeat(6, 1fr) 40px;
   align-items: center;
   align-content: center;
 }
@@ -7471,7 +7471,7 @@ div section.modecreation-top div.modecreation-traits div.btn i {
 }
 div section.modecreation-top div.modecreation-traits div.block {
   display: grid;
-  grid-template-columns: 1fr 90px 35px;
+  grid-template-columns: 1fr 90px 40px;
   border: 1px solid black;
   border-radius: 5px;
   background: #D3D3D3;

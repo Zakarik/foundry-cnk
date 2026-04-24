@@ -173,7 +173,7 @@ div {
                     }
 
                     &.sortilege {
-                        grid-template-columns: 1fr 90px 40px 35px;
+                        grid-template-columns: 1fr 90px 40px 40px;
 
                         span {
                             &.rang {
@@ -221,7 +221,7 @@ div {
 
             &.block {
                 display:grid;
-                grid-template-columns: 1fr 40px 35px;
+                grid-template-columns: 1fr 40px 40px;
                 column-gap: 5px;
 
                 border: 1px solid $black;
@@ -341,7 +341,7 @@ div {
 
             div {
                 &.block {
-                    grid-template-columns: 1fr max-content 35px;
+                    grid-template-columns: 1fr max-content 40px;
                 }
 
                 &.btnequip {

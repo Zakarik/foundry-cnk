@@ -174,3 +174,26 @@ CNK.DefensePossible = {
     'simple':"CNK.COMBAT.DefenseSimple",
     'totale':"CNK.COMBAT.DefenseTotale",
 }
+
+CNK.LIST = {};
+
+CNK.LIST.Famille = {
+    'action':'CNK.PROFIL.FAMILLE.Action',
+    'reflexion':'CNK.PROFIL.FAMILLE.Reflexion',
+    'societe':'CNK.PROFIL.FAMILLE.Societe',
+}
+
+CNK.LIST.Caracteristiques = {
+    'force':'CNK.CARACTERISTIQUES.Force',
+    'dexterite':'CNK.CARACTERISTIQUES.Dexterite',
+    'constitution':'CNK.CARACTERISTIQUES.Constitution',
+    'intelligence':'CNK.CARACTERISTIQUES.Intelligence',
+    'perception':'CNK.CARACTERISTIQUES.Perception',
+    'charisme':'CNK.CARACTERISTIQUES.Charisme',
+}
+
+CNK.LIST.Dv = {
+    '6':'CNK.De-short6',
+    '8':'CNK.De-short8',
+    '10':'CNK.De-short10',
+}
